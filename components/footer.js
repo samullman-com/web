@@ -13,9 +13,8 @@ function Footer () {
     return (
         <Box bg="black" color="white"  py={ 20 } px={ 5 }>
             <Container maxWidth="1400px">
-            <SimpleGrid columns={[ 1, 2, 2, 4]} mb={12}>
-                <Box>
-                    <Link href="/">
+
+            <Link href="/">
                     <Box rounded="full"  mb={6} height={"60px"} width="60px" overflow="hidden">
                     <Image
         src="/sam.jpg"
@@ -26,8 +25,18 @@ function Footer () {
       />
                     </Box>
                     </Link>
+
+
+            <SimpleGrid columns={[ 1, 1, 3, 3]} mb={12}>
+                <Box>
+                    
+
+
+                    <Heading size="lg" mb={ 5 }>
+                        SAMULLMAN.COM
+                    </Heading>
                     <Heading size="sm" mb={ 6 }>
-                        AGENTS OF DIGITAL CHANGE. 
+                        Agents of digital change. 
                     </Heading>
 
                     <Box maxWidth="240px">
@@ -37,7 +46,35 @@ function Footer () {
                 </Box>
 
                 <Box>
-                    aksdjnf
+                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    <Link href="/">
+                        HOME
+                    </Link>
+                    </Box>
+                    
+                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    <Link href="/about">
+                        ABOUT
+                    </Link>
+                    </Box>
+
+                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    <Link href="/projects">
+                        PROJECTS
+                    </Link>
+                    </Box>
+
+                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    <Link href="/contact">
+                        CONTACT
+                    </Link>
+                    </Box>
+
+                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    <Link href="/login">
+                        LOGIN
+                    </Link>
+                    </Box>
                     
                 </Box>
 
@@ -46,10 +83,6 @@ function Footer () {
                     
                 </Box>
 
-                <Box>
-                    asdkjfn
-                    
-                </Box>
 
             </SimpleGrid>
 

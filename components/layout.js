@@ -2,6 +2,10 @@ import Head from 'next/head';
 import Header from "../components/header";
 import Footer from "../components/footer";
 
+import {
+  Box, 
+} from "@chakra-ui/react";
+
 function Layout ( props ) {
     return < >
     <Head>
@@ -11,9 +15,11 @@ function Layout ( props ) {
 
     <Header />
 
+    <Box pt={[ "70px", "70px", "80px"]}> 
     <main>
         { props.children }
     </main>
+    </Box>
 
     <Footer />
   </>

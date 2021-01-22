@@ -11,7 +11,7 @@ function Socials () {
         <Flex width="100%">
 
         <Flex>
-          <SocialIcon url="https://github.com/samullman" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
+          <SocialIcon url="https://github.com/samullman-com" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
         </Flex>
 
         <Spacer />

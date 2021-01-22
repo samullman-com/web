@@ -29,15 +29,15 @@ import jump from "jump.js";
   return (
     <Layout title="Contact">
 
-        <Box height="100vh" bg="gray.100">
+        <Box py={20} bg="gray.100">
           <VerticalAlign>
             
-            <Container >
+            <Container maxWidth="1000px" mb={12}>
               <Heading mb={ 6 }>
-                Contact me! 
+                Contact us! 
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg">
+              <Box bg="white" p={6} rounded="lg" shadow="lg">
                  
                 <form action="https://formcarry.com/s/aijTlOcIOM" method="POST" accept-charset="UTF-8" >
                   <FormControl isRequired mb={3}>
