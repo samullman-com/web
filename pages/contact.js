@@ -23,7 +23,7 @@ import {
 import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
 
-export default function Home() {
+ function Contact () {
   
   
   return (
@@ -82,3 +82,6 @@ export default function Home() {
     </Layout>
   )
 }
+
+
+export default Contact;

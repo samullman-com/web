@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from 'next/link'
 
 import {
+    Heading, 
     Box, 
     Button, 
     Grid,
@@ -17,21 +18,16 @@ import {
 
 import theme from "../public/theme";
 
-const Header =  () => {
-    return  <Grid gridTemplateColumns="100px calc(100% - 100px)" bg="gray.900" height={["70px", "70px",  "80px"]} position="fixed" width="100vw" zIndex="600" top={["none", "none", "0"]} bottom={["0", "0", "none"]} px={ 5 }>
+function Header () {
+    return  <Grid gridTemplateColumns="100px calc(100% - 100px)" bg="black" height={["70px", "70px",  "80px"]} position="fixed" width="100vw" zIndex="600" top={0} px={ 5 }>
 
         <Box>
             <VerticalAlign>
                 <Link href="/">
-                    <Box rounded="full" overflow="hidden" width={[50, 50, "55px"]}>
-            <Image
-        src="/sam.jpg"
-        width={ 55 }
-        height={ 55 }
-        
-        alt="Home"
-      />
-        </Box>
+                    <Heading color="white" size="md" letterSpacing={1}>
+                        SAMULLMAN.COM
+                    </Heading>
+                    
       </Link>
 
       

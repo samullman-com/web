@@ -1,146 +1,132 @@
 import React from "react";
 import Link from "next/link"
-import { SocialIcon } from "react-social-icons";
+
+import Socials from "../components/socials";
+
+
+import { signIn, signOut, useSession } from 'next-auth/client'
+
 
 import {
-    Box, 
-    Button, 
-    Grid,
-    IconButton,
-    useDisclosure,
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    VStack,
-    Divider,
-    Flex,
-    Spacer,
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  VStack,
+  Divider,
+  Flex,
+  Spacer,
 } from "@chakra-ui/react";
 
 import {
-  RiMenu5Fill
-} from "react-icons/ri";
+  HiOutlineMenuAlt3
+} from "react-icons/hi";
+
+
 
 
 import theme from "../public/theme.js"
 
 
-const Sidebar = ( props ) => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
+function Sidebar(props) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = React.useRef()
 
-    const menuItems = [
-        {
-            text: "Home", 
-            to: "/",
-        }, 
+  const menuItems = [
+    {
+      text: "Home",
+      to: "/",
+    },
 
-        {
-            text: "About", 
-            to: "/about",
-        }, 
+    {
+      text: "About",
+      to: "/about",
+    },
 
 
-        {
-            text: "Contact", 
-            to: "/contact",
-        }, 
+    {
+      text: "Contact",
+      to: "/contact",
+    },
 
-        {
-            text: "Login", 
-            to: "/login",
-        }, 
-    ]
     
-    let textAlign = props.placement == "right" ? "left" : "center";
+  ]
 
-    return (
-      <>
-        <IconButton ref={btnRef} icon={ <RiMenu5Fill /> } float="right" variant="ghost" colorScheme="none" color="white" fontSize="30px" onClick={onOpen}>
-            
-            </IconButton>
-        <Drawer
-          isOpen={isOpen}
-          placement="right"
-          onClose={onClose}
-          finalFocusRef={btnRef}
-          placement={ props.placement }
-        >
-          <DrawerOverlay>
-            <DrawerContent bg={ "gray.900" } color="white" textAlign="left">
-              <DrawerCloseButton />
-              <DrawerHeader></DrawerHeader>
-  
-              <DrawerBody textAlign={ textAlign }>
-                      
-
-                   {
-                       menuItems.map( (el) => {
-                           return <Box mb={4} key={ el.text } fontSize="18px">
-                               <Link href={ el.to }>
-                           { el.text }
-                           </Link>
-                       </Box>
-                       })
-                   }
+  let textAlign = props.placement == "right" ? "left" : "center";
+  const [session, loading] = useSession()
 
 
-                   <Divider mb={3} /> 
+  return (
+    <>
+      <IconButton ref={btnRef} icon={<HiOutlineMenuAlt3 />} float="right" variant="ghost" colorScheme="none" color="white" fontSize="30px" onClick={onOpen}>
 
-                   <Flex mb={3}>
+      </IconButton>
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+        placement={props.placement}
+      >
+        <DrawerOverlay>
+          <DrawerContent bg={"black"} color="white" textAlign="left">
+            <DrawerCloseButton />
+            <DrawerHeader></DrawerHeader>
 
-                      <Flex>
-                      <SocialIcon url="https://github.com/samullman" fgColor="white" style={{width: 30, height: 30}} />
-                     </Flex>
-
-                     <Spacer />
-
-                    <Flex>
-                      <SocialIcon url="https://twitter.com/samullman" fgColor="white" style={{width: 30, height: 30}} />
-                     </Flex>
-
-                     <Spacer />
-
-
-                     <Flex>
-                      <SocialIcon url="https://linkedin.com/in/jaketrent" fgColor="white" style={{width: 30, height: 30}} />
-                     </Flex>
-
-                     <Spacer />
-
-                     <Flex>
-                      <SocialIcon url="https://facebook.com/samullman" fgColor="white" style={{width: 30, height: 30}} />
-                     </Flex>
-
-                     <Spacer />
-
-                     <Flex>
-                      <SocialIcon url="https://instagram.com/samullman" fgColor="white" style={{width: 30, height: 30}} />
-                     </Flex>
-
-                     <Spacer />
-
-                     <Flex>
-                      <SocialIcon url="https://twitch.tv/samullman" fgColor="white" style={{width: 30, height: 30}} />
-                     </Flex>
-
-                   </Flex>
-
-                   <Divider mb={ 3 } /> 
+            <DrawerBody textAlign={textAlign}>
 
 
-              </DrawerBody>
-  
-              <DrawerFooter></DrawerFooter>
-            </DrawerContent>
-          </DrawerOverlay>
-        </Drawer>
-      </>
-    )
-  }
+              {
+                menuItems.map((el) => {
+                  return <Box mb={4} key={el.text} fontSize="18px" fontWeight="600" letterSpacing="1">
+                    <Link href={el.to}>
+                      {el.text}
+                    </Link>
+                  </Box>
+                })
+              }
 
-  export default Sidebar;
+
+                
+
+
+
+
+              {!session && <Box mb={4}  fontSize="18px" fontWeight="600"  >
+                    <span onClick={ signIn }>
+                      Login
+                    </span>
+                  </Box>
+              }
+              {session && <>
+                Signed in as {session.user.email} <br />
+                <button onClick={signOut}>Sign out</button>
+              </>}
+
+
+
+
+
+            </DrawerBody>
+
+            <DrawerFooter px={10}>
+
+             <Socials />
+
+            </DrawerFooter>
+          </DrawerContent>
+        </DrawerOverlay>
+      </Drawer>
+    </>
+  )
+}
+
+export default Sidebar;

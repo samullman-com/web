@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Header from "../components/header";
+import Footer from "../components/footer";
 
-const Layout = ( props ) => (
-    <div >
+function Layout ( props ) {
+    return < >
     <Head>
       <title>{ props.title }</title>
       <link rel="icon" href="/favicon.ico" />
@@ -14,9 +15,8 @@ const Layout = ( props ) => (
         { props.children }
     </main>
 
-    <footer>
-    </footer>
-  </div>
-)
+    <Footer />
+  </>
+}
 
 export default Layout;

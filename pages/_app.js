@@ -1,11 +1,16 @@
 import '../styles/globals.css'
-import { ChakraProvider } from "@chakra-ui/react"
+import {
+  Box, 
+  ChakraProvider, 
+} from "@chakra-ui/react"
 
 
 function App ({ Component, pageProps }) {
-  return <ChakraProvider>
+  return <Box bg="gray.900">
+  <ChakraProvider>
     <Component {...pageProps} />
   </ChakraProvider>
+  </Box>
 
 }
 
