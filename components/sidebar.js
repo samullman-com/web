@@ -51,6 +51,11 @@ function Sidebar(props) {
       to: "/about",
     },
 
+    {
+      text: "Projects",
+      to: "/projects",
+    },
+
 
     {
       text: "Contact",

@@ -35,9 +35,9 @@ function Footer () {
                     <Heading size="lg" mb={ 5 }>
                         SAMULLMAN.COM
                     </Heading>
-                    <Heading size="sm" mb={ 6 }>
+                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={ 6 }>
                         Agents of digital change. 
-                    </Heading>
+                    </Box>
 
                     <Box maxWidth="240px">
 
@@ -48,31 +48,31 @@ function Footer () {
                 <Box>
                     <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
                     <Link href="/">
-                        HOME
+                        Home
                     </Link>
                     </Box>
                     
                     <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
                     <Link href="/about">
-                        ABOUT
+                        About
                     </Link>
                     </Box>
 
                     <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
                     <Link href="/projects">
-                        PROJECTS
+                        Projects
                     </Link>
                     </Box>
 
                     <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
                     <Link href="/contact">
-                        CONTACT
+                        Contact
                     </Link>
                     </Box>
 
                     <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
                     <Link href="/login">
-                        LOGIN
+                        Login
                     </Link>
                     </Box>
                     
