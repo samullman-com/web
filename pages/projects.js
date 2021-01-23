@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../components/layout";
-
+import ProgressiveImage from "react-progressive-graceful-image";
 
 import {
   Box, 
@@ -18,45 +18,42 @@ function About () {
   return (
     <Layout title="Projects">
 
-        <Box py={20} bg="gray.100">
+        <Box py={20} bg="white">
           <VerticalAlign>
             
             <Container maxW="1200px">
               <Heading mb={ 6 } size="xl">
-                The Team
+                Our Projects
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg">
-                <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
+              <Box bg="gray.100" p={6} rounded="lg">
+                <Box height="500px" rounded="md" overflow="hidden" mb={6}>
 
-                  <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
-                  <Image
-                      src="/sam.jpg"
-                      layout="fill"
-                      objectFit="cover"
-                      alt="Sam Ullman"
-                    />
+                <a target="_blank" href="https://bemizu.app/" rel="noopener noreferrer">
+        <ProgressiveImage src="bemizu.jpg" placeholder="bemizu.jpg">
+          {(src) => <img src={src} alt="Bemizu" style={{height: "100%", width: "100%", objectFit: "cover" }} />}
+        </ProgressiveImage>
+                </a>
 
-                    
-                  </Box>
 
-                  <Box>
-                    <Heading mb={2} size="lg">
-                      Sam Ullman
-                    </Heading>
 
-                    <Heading size="sm" color="gray.700" mb={2}>
-                      Founder
-                    </Heading>
+                </Box>
 
-                    <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </Text>
 
-                  </Box>
+                <Divider mb={ 6 } />
 
-                </Grid>
-                <Divider />
+
+                <Box height="500px" rounded="md" overflow="hidden" mb={6}>
+
+                <a target="_blank" href="https://submissionwars.com/" rel="noopener noreferrer">
+<ProgressiveImage src="sub-wars.jpg" placeholder="sub-wars.jpg">
+  {(src) => <img src={src} alt="Submission Wars" style={{height: "100%", width: "100%", objectFit: "cover" }} />}
+</ProgressiveImage>
+</a>
+
+
+
+        </Box>
 
 
               </Box>

@@ -10,6 +10,7 @@ import {
   Grid, 
   Heading,
   Text,
+  Button, 
 } from "@chakra-ui/react";
 
 import VerticalAlign from "../components/verticalAlign";
@@ -26,7 +27,7 @@ function About () {
                 Team
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg" shadow="lg">
+              <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6}>
                 <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
 
                   <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
@@ -122,6 +123,11 @@ function About () {
 
 
               </Box>
+
+              <Button rounded="full" colorScheme="yellow" size="lg">
+                JOIN US!
+
+              </Button>
 
 
             </Container>

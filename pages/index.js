@@ -100,7 +100,7 @@ function Index ()  {
 
             <Box >
               <ChakraLink href="https://jamstack.org/" target="_blank" rel="noopener noreferrer" rounded="md">
-              JAMStack</ChakraLink> philosophy has allowed indepedent engineers real power to architect and manage Progressive Web Apps
+              JAMStack</ChakraLink> tools have allowed indepedent developers to continuously deploy Progressive Web Applications targeting all screen sizes (Desktop, Tablet, and Mobile). 
             </Box>
           </Container>
 
