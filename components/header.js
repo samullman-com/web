@@ -19,7 +19,7 @@ import {
 import theme from "../public/theme";
 
 function Header () {
-    return  <Grid gridTemplateColumns="100px calc(100% - 100px)" bg="black" height={["70px", "70px",  "80px"]} position="fixed" width="100vw" zIndex="600" top={0} px={ 5 }>
+    return  <Grid gridTemplateColumns="100px calc(100% - 100px)" bg="black" height={["60px", "60px",  "80px"]} position="fixed" width="100vw" zIndex="600" top={0} px={[3, 4,  5 ]}>
 
         <Box>
             <VerticalAlign>

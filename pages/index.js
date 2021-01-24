@@ -43,10 +43,10 @@ function Index ()  {
   
   return (
     <Layout title="Home">
-        <Box height={["calc(100vh - 70px)", "calc(100vh - 70px)", "calc(100vh - 80px)"]} position="relative">
+        <Box py={["100px", "150px", "160px", "180px"]} position="relative">
 
         <VerticalAlign>
-          <Container zIndex="5" position="relative" maxW="1200px" mb={ 10 }>
+          <Container zIndex="5" position="relative" maxW="1200px" mb={[0, 0, 0, 6]} >
             <Heading color="white" fontSize={[40, 55, 85, 95,  105]} textAlign={["center", "center", "left"]} >
             CHANGING THE WAY ORGANIZATIONS DO DIGITAL
 
