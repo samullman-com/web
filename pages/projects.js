@@ -18,15 +18,15 @@ function About () {
   return (
     <Layout title="Projects">
 
-        <Box py={20} bg="white">
+        <Box py={20} bg="gray.100">
           <VerticalAlign>
             
-            <Container maxW="1200px">
+            <Container maxW="1200px" >
               <Heading mb={ 6 } size="xl">
-                Our Projects
+                Projects
               </Heading>
 
-              <Box bg="gray.100" p={6} rounded="lg">
+              <Box bg="white" p={6} rounded="lg">
                 <Box height="500px" rounded="md" overflow="hidden" mb={6}>
 
                 <a target="_blank" href="https://bemizu.app/" rel="noopener noreferrer">
@@ -54,6 +54,9 @@ function About () {
 
 
         </Box>
+
+
+        <Divider mb={ 6 } />
 
 
               </Box>

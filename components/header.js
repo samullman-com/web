@@ -24,7 +24,7 @@ function Header () {
         <Box>
             <VerticalAlign>
                 <Link href="/">
-                    <Heading color="white" size="md" letterSpacing={1} cursor="pointer">
+                    <Heading className="hari" color="white" size="md" letterSpacing={1} cursor="pointer">
                         SAMULLMAN.COM
                     </Heading>
                     
