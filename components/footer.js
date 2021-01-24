@@ -12,10 +12,10 @@ import {
 function Footer () {
     return (
         <Box bg="black" color="white"  py={ 20 } px={ 5 }>
-            <Container maxWidth="1400px">
+            <Container maxWidth="1400px" textAlign={["center", "center", "left"]}>
 
             <Link href="/">
-                    <Box rounded="full"  mb={6} height={"60px"} width="60px" overflow="hidden">
+                    <Box rounded="full" height={"60px"} width="60px" overflow="hidden"  margin={["0 auto", "0 auto", "0"]} mb={6}>
                     <Image
         src="/sam.jpg"
         width={ 60 }
@@ -39,7 +39,7 @@ function Footer () {
                         Agents of digital change. 
                     </Box>
 
-                    <Box maxWidth="240px">
+                    <Box maxWidth="240px" margin={["0 auto", "0 auto", "0"]} mb={[4, 4, 0]}>
 
                      <Socials />
                     </Box>

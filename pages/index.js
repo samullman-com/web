@@ -8,6 +8,9 @@ import { signIn, signOut, useSession } from 'next-auth/client'
 import { DateTime } from "luxon";
 import { FiChevronDown, FiSend } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
+import { 
+  ImArrowDown
+} from "react-icons/im";
 
 import {
   Box, 
@@ -44,18 +47,11 @@ function Index ()  {
 
         <VerticalAlign>
           <Container zIndex="5" position="relative" maxW="1200px" mb={ 10 }>
-            <Heading color="white" fontSize={[40, "9vw", "9vw", 85,  95]} >
-            CHANGING THE WAY
-            </Heading>
+            <Heading color="white" fontSize={[40, 55, 85, 95,  105]} textAlign={["center", "center", "left"]} >
+            CHANGING THE WAY ORGANIZATIONS DO DIGITAL
 
-            <Heading color="white" fontSize={[40, "9vw", "9vw", 85,  95]} >
-            ORGANIZATIONS DO
-            </Heading>
 
-            <Heading color="white" fontSize={[40, "11vw", "11vw", 110,  124]} >
-            DIGITAL
-
-            <Box borderRadius={30} height={"30px"} width="30px" overflow="hidden" display="inline" ml={4}>
+            <Box borderRadius={30} height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden"  ml={4} display={["none", "none", "inline"]}>
                     <Image
                     className="rounded"
         src="/sam.jpg"
@@ -67,6 +63,20 @@ function Index ()  {
       />
                     </Box>
             </Heading>
+
+            <Box borderRadius={30} height={["60px"] } width={["60px", ]} overflow="hidden"  margin={["20px auto"]} display={["block", "block", "none"]}>
+                    <Image
+                    className="rounded"
+        src="/sam.jpg"
+        width={ 60  }
+        height={ 60 }
+        
+        
+        alt="sam"
+      />
+                    </Box>
+
+           
           </Container>
           
         </VerticalAlign>
@@ -92,7 +102,7 @@ function Index ()  {
         
         </Box>
 
-        <Box  py={[5, 10, 12]} px={[2, 5, 10]} bg="gray.100">
+        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100">
           <Container maxW="1200px" bg="white" rounded="lg" p={ 6 } shadow="lg">
             <Heading mb={6}>
               Welcome to the Progressive Web. 
@@ -106,6 +116,19 @@ function Index ()  {
 
 
         </Box>
+
+        <Box textAlign="center" background="linear-gradient(to bottom, #EDF2F7, white)" >
+          <VerticalAlign>
+          <Box display="inline-block" fontSize={[100, 200, 250]} color="blue.800" cursor="pointer">
+          <ImArrowDown />
+          </Box>
+          </VerticalAlign>
+        </Box>
+
+        <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
+
+        </Box>
+
 
 
         
