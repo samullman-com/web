@@ -93,7 +93,7 @@ function Index ()  {
         </Box>
 
         <Box  py={[5, 10, 20]} px={[2, 5, 10]} bg="gray.100">
-          <Container maxW="1200px" bg="white" rounded="lg" p={ 6 }>
+          <Container maxW="1200px" bg="white" rounded="lg" p={ 6 } shadow="lg">
             <Heading mb={6}>
               Welcome to the Progressive Web. 
             </Heading>

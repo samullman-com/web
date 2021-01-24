@@ -26,7 +26,7 @@ function About () {
                 Projects
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg">
+              <Box bg="white" p={6} rounded="lg" shadow="lg">
                 <Box height="500px" rounded="md" overflow="hidden" mb={6}>
 
                 <a target="_blank" href="https://bemizu.app/" rel="noopener noreferrer">
