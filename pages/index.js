@@ -44,11 +44,11 @@ function Index ()  {
 
         <VerticalAlign>
           <Container zIndex="5" position="relative" maxW="1200px" mb={ 10 }>
-            <Heading color="white" fontSize={[40, "9vw", "9vw", 96,  104]} >
+            <Heading color="white" fontSize={[40, "9vw", "9vw", 85,  95]} >
             CHANGING THE WAY
             </Heading>
 
-            <Heading color="white" fontSize={[40, "9vw", "9vw", 96,  104]} >
+            <Heading color="white" fontSize={[40, "9vw", "9vw", 85,  95]} >
             ORGANIZATIONS DO
             </Heading>
 
@@ -92,7 +92,7 @@ function Index ()  {
         
         </Box>
 
-        <Box  py={[5, 10, 20]} px={[2, 5, 10]} bg="gray.100">
+        <Box  py={[5, 10, 12]} px={[2, 5, 10]} bg="gray.100">
           <Container maxW="1200px" bg="white" rounded="lg" p={ 6 } shadow="lg">
             <Heading mb={6}>
               Welcome to the Progressive Web. 

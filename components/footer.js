@@ -32,7 +32,7 @@ function Footer () {
                     
 
 
-                    <Heading size="lg" mb={ 5 } letterSpacing={ 1 }>
+                    <Heading size="lg" mb={ 5 } letterSpacing={ 1 } fontWeight="600">
                         SAMULLMAN.COM
                     </Heading>
                     <Box fontSize="15px" fontWeight="600" letterSpacing={ 1 } mb={ 6 } color="gray.100">

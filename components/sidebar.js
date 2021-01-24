@@ -27,8 +27,8 @@ import {
 } from "@chakra-ui/react";
 
 import {
-  HiOutlineMenuAlt3
-} from "react-icons/hi";
+  BiMenuAltRight
+} from "react-icons/bi";
 
 
 
@@ -71,7 +71,7 @@ function Sidebar(props) {
 
   return (
     <>
-      <IconButton ref={btnRef} icon={<HiOutlineMenuAlt3 />} float="right" variant="ghost" colorScheme="none" color="white" fontSize="30px" onClick={onOpen}>
+      <IconButton ref={btnRef} icon={<BiMenuAltRight />} float="right" variant="ghost" colorScheme="none" color="white" fontSize="30px" onClick={onOpen}>
 
       </IconButton>
       <Drawer
