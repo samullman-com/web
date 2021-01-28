@@ -84,7 +84,7 @@ function About() {
       </Box>
 
 
-    </Layout>
+    </Layout> 
   )
 }
 
@@ -96,10 +96,13 @@ export default About;
 
 const Project = ( props ) => {
 
-  let buttonColors = ["blue", "purple"]
+  let buttonColors = ["blue", "purple", "orange"]
   let fields = props.el.fields;
 
-  return <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6} >
+  return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
+
+  
+  <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6} >
 
       
 
@@ -111,19 +114,14 @@ const Project = ( props ) => {
         { fields.title }
       </Heading>
 
-      <Box mb={ 3 }>
+      <Box >
         { documentToReactComponents( fields.description ) }
       </Box>
 
-      <ButtonGroup mb={[2, 2, 0]} >
-
-      <Button colorScheme={ buttonColors[ props.idx ]} rounded="full" as={ ChakraLink } href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} rightIcon={ <VscGlobe /> }>
-        Visit 
-      </Button>
-      </ButtonGroup>
+      
 
 
-      <ButtonGroup float={["none", "none", "right"]}>
+      <ButtonGroup float={["none", "none", "right"]} display="none">
         <IconButton rounded="full" icon={ <ImReddit /> }>
           
         </IconButton>
@@ -133,4 +131,5 @@ const Project = ( props ) => {
 
 
   </Box>
+  </ChakraLink>
 }

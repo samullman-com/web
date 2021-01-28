@@ -30,7 +30,7 @@ function Footer () {
 
 
             <SimpleGrid columns={[ 1, 1, 3, 3]} mb={12} mt={ 5 }>
-                <Box>
+                <Box mb={[4, 4, 0]}>
                     
 
 

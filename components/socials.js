@@ -8,7 +8,8 @@ import {
 
 function Socials() {
     return (
-        <Grid gridTemplateColumns={"repeat(7, 1fr)"} gap={4} maxWidth="300px" margin={["0 auto", "0 auto", 0]}>
+        <Box textAlign={["center", "center", "left"]}>
+        <Grid gridTemplateColumns={"repeat(5, 1fr)"} gap={4} maxWidth="300px" display="inline-grid">
             <Box >
                 <a href="https://github.com/samullman-com" target="_blank" rel="noopener noreferrer">
                     <Image
@@ -74,6 +75,7 @@ function Socials() {
 
 
         </Grid>
+        </Box>
     )
 }
 
