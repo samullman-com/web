@@ -1,7 +1,5 @@
 import { Component } from "react";
 
-import { initGA, logPageView } from '../utils/analytics'
-
 import Head from 'next/head';
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -18,21 +16,14 @@ import { BiUpArrowAlt } from "react-icons/bi";
 import ScrollToTop from "react-scroll-to-top";
 
 
-class Layout extends Component  {
-  componentDidMount ()  {
-    if (!window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
-    }
-    logPageView()
-  }
+function Layout ( props )  {
+ 
 
 
-  render () {
 
     return < >
     <Head>
-      <title>{ this.props.title }</title>
+      <title>{ props.title }</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
@@ -48,14 +39,13 @@ class Layout extends Component  {
 
 
     <main>
-        { this.props.children }
+        { props.children }
     </main>
     </Box>
 
     <Footer />
   </>
 
-  }
     
 }
 
