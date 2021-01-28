@@ -30,8 +30,8 @@ import jump from "jump.js";
 
 
 const client = require('contentful').createClient({
-  space: `${process.env.CONTENTFUL_SPACE_ID}` ,
-  accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+  space: process.env.CONTENTFUL_SPACE_ID || "c13ag7zvuwi0",
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "G7mSw24UXPM5SZVYnkNuP3_aHgicnABLTztJ_mAQYVU", 
 });
 
 
