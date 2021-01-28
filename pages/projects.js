@@ -96,7 +96,6 @@ export default About;
 
 const Project = ( props ) => {
 
-  let buttonColors = ["blue", "purple", "orange"]
   let fields = props.el.fields;
 
   return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">

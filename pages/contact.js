@@ -29,17 +29,19 @@ import jump from "jump.js";
   return (
     <Layout title="Contact">
 
-        <Box py={20} bg="gray.100">
+        <Box py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
           <VerticalAlign>
             
             <Container maxWidth="1000px" mb={12}>
-              <Heading mb={ 6 }>
-                Contact! 
+
+            <form action="https://formcarry.com/s/aijTlOcIOM" method="POST" acceptCharset="UTF-8" >
+
+              <Heading mb={ [3, 5] }>
+                Contact
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg" shadow="lg">
+              <Box bg="white" p={6} rounded="lg" shadow="lg" mb={[3, 6]}>
                  
-                <form action="https://formcarry.com/s/aijTlOcIOM" method="POST" accept-charset="UTF-8" >
                   <FormControl isRequired mb={3}>
                     <FormLabel>
                       Email
@@ -60,17 +62,19 @@ import jump from "jump.js";
                       Message
                     </FormLabel>
 
-                    <Textarea name="message" />
+                    <Textarea name="message" rows={ 6 } resize />
                   </FormControl>
 
-                  <ButtonGroup>
+                
+
+              </Box>
+
+              <ButtonGroup>
                     <Button rounded="full" colorScheme="blue">
                       Submit
                     </Button>
                   </ButtonGroup>
-
-                </form>
-              </Box>
+                  </form>
 
 
             </Container>
