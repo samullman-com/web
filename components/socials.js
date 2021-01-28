@@ -1,47 +1,79 @@
-import { SocialIcon } from "react-social-icons";
+import Image from "next/image";
 
 import {
-    Flex, 
-    Spacer, 
+    Grid,
+    Box,
 } from "@chakra-ui/react";
 
 
-function Socials () {
+function Socials() {
     return (
-        <Flex width="100%">
+        <Grid gridTemplateColumns={"repeat(7, 1fr)"} gap={4} maxWidth="300px" margin={["0 auto", "0 auto", 0]}>
+            <Box >
+                <a href="https://github.com/samullman-com" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src="/github-icon.svg"
+                        width={30}
+                        height={30}
+                    />
+                </a>
 
-        <Flex>
-          <SocialIcon url="https://github.com/samullman-com" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
-        </Flex>
+            </Box>
 
-        <Spacer />
+            <Box >
+                <a href="https://instagram.com/samullmandotcom" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src="/instagram-icon.svg"
+                        width={30}
+                        height={30}
+                    />
+                </a>
 
-        <Flex>
-          <SocialIcon url="https://twitter.com/samullman" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
-        </Flex>
-
-        <Spacer />
-
-
-        <Flex>
-          <SocialIcon url="https://www.linkedin.com/in/samullman/" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
-        </Flex>
-
-        <Spacer />
+            </Box>
 
 
+            <Box >
+                <a href="https://twitter.com/samullman" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src="/twitter-icon.svg"
+                        width={30}
+                        height={30}
+                    />
+                </a>
 
-        <Flex>
-          <SocialIcon url="https://instagram.com/samullmandotcom" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
-        </Flex>
+            </Box>
 
-        <Spacer />
+            <Box >
 
-        <Flex>
-          <SocialIcon url="https://twitch.tv/samullman" target="blank" fgColor="white" style={{ width: 30, height: 30 }} />
-        </Flex>
+                <a href="https://www.linkedin.com/in/samullman/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src="/linkedin-icon.svg"
+                        width={30}
+                        height={30}
+                    />
+                </a>
 
-      </Flex>
+            </Box>
+
+
+            <Box >
+
+                <a href="https://www.twitch.tv/samullman/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src="/twitch-icon.svg"
+                        width={30}
+                        height={30}
+                    />
+                </a>
+
+            </Box>
+
+
+
+
+
+
+        </Grid>
     )
 }
 

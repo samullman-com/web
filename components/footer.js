@@ -7,6 +7,7 @@ import {
     SimpleGrid, 
     Heading,
     Divider, 
+    Grid, 
 } from "@chakra-ui/react"
 
 function Footer () {
@@ -15,8 +16,9 @@ function Footer () {
             <Container maxWidth="1400px" textAlign={["center", "center", "left"]}>
 
             <Link href="/">
-                    <Box rounded="full" height={"60px"} width="60px" overflow="hidden"  margin={["0 auto", "0 auto", "0"]} mb={6}>
+                    <Box rounded="full" height={"60px"} width="60px" overflow="hidden"  margin={["0 auto", "0 auto", "0"]} cursor="pointer">
                     <Image
+                    
         src="/sam.jpg"
         width={ 60 }
         height={ 60 }
@@ -27,7 +29,7 @@ function Footer () {
                     </Link>
 
 
-            <SimpleGrid columns={[ 1, 1, 3, 3]} mb={12}>
+            <SimpleGrid columns={[ 1, 1, 3, 3]} mb={12} mt={ 5 }>
                 <Box>
                     
 
@@ -35,14 +37,10 @@ function Footer () {
                     <Heading size="lg" mb={ 5 } letterSpacing={ 1 } fontWeight="600">
                         SAMULLMAN.COM
                     </Heading>
-                    <Box fontSize="15px" fontWeight="600" letterSpacing={ 1 } mb={ 6 } color="gray.100">
-                        Agents of digital change. 
-                    </Box>
 
-                    <Box maxWidth="240px" margin={["0 auto", "0 auto", "0"]} mb={[4, 4, 0]}>
+                    <Socials />
 
-                     <Socials />
-                    </Box>
+                   
                 </Box>
 
                 <Box>

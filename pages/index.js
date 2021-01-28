@@ -80,7 +80,7 @@ function Index ()  {
         <VerticalAlign>
           <Container zIndex="5" position="relative" maxW="1200px" mb={[0, 0, 0, 6]} >
             <Heading color="white" fontSize={[40, 55, 85, 95,  105]} textAlign={["center", "center", "left"]} >
-            CHANGING THE WAY ORGANIZATIONS DO DIGITAL
+            RETHINKING THE WAY ORGANIZATIONS DO DIGITAL
 
 
             <Box borderRadius={30} height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden"  ml={4} display={["none", "none", "inline"]}>
