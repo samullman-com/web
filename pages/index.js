@@ -134,7 +134,7 @@ function Index ()  {
         
         </Box>
 
-        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100">
+        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100" display="none">
           <Container maxW="1000px" bg="white" rounded="lg" p={ 6 } shadow="lg">
             <Heading mb={6}>
               Welcome to the Progressive Web. 
@@ -149,9 +149,9 @@ function Index ()  {
 
         </Box>
 
-        <Box textAlign="center" background="linear-gradient(to bottom, #EDF2F7, white)" >
+        <Box textAlign="center" background="linear-gradient(to bottom, #EDF2F7, white)" height={[20, 50, 100, 120]}>
           <VerticalAlign>
-          <Box display="inline-block" fontSize={[80, 120, 150, 200]} color="blue.800" cursor="pointer">
+          <Box display="inline-block" fontSize={[80, 120, 150, 200]} color="blue.800" cursor="pointer" display="none">
           <ImArrowDown />
           </Box>
           </VerticalAlign>
@@ -159,7 +159,7 @@ function Index ()  {
 
         <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
 
-          <Container maxWidth="1000px">
+          <Container maxWidth="1100px">
           <SimpleGrid columns={[3, 4, 5, 6]} spacing={[4, 8, 12]}>
             {
               favorites.map( ( el ) => {
@@ -171,15 +171,15 @@ function Index ()  {
 
         </Box>
 
-        <Box textAlign="center" background="linear-gradient(to bottom, white, #EDF2F7)" >
+        <Box textAlign="center" background="linear-gradient(to bottom, white, #EDF2F7)" height={[20, 50, 100, 120]}>
           <VerticalAlign>
-          <Box display="inline-block" fontSize={[80, 120, 150, 200]} color="blue.800" cursor="pointer">
+          <Box display="inline-block" fontSize={[80, 120, 150, 200]} color="blue.800" cursor="pointer" display="none">
           <ImArrowDown />
           </Box>
           </VerticalAlign>
         </Box>
 
-        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100">
+        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100" display="none">
           <Container maxW="1000px" bg="white" rounded="lg" p={ 6 } shadow="lg">
             <Heading mb={6}>
               Welcome to the Progressive Web. 
