@@ -28,10 +28,10 @@ import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
 
 
-console.log( process.env )
+
 const client = require('contentful').createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: process.env.CONTENTFUL_SPACE_ID ,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ,
 });
 
 
@@ -211,7 +211,7 @@ const Favorite = ( props ) => {
 
       <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer">
       <Box rounded="full" height={["50px",  "65px", "80px"]} width={["50px", "65px", "80px"]} overflow="hidden" borderWidth={ 2 } margin="0 auto" mb={2}>
-        <ChakraImage src={ fields.images[0].fields.file.url } height="100%" width="100%" objectFit="cover" />
+        <ChakraImage src={ fields.images[0].fields.file.url } height="100%" width="100%" objectFit="cover" alt={ fields.alt } />
       </Box>
       
       <Heading size="sm">
