@@ -1,3 +1,5 @@
+import { Component } from "react";
+
 import { initGA, logPageView } from '../utils/analytics'
 
 import Head from 'next/head';
@@ -16,7 +18,7 @@ import { BiUpArrowAlt } from "react-icons/bi";
 import ScrollToTop from "react-scroll-to-top";
 
 
-class Layout extends React.Component  {
+class Layout extends Component  {
   componentDidMount ()  {
     if (!window.GA_INITIALIZED) {
       initGA()
@@ -25,7 +27,7 @@ class Layout extends React.Component  {
     logPageView()
   }
 
-  
+
   render () {
 
     return < >
