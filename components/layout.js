@@ -15,7 +15,7 @@ function Layout ( props ) {
 
     <Header />
 
-    <Box pt={[ "60px", "60px", "80px"]}> 
+    <Box pt={[ "60px", "60px", "70px"]}> 
     <main>
         { props.children }
     </main>
