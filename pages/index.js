@@ -74,10 +74,10 @@ function Index ()  {
   
   return (
     <Layout title="Home">
-        <Box py={["100px", "120px","14vh"]} position="relative">
+        <Box py={["100px", "120px","14vh"]}  position="relative">
 
         <VerticalAlign>
-          <Container zIndex="5" position="relative" maxW="1200px" mb={[0, 0, 0, 6]} >
+          <Container zIndex="5" position="relative" maxW="1200px" mb={[0, 0, 0, 6]} px={3} >
             <Heading color="white" fontSize={[40, 55, 85, 95,  105]} textAlign={["center", "center", "left"]} >
             RETHINKING THE WAY ORGANIZATIONS DO DIGITAL
 
@@ -95,7 +95,7 @@ function Index ()  {
                     </Box>
             </Heading>
 
-            <Box borderRadius={30} height={["60px"] } width={["60px", ]} overflow="hidden"  margin={["20px auto"]} display={["block", "block", "none"]}>
+            <Box borderRadius={30} height={[12, "60px"] } width={[12, "60px", ]} overflow="hidden"  margin={["20px auto"]} display={["block", "block", "none"]}>
                     <Image
                     className="rounded"
         src="/sam.jpg"
@@ -133,27 +133,8 @@ function Index ()  {
         
         </Box>
 
-        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100" display="none">
-          <Container maxW="1000px" bg="white" rounded="lg" p={ 6 } shadow="lg">
-            <Heading mb={6}>
-              Welcome to the Progressive Web. 
-            </Heading>
 
-            <Box >
-              <ChakraLink href="https://jamstack.org/" target="_blank" rel="noopener noreferrer" rounded="md">
-              JAMStack</ChakraLink> tooling has allowed indepedent developers to continuously deploy Progressive Web Applications targeting all screen sizes (Desktop, Tablet, and Mobile). 
-            </Box>
-          </Container>
-
-
-        </Box>
-
-        <Box textAlign="center" background="linear-gradient(to bottom, #EDF2F7, white)" height={[20, 50, 100, 120]}>
-          <VerticalAlign>
-          <Box display="inline-block" fontSize={[80, 120, 150, 200]} color="blue.800" cursor="pointer" display="none">
-          <ImArrowDown />
-          </Box>
-          </VerticalAlign>
+        <Box background="linear-gradient(to bottom, #EDF2F7, white)" height={[10, 20, 50, 100, 120]}>
         </Box>
 
         <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
@@ -170,28 +151,9 @@ function Index ()  {
 
         </Box>
 
-        <Box textAlign="center" background="linear-gradient(to bottom, white, #EDF2F7)" height={[20, 50, 100, 120]}>
-          <VerticalAlign>
-          <Box display="inline-block" fontSize={[80, 120, 150, 200]} color="blue.800" cursor="pointer" display="none">
-          <ImArrowDown />
-          </Box>
-          </VerticalAlign>
+        <Box background="linear-gradient(to bottom, white, #EDF2F7)" height={[10, 20, 50, 100, 120]}>
         </Box>
 
-        <Box  py={[5, 10, 12]} px={[5, 5, 10]} bg="gray.100" display="none">
-          <Container maxW="1000px" bg="white" rounded="lg" p={ 6 } shadow="lg">
-            <Heading mb={6}>
-              Welcome to the Progressive Web. 
-            </Heading>
-
-            <Box >
-              <ChakraLink href="https://jamstack.org/" target="_blank" rel="noopener noreferrer" rounded="md">
-              JAMStack</ChakraLink> tooling has allowed indepedent developers to continuously deploy Progressive Web Applications targeting all screen sizes (Desktop, Tablet, and Mobile). 
-            </Box>
-          </Container>
-
-
-        </Box>
 
 
 
@@ -206,16 +168,18 @@ export default Index;
 const Favorite = ( props ) => {
   let fields = props.el.fields;
 
-  return <Box  textAlign="center">
+  return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" display="block" rounded="md" _hover={{textDecor: "none"}}>
+  <Box  textAlign="center" p={1}>
 
-      <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer">
-      <Box rounded="full" height={["50px",  "65px", "80px"]} width={["50px", "65px", "80px"]} overflow="hidden" borderWidth={ 2 } margin="0 auto" mb={2}>
+      
+      <Box rounded="full" height={["60px",  "65px", "80px"]} width={["60px", "65px", "80px"]} overflow="hidden" borderWidth={ 2 } margin="0 auto" mb={2}>
         <ChakraImage src={ fields.images[0].fields.file.url } height="100%" width="100%" objectFit="cover" alt={ fields.alt } />
       </Box>
       
-      <Heading size="sm">
+      <Heading size="sm" fontWeight={[500, 600]}>
         { fields.title }
       </Heading>
-      </ChakraLink>
+      
   </Box>
+  </ChakraLink>
 }

@@ -84,7 +84,6 @@ function Footer () {
 
             </SimpleGrid>
 
-            <Divider />
             </Container>
 
         </Box>
