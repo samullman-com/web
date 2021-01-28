@@ -34,7 +34,7 @@ import jump from "jump.js";
             
             <Container maxWidth="1000px" mb={12}>
               <Heading mb={ 6 }>
-                Contact us! 
+                Contact! 
               </Heading>
 
               <Box bg="white" p={6} rounded="lg" shadow="lg">

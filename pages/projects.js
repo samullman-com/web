@@ -1,76 +1,136 @@
 import Link from "next/link";
+import { useState, useEffect } from "react"; 
 import Image from "next/image";
 import Layout from "../components/layout";
 import ProgressiveImage from "react-progressive-graceful-image";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+import { VscGlobe } from "react-icons/vsc"
+import { ImReddit } from "react-icons/im"
 
 import {
-  Box, 
-  Container, 
-  Divider, 
-  Grid, 
+  Box,
+  Container,
+  Divider,
+  Grid,
   Heading,
+  Button, 
+  ButtonGroup, 
   Text,
+  Link as ChakraLink, 
+  Image as ChakraImage,
+  IconButton, 
+
 } from "@chakra-ui/react";
 
 import VerticalAlign from "../components/verticalAlign";
 
-function About () {
+
+const client = require('contentful').createClient({
+  space: process.env.CONTENTFUL_SPACE_ID || "c13ag7zvuwi0",
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "G7mSw24UXPM5SZVYnkNuP3_aHgicnABLTztJ_mAQYVU",
+});
+
+
+
+function About() {
+
+  const [projects, setProjects] = useState([]);
+
+  async function fetchProjects() {
+    const entries = await client.getEntries({
+      'content_type': 'project'
+    })
+
+    if (entries.items) return entries.items
+    console.log(`Error getting Entries for ${contentType.name}.`)
+  }
+
+
+  useEffect(() => {
+    
+    async function getProjects() {
+      const allProjects = await fetchProjects()
+      setProjects([...allProjects])
+    }
+
+    getProjects()
+  }, [])
+
+
   return (
     <Layout title="Projects">
 
-        <Box py={20} bg="gray.100">
-          <VerticalAlign>
-            
-            <Container maxW="1200px" >
-              <Heading mb={ 6 } size="xl">
-                Projects
+      <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
+
+          <Container maxW="1200px" >
+            <Heading mb={6} size="xl">
+              Projects
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg" shadow="lg">
-                <Box height="500px" rounded="md" overflow="hidden" mb={6}>
-
-                <a target="_blank" href="https://bemizu.app/" rel="noopener noreferrer">
-        <ProgressiveImage src="bemizu.jpg" placeholder="bemizu.jpg">
-          {(src) => <img src={src} alt="Bemizu" style={{height: "100%", width: "100%", objectFit: "cover" }} />}
-        </ProgressiveImage>
-                </a>
+            {
+              projects.map((el, idx) => {
+                return <Project el={el} idx={ idx } />
+              })
+            }
 
 
 
-                </Box>
 
 
-                <Divider mb={ 6 } />
+          </Container>
+
+      </Box>
 
 
-                <Box height="500px" rounded="md" overflow="hidden" mb={6}>
-
-                <a target="_blank" href="https://submissionwars.com/" rel="noopener noreferrer">
-<ProgressiveImage src="sub-wars.jpg" placeholder="sub-wars.jpg">
-  {(src) => <img src={src} alt="Submission Wars" style={{height: "100%", width: "100%", objectFit: "cover" }} />}
-</ProgressiveImage>
-</a>
-
-
-
-        </Box>
-
-
-        <Divider mb={ 6 } />
-
-
-              </Box>
-
-
-            </Container>
-          </VerticalAlign>
-
-        </Box>
-
-        
     </Layout>
   )
 }
 
 
 export default About;
+
+
+
+
+const Project = ( props ) => {
+
+  let buttonColors = ["blue", "purple"]
+  let fields = props.el.fields;
+
+  return <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6} >
+
+      
+
+      <Box rounded="lg" height={["300px",  "400px", "500px"]}  overflow="hidden"  mb={2}>
+        <ChakraImage src={ fields.images[0].fields.file.url } height="100%" width="100%" objectFit="cover" alt={ fields.alt } />
+      </Box>
+      
+      <Heading mb={ 2 }>
+        { fields.title }
+      </Heading>
+
+      <Box mb={ 3 }>
+        { documentToReactComponents( fields.description ) }
+      </Box>
+
+      <ButtonGroup mb={[2, 2, 0]} >
+
+      <Button colorScheme={ buttonColors[ props.idx ]} rounded="full" as={ ChakraLink } href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} rightIcon={ <VscGlobe /> }>
+        Visit 
+      </Button>
+      </ButtonGroup>
+
+
+      <ButtonGroup float={["none", "none", "right"]}>
+        <IconButton rounded="full" icon={ <ImReddit /> }>
+          
+        </IconButton>
+
+      </ButtonGroup>
+
+
+
+  </Box>
+}

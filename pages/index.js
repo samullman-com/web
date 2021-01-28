@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 import Layout from "../components/layout";
 import ProgressiveImage from "react-progressive-graceful-image";
 import { signIn, signOut, useSession } from 'next-auth/client'
 
-import { useEffect } from "react";
 
 import { DateTime } from "luxon";
 import { FiChevronDown, FiSend } from "react-icons/fi";
