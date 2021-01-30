@@ -1,4 +1,5 @@
 
+
 html,
 body {
   background: black;
@@ -19,4 +20,15 @@ a {
 
 .rounded {
   border-radius: 50%;
+}
+
+
+@font-face {
+  font-family: 'finland';
+  src: url('/finland.otf') format("opentype");
+ }
+
+/* In your css file where you want to use the font */
+.finland { 
+ font-family: 'finland' !important;
 }

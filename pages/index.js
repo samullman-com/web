@@ -176,9 +176,9 @@ const Favorite = ( props ) => {
         <ChakraImage src={ fields.images[0].fields.file.url } height="100%" width="100%" objectFit="cover" alt={ fields.alt } />
       </Box>
       
-      <Heading size="sm" fontWeight={[500, 600]}>
+      <Box size="sm" fontWeight={[500, 600]} >
         { fields.title }
-      </Heading>
+      </Box>
       
   </Box>
   </ChakraLink>

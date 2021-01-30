@@ -10,7 +10,7 @@ function Socials() {
     return (
         <Box textAlign={["center", "center", "left"]}>
         <Grid gridTemplateColumns={"repeat(5, 1fr)"} gap={4} maxWidth="300px" display="inline-grid">
-            <Box >
+            <Box rounded="md" height="30px" overflow="hidden">
                 <a href="https://github.com/samullman-com" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/github-icon.svg"
@@ -21,7 +21,7 @@ function Socials() {
 
             </Box>
 
-            <Box >
+            <Box rounded="md" height="30px" overflow="hidden" >
                 <a href="https://instagram.com/samullmandotcom" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/instagram-icon.svg"
@@ -33,7 +33,7 @@ function Socials() {
             </Box>
 
 
-            <Box >
+            <Box rounded="md" height="30px" overflow="hidden">
                 <a href="https://twitter.com/samullman" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/twitter-icon.svg"
@@ -44,7 +44,7 @@ function Socials() {
 
             </Box>
 
-            <Box >
+            <Box rounded="md" height="30px" overflow="hidden">
 
                 <a href="https://www.linkedin.com/in/samullman/" target="_blank" rel="noopener noreferrer">
                     <Image
@@ -57,7 +57,7 @@ function Socials() {
             </Box>
 
 
-            <Box >
+            <Box rounded="md" height="30px" overflow="hidden">
 
                 <a href="https://www.twitch.tv/samullman/" target="_blank" rel="noopener noreferrer">
                     <Image

@@ -34,7 +34,7 @@ function Footer () {
                     
 
 
-                    <Heading size="lg" mb={ 5 } letterSpacing={ 1 } fontWeight="600">
+                    <Heading size="md" mb={ 5 } letterSpacing={ 1 } fontWeight="600" className="finland" >
                         SAMULLMAN.COM
                     </Heading>
 
@@ -43,35 +43,46 @@ function Footer () {
                    
                 </Box>
 
-                <Box>
-                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                <Box letterSpacing={"1"} fontWeight="600">
+                    <Box mb={1}>
+                    <Box  _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/">
                         Home
                     </Link>
                     </Box>
-                    
-                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    </Box>
+
+                    <Box mb={1}>
+                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/about">
                         About
                     </Link>
                     </Box>
-
-                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    </Box>
+                    
+                    <Box  mb={1}>
+                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/projects">
                         Projects
                     </Link>
                     </Box>
-
-                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    </Box>
+                    
+                    <Box mb={1}>
+                    <Box  _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/contact">
                         Contact
                     </Link>
                     </Box>
+                    </Box>
+                    
 
-                    <Box fontSize="17px" fontWeight="600" letterSpacing="1" mb={1}>
+                    <Box  mb={1}>
+                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/login">
                         Login
                     </Link>
+                    </Box>
                     </Box>
                     
                 </Box>

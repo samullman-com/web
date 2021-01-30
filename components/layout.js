@@ -21,7 +21,7 @@ function Layout ( props )  {
 
 
 
-    return < >
+    return <>
     <Head>
       <title>{ props.title }</title>
       <link rel="icon" href="/favicon.ico" />
