@@ -12,7 +12,7 @@ import {
 
 function Footer () {
     return (
-        <Box bg="black" color="white"  py={ 20 } px={ 5 }>
+        <Box bg="#0a0a0a" color="white"  py={ 20 } px={ 5 }>
             <Container maxWidth="1400px" textAlign={["center", "center", "left"]}>
 
             <Link href="/">

@@ -29,7 +29,7 @@ function Layout ( props )  {
 
     <Header />
 
-    <Box pt={[ "60px", "60px", "70px"]} bg="gray.100"> 
+    <Box pt={[ "60px", "60px", "70px"]} > 
 
     <ScrollToTop smooth color="#6f00ff" component={ 
       <Button textAlign="center" width="40px" p={0} fontSize={24} variant="ghost">
@@ -42,6 +42,11 @@ function Layout ( props )  {
         { props.children }
     </main>
     </Box>
+    
+    <Box id="attributions" position="absolute" bottom="0" zIndex="-1" height="0" opacity="0">
+    <a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a>    
+    </Box>
+
 
     <Footer />
   </>

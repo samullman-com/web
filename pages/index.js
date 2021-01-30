@@ -74,7 +74,7 @@ function Index() {
 
   return (
     <Layout title="Home">
-      <Box height="calc(100vh - 120px)" position="relative">
+      <Box height="calc(100vh - 120px)" minHeight="-webkit-fill-available" position="relative">
 
         <VerticalAlign>
           <Container zIndex="5" position="relative" maxW="1200px" mb={[0, 0, 0, 10]} px={3} >
