@@ -73,11 +73,11 @@ function Index() {
   // setInterval(countUp, 1000);
 
   return (
-    <Layout title="Home">
-      <Box height="calc(100vh - 120px)" minHeight="-webkit-fill-available" position="relative">
+    <Layout title="Home" noTop={ true }>
+      <Box height="calc(100vh)" minHeight="-webkit-fill-available" position="relative">
 
         <VerticalAlign>
-          <Container zIndex="5" position="relative" maxW="1200px" mb={[0, 0, 0, 10]} px={3} >
+          <Container zIndex="5" position="relative" maxW="1200px" px={3} >
             <Heading color="white" fontSize={[40, 55, 85, 95, 105]} textAlign={["center", "center", "left"]} >
               RETHINKING THE WAY ORGANIZATIONS DO DIGITAL
 

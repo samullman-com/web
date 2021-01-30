@@ -17,9 +17,8 @@ import ScrollToTop from "react-scroll-to-top";
 
 
 function Layout ( props )  {
- 
-
-
+    
+    let paddingTop = props.noTop ? 0 : [ "60px", "60px", "70px"];
 
     return <>
     <Head>
@@ -29,7 +28,7 @@ function Layout ( props )  {
 
     <Header />
 
-    <Box pt={[ "60px", "60px", "70px"]} > 
+    <Box pt={ paddingTop } > 
 
     <ScrollToTop smooth color="#6f00ff" component={ 
       <Button textAlign="center" width="40px" p={0} fontSize={24} variant="ghost">
