@@ -50,11 +50,20 @@ function Index() {
 
 
   useEffect(() => {
+
+    function setResize () {
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
+    }
     async function getFavorites() {
       const allFavorites = await fetchFavorites()
       setFavorites([...allFavorites])
     }
     getFavorites()
+    setResize();
   }, [])
 
   // let end = DateTime.fromISO( DateTime.local() )
@@ -72,13 +81,15 @@ function Index() {
 
   // setInterval(countUp, 1000);
 
+
+ 
   return (
     <Layout title="Home" noTop={ true }>
-      <Box height="calc(100vh)" minHeight="-webkit-fill-available" position="relative">
+      <Box className="hero" minHeight="-webkit-fill-available" position="relative">
 
         <VerticalAlign>
           <Container zIndex="5" position="relative" maxW="1200px" px={3} >
-            <Heading color="white" fontSize={[40, 55, 85, 95, 105]} textAlign={["center", "center", "left"]} >
+            <Heading color="white" fontSize={[40, 55, 85, 95, 95, 105]} textAlign={["center", "center", "left"]} >
               RETHINKING THE WAY ORGANIZATIONS DO DIGITAL
 
 

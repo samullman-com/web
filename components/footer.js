@@ -45,7 +45,7 @@ function Footer () {
 
                 <Box letterSpacing={"1"} fontWeight="600">
                     <Box mb={1}>
-                    <Box  _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
+                    <Box  _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
                     <Link href="/">
                         Home
                     </Link>
@@ -53,7 +53,7 @@ function Footer () {
                     </Box>
 
                     <Box mb={1}>
-                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
+                    <Box _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
                     <Link href="/about">
                         About
                     </Link>
@@ -61,7 +61,7 @@ function Footer () {
                     </Box>
                     
                     <Box  mb={1}>
-                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
+                    <Box _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
                     <Link href="/projects">
                         Projects
                     </Link>
@@ -69,7 +69,7 @@ function Footer () {
                     </Box>
                     
                     <Box mb={1}>
-                    <Box  _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
+                    <Box  _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
                     <Link href="/contact">
                         Contact
                     </Link>
@@ -78,7 +78,7 @@ function Footer () {
                     
 
                     <Box  mb={1}>
-                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
+                    <Box _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
                     <Link href="/login">
                         Login
                     </Link>

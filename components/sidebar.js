@@ -91,10 +91,12 @@ function Sidebar(props) {
 
               {
                 menuItems.map((el) => {
-                  return <Box mb={4} key={el.text}  letterSpacing="1" _hover={{color: "blue.200"}} transition="0.2s ease" >
+                  return <Box mb={4} key={el.text} >
+                  <Box  letterSpacing="1" _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block" >
                     <Link href={el.to}>
                       {el.text}
                     </Link>
+                  </Box>
                   </Box>
                 })
               }
