@@ -28,16 +28,19 @@ import jump from "jump.js";
 
 
 
-const client = require('contentful').createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || "c13ag7zvuwi0",
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "G7mSw24UXPM5SZVYnkNuP3_aHgicnABLTztJ_mAQYVU",
-});
-
-
-function Index() {
+function Index( props ) {
 
   const [session, loading] = useSession()
   const [favorites, setFavorites] = useState([]);
+
+
+
+  const client = require('contentful').createClient({
+    space: props.CONTENTFUL_SPACE_ID,
+    accessToken: props.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+
 
   async function fetchFavorites() {
     const entries = await client.getEntries({
@@ -125,8 +128,8 @@ function Index() {
 
         <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
 
-          <ProgressiveImage src="honeycomb.jpg" placeholder="stars.jpg">
-            {(src) => <img src={src} alt="Stars" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
+          <ProgressiveImage src="honeycomb.jpg" placeholder="honeycomb.jpg">
+            {(src) => <img src={src} alt="Honeycomb" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
           </ProgressiveImage>
         </Box>
 
@@ -193,4 +196,17 @@ const Favorite = (props) => {
 
     </Box>
   </ChakraLink>
+}
+
+
+export async function getStaticProps(context) {
+    let CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
+    let CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
+
+  return {
+    props: {
+      CONTENTFUL_SPACE_ID, 
+      CONTENTFUL_ACCESS_TOKEN
+    }, // will be passed to the page component as props
+  }
 }

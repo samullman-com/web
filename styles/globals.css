@@ -23,15 +23,14 @@ a {
 }
 
 
-@font-face {
-  font-family: 'finland';
-  src: url('/finland.otf') format("opentype");
+/* @font-face {
+  font-family: 'typewriter';
+  src: url('/typewriter.woff') format("WOFF");
  }
 
-/* In your css file where you want to use the font */
-.finland { 
- /* font-family: 'finland' !important; */
-}
+.typewriter { 
+ font-family: 'typewriter' !important;
+} */
 
 .hero {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
