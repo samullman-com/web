@@ -29,8 +29,8 @@ function Footer () {
                     </Link>
 
 
-            <SimpleGrid columns={[ 1, 1, 3, 3]} mb={12} mt={ 5 }>
-                <Box mb={[4, 4, 0]}>
+            <SimpleGrid columns={[ 1, 1, 3, 3]} mb={[0, 0, 12]} mt={ 5 }>
+                <Box mb={[10, 10, 0]}>
                     
 
 
@@ -43,9 +43,14 @@ function Footer () {
                    
                 </Box>
 
-                <Box letterSpacing={"1"} fontWeight="600">
+                <Box letterSpacing={"1"} fontWeight="600" mb={[10, 10, 0]}>
+
+                <Heading  size="md" mb={ 3 } letterSpacing={ 1 } fontWeight="600" >
+                        PAGES
+                    </Heading>
+
                     <Box mb={1}>
-                    <Box  _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
+                    <Box  _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/">
                         Home
                     </Link>
@@ -53,7 +58,7 @@ function Footer () {
                     </Box>
 
                     <Box mb={1}>
-                    <Box _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
+                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/about">
                         About
                     </Link>
@@ -61,7 +66,7 @@ function Footer () {
                     </Box>
                     
                     <Box  mb={1}>
-                    <Box _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
+                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/projects">
                         Projects
                     </Link>
@@ -69,7 +74,7 @@ function Footer () {
                     </Box>
                     
                     <Box mb={1}>
-                    <Box  _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
+                    <Box  _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/contact">
                         Contact
                     </Link>
@@ -78,7 +83,7 @@ function Footer () {
                     
 
                     <Box  mb={1}>
-                    <Box _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block">
+                    <Box _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block">
                     <Link href="/login">
                         Login
                     </Link>
@@ -88,7 +93,13 @@ function Footer () {
                 </Box>
 
                 <Box>
-                    asdkjfn
+                    <Heading  size="md" mb={ 3 } letterSpacing={ 1 } fontWeight="600" pl={[0, 0, 3]}>
+                        SUBSCRIBE
+                    </Heading>
+
+                    <Box width="300px" margin={["0 auto", "0 auto", 0]}>
+                <iframe src="https://samullman.substack.com/embed" width="300px" height="80px" style={{border: "none", background: "#0a0a0a"}} frameborder="0" scrolling="no"></iframe>
+                </Box>
                     
                 </Box>
 

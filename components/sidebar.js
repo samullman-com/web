@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import Socials from "../components/socials";
 
+import VerticalAlign from "../components/verticalAlign";
 
 import { signIn, signOut, useSession } from 'next-auth/client'
 
@@ -24,12 +25,23 @@ import {
   Divider,
   Flex,
   Spacer,
+  Switch,
+  SimpleGrid, 
 } from "@chakra-ui/react";
 
 import {
   BiMenuAltRight
 } from "react-icons/bi";
 
+import {
+  BsMoon, 
+} from "react-icons/bs";
+
+import {
+  FiSun, 
+} from "react-icons/fi"
+
+import colors from "../contexts/colors";
 
 
 
@@ -37,6 +49,10 @@ import theme from "../public/theme.js"
 
 
 function Sidebar(props) {
+
+  const increasePopulation = colors(state => state.increasePopulation)
+
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
 
@@ -82,7 +98,7 @@ function Sidebar(props) {
         placement={props.placement}
       >
         <DrawerOverlay>
-          <DrawerContent bg={"black"} color="white" textAlign="left">
+          <DrawerContent bg={"#0a0a0a"} color="white" textAlign="left">
             <DrawerCloseButton />
             <DrawerHeader></DrawerHeader>
 
@@ -92,7 +108,7 @@ function Sidebar(props) {
               {
                 menuItems.map((el) => {
                   return <Box mb={4} key={el.text} >
-                  <Box  letterSpacing="1" _hover={{color: "blue.300"}} transition="0.2s ease" display="inline-block" >
+                  <Box  letterSpacing="1" _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block" >
                     <Link href={el.to}>
                       {el.text}
                     </Link>
@@ -119,7 +135,41 @@ function Sidebar(props) {
               </>}
 
 
+              {/* <Divider mb={4} /> */}
+              
+              <Box display="none">
+              <Grid templateColumns="24px 40px 24px"  columns={3} display="inline-grid">
+                <Box >
+                  <VerticalAlign>
+                    <Box display="inline-block" position="relative" top={"2px"}>
 
+                    
+                  <BsMoon />
+                  </Box>
+                  </VerticalAlign>
+                </Box>
+
+                <Box>
+                <Switch />
+
+                
+                </Box>
+
+                <Box textAlign="center">
+                  <VerticalAlign>
+                  <Box display="inline-block" position="relative" top={"3px"}> 
+                    <FiSun />
+                    </Box>
+                  </VerticalAlign>
+
+                </Box>
+
+              </Grid>
+              </Box>
+
+              
+
+              
 
 
             </DrawerBody>

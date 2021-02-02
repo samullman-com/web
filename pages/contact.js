@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { useState } from "react"; 
 import Layout from "../components/layout";
+import Section from "../components/section";
 
 import { DateTime } from "luxon";
 import { FiChevronDown } from "react-icons/fi";
@@ -29,7 +30,7 @@ import jump from "jump.js";
   return (
     <Layout title="Contact">
 
-        <Box py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
+        <Section>
           <VerticalAlign>
             
             <Container maxWidth="1000px" mb={12}>
@@ -80,7 +81,7 @@ import jump from "jump.js";
             </Container>
           </VerticalAlign>
 
-        </Box>
+          </Section>
 
         
     </Layout>

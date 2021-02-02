@@ -25,10 +25,12 @@ import {
 } from "@chakra-ui/react";
 import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
+import theme from "../public/theme";
+import Section from "../components/section";
 
 
 
-function Index( props ) {
+function Index(props) {
 
   const [session, loading] = useSession()
   const [favorites, setFavorites] = useState([]);
@@ -54,7 +56,7 @@ function Index( props ) {
 
   useEffect(() => {
 
-    function setResize () {
+    function setResize() {
       window.addEventListener('resize', () => {
         // We execute the same script as before
         let vh = window.innerHeight * 0.01;
@@ -85,16 +87,23 @@ function Index( props ) {
   // setInterval(countUp, 1000);
 
 
- 
+
   return (
-    <Layout title="Home" noTop={ true }>
+    <Layout title="Home" noTop={true}>
       <Box className="hero" minHeight="-webkit-fill-available" position="relative">
 
         <VerticalAlign>
-          <Container zIndex="5" position="relative" maxW="1200px" px={3} >
-            <Heading color="white" fontSize={[40, 55, 85, 95, 95, 105]} textAlign={["center", "center", "left"]} >
-              RETHINKING THE WAY ORGANIZATIONS DO DIGITAL
+          <Container zIndex="5" position="relative" maxWidth="1100px"  px={[0, 0, 10, ]} >
+            <Heading color="white" fontSize={[55, 55,  95, 115, 120]} textAlign={["center", "center", "left"]} >
+              BUILDING
+              </Heading>
 
+              <Heading color="white" fontSize={[55, 55, 95, 115, 120]} textAlign={["center", "center", "left"]} >
+              THE
+              </Heading>
+
+              <Heading color="white" fontSize={[55, 55, 95, 115, 120]} textAlign={["center", "center", "left"]} >
+              FUTURE
 
             <Box borderRadius={30} height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]}>
                 <Image
@@ -107,7 +116,9 @@ function Index( props ) {
                   alt="sam"
                 />
               </Box>
-            </Heading>
+              </Heading>
+
+              
 
             <Box borderRadius={30} height={[12, "60px"]} width={[12, "60px",]} overflow="hidden" margin={["20px auto"]} display={["block", "block", "none"]}>
               <Image
@@ -153,7 +164,7 @@ function Index( props ) {
 
       <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
 
-        <Container maxWidth="1100px">
+        <Container maxWidth="1000px">
           <SimpleGrid columns={[3, 4, 5, 6]} spacing={[4, 8, 12]}>
             {
               favorites.map((el) => {
@@ -167,6 +178,60 @@ function Index( props ) {
 
       <Box background="linear-gradient(to bottom, white, #EDF2F7)" height={[10, 20, 50, 100, 120]}>
       </Box>
+
+      <Section>
+
+        <Container>
+          <Heading textAlign="center" mb={[5, 10, 20]} color="#0a0a0a">
+            WHAT COULD YOU BUILD WITH THESE TOOLS?
+        </Heading>
+        </Container>
+        <Container maxWidth="1200px">
+          <SimpleGrid columns={[1, 2]} spacing={[4, 8, 12]}>
+
+            <Link href="/music">
+              <Box height={["200px", "300px", "400px"]} rounded="sm" position="relative" overlfow="hidden" cursor="pointer">
+                <VerticalAlign>
+                  <Heading textAlign="center" color="white" position="relative" zIndex={1}>
+                    MUSIC PLAYER
+              </Heading>
+                </VerticalAlign>
+
+                <Box position="absolute" top={0} width="100%" height="100%" bottom={0} rounded="sm" overflow="hidden">
+
+                  <ProgressiveImage src="music.jpg" placeholder="music.jpg">
+                    {(src) => <img src={src} alt="Music" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
+                  </ProgressiveImage>
+                </Box>
+
+              </Box>
+            </Link>
+
+
+            <Link href="/gallery">
+              <Box height={["200px", "300px", "400px"]} rounded="sm" position="relative" overlfow="hidden" cursor="pointer">
+                <VerticalAlign>
+                  <Heading textAlign="center" color="white" position="relative" zIndex={1}>
+                    GALLERY
+              </Heading>
+                </VerticalAlign>
+
+                <Box position="absolute" top={0} width="100%" height="100%" bottom={0} rounded="sm" overflow="hidden">
+
+                  <ProgressiveImage src="gallery.jpg" placeholder="gallery.jpg">
+                    {(src) => <img src={src} alt="Gallery" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
+                  </ProgressiveImage>
+                </Box>
+
+              </Box>
+            </Link>
+
+
+
+          </SimpleGrid>
+        </Container>
+
+      </Section>
 
 
 
@@ -190,7 +255,7 @@ const Favorite = (props) => {
         <ChakraImage src={fields.images[0].fields.file.url} height="100%" width="100%" objectFit="cover" alt={fields.alt} />
       </Box>
 
-      <Box size="sm" fontWeight={[500, 600]} >
+      <Box size="sm" fontWeight={[500, 600]} color="gray.900" >
         {fields.title}
       </Box>
 
@@ -200,12 +265,12 @@ const Favorite = (props) => {
 
 
 export async function getStaticProps(context) {
-    let CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
-    let CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
+  let CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
+  let CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 
   return {
     props: {
-      CONTENTFUL_SPACE_ID, 
+      CONTENTFUL_SPACE_ID,
       CONTENTFUL_ACCESS_TOKEN
     }, // will be passed to the page component as props
   }

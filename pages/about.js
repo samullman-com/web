@@ -1,141 +1,148 @@
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../components/layout";
+import Section from "../components/section";
 
 
 import {
-  Box, 
-  Container, 
-  Divider, 
-  Grid, 
+  Box,
+  Container,
+  Divider,
+  Grid,
   Heading,
   Text,
-  Button, 
+  Button,
 } from "@chakra-ui/react";
 
 import VerticalAlign from "../components/verticalAlign";
 
-function About () {
+function About() {
   return (
     <Layout title="About">
-
-        <Box py={20} bg="gray.100">
-          <VerticalAlign>
-            
-            <Container maxW="1200px">
-              <Heading mb={ 6 } size="xl">
-                Team
+      <Section>
+        <Container maxW="1000px">
+          <Heading mb={6} size="xl">
+            About
               </Heading>
 
-              <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6}>
-                <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
+              <Box bg="white" p={6} rounded="lg" shadow="lg" >
 
-                  <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
-                  <Image
-                      src="/sam.jpg"
-                      layout="fill"
-                      objectFit="cover"
-                      alt="Sam Ullman"
-                    />
+              </Box>
+        </Container>
 
-                    
-                  </Box>
+      </Section>
 
-                  <Box>
-                    <Heading mb={2} size="lg">
-                      Sam Ullman
-                    </Heading>
+      <Section>
 
-                    <Heading size="sm" color="gray.700" mb={2}>
-                      Founder
-                    </Heading>
+        <Container maxW="1000px">
+          <Heading mb={6} size="xl">
+            Team
+              </Heading>
 
-                    <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </Text>
+          <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6}>
+            <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
 
-                  </Box>
-
-                </Grid>
-                <Divider mb={6} />
-
-                <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
-
-                <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
+              <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
                 <Image
-                    src="/emotion.png"
-                    layout="fill"
-                    objectFit="cover"
-                    alt="Styled Components"
-                  />
-
-                  
-                </Box>
-
-                <Box>
-                  <Heading mb={2} size="lg">
-                    Styled Components
-                  </Heading>
-
-                  <Heading size="sm" color="gray.700" mb={2}>
-                    Design
-                  </Heading>
-
-                  <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </Text>
-
-                </Box>
-
-                </Grid>
-
-                <Divider mb={6} />
-
-                <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
-
-                <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
-                <Image
-                    src="/google.webp"
-                    layout="fill"
-                    objectFit="cover"
-                    alt="Styled Components"
-                  />
-
-                  
-                </Box>
-
-                <Box>
-                  <Heading mb={2} size="lg">
-                    Google
-                  </Heading>
-
-                  <Heading size="sm" color="gray.700" mb={2}>
-                    Research
-                  </Heading>
-
-                  <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </Text>
-
-                </Box>
-
-                </Grid>
+                  src="/sam.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Sam Ullman"
+                />
 
 
               </Box>
 
-              <Button rounded="full" colorScheme="yellow" size="lg">
-                JOIN US!
+              <Box>
+                <Heading mb={2} size="lg">
+                  Sam Ullman
+                    </Heading>
 
-              </Button>
+                <Heading size="sm" color="gray.700" mb={2}>
+                  Founder
+                    </Heading>
+
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </Text>
+
+              </Box>
+
+            </Grid>
+            <Divider mb={6} />
+
+            <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
+
+              <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
+                <Image
+                  src="/emotion.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Styled Components"
+                />
 
 
-            </Container>
-          </VerticalAlign>
+              </Box>
 
-        </Box>
+              <Box>
+                <Heading mb={2} size="lg">
+                  Styled Components
+                  </Heading>
 
-        
+                <Heading size="sm" color="gray.700" mb={2}>
+                  Design
+                  </Heading>
+
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </Text>
+
+              </Box>
+
+            </Grid>
+
+            <Divider mb={6} />
+
+            <Grid templateColumns={["1fr", "150px 3fr", "150px 5fr"]} mb={6} gap="24px">
+
+              <Box position="relative" height="150px" width="150px" margin="0 auto" rounded="full" overflow="hidden">
+                <Image
+                  src="/google.webp"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="Styled Components"
+                />
+
+
+              </Box>
+
+              <Box>
+                <Heading mb={2} size="lg">
+                  Google
+                  </Heading>
+
+                <Heading size="sm" color="gray.700" mb={2}>
+                  Research
+                  </Heading>
+
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </Text>
+
+              </Box>
+
+            </Grid>
+
+
+          </Box>
+
+
+
+        </Container>
+
+      </Section>
+
+
     </Layout>
   )
 }
