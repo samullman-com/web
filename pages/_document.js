@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../utils/analytics'
 
+
 import theme from "../public/theme";
 
 export default class MyDocument extends Document {
@@ -8,6 +9,8 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

@@ -32,6 +32,23 @@ import Section from "../components/section";
 
 function Index(props) {
 
+  let examples = [
+    {
+      heading: "MUSIC PLAYER",
+      link: "/music", 
+      src: "/music.jpg", 
+    }, 
+
+
+    {
+      heading: "GALLERY",
+      link: "/gallery", 
+      src: "/gallery.jpg", 
+    }, 
+    
+    
+  ]
+
   const [session, loading] = useSession()
   const [favorites, setFavorites] = useState([]);
 
@@ -89,23 +106,26 @@ function Index(props) {
 
 
   return (
-    <Layout title="Home" noTop={true}>
+    <Layout title="Home | Agents of Change" noTop={true}>
+
+
+
       <Box className="hero" minHeight="-webkit-fill-available" position="relative">
 
         <VerticalAlign>
-          <Container zIndex="5" position="relative" maxWidth="1100px"  px={[0, 0, 10, ]} >
-            <Heading color="white" fontSize={[55, 75,  100, 115, 120]} textAlign={["center", "center", "left"]} >
+          <Container zIndex="5" position="relative" maxWidth="1100px" px={[0, 0, 10,]} >
+            <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
               DISCOVER
               </Heading>
 
-              <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+            <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
               YOUR
               </Heading>
 
-              <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+            <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
               AGENCY
 
-            <Box borderRadius={30} height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]}>
+            <Box rounded="sm" height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]}>
                 <Image
                   className="rounded"
                   src="/sam.jpg"
@@ -116,9 +136,9 @@ function Index(props) {
                   alt="sam"
                 />
               </Box>
-              </Heading>
+            </Heading>
 
-              
+
 
             <Box borderRadius={30} height={[12, "60px"]} width={[12, "60px",]} overflow="hidden" margin={["20px auto"]} display={["block", "block", "none"]}>
               <Image
@@ -159,12 +179,23 @@ function Index(props) {
       </Box>
 
 
-      <Box background="linear-gradient(to bottom, #EDF2F7, white)" height={[10, 20, 50, 100, 120]}>
+      <Section>
+        
+      </Section>
+
+
+      <Box background="linear-gradient(to bottom, #EDF2F7, white)" height={[10, 20, 50, 100,]}>
       </Box>
 
       <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
 
         <Container maxWidth="1000px">
+
+          <Heading textAlign="center" mb={[5, 10, 20]} color="#0a0a0a">
+            WHAT COULD YOU BUILD?
+        </Heading>
+
+
           <SimpleGrid columns={[3, 4, 5, 6]} spacing={[4, 8, 12]}>
             {
               favorites.map((el) => {
@@ -176,60 +207,55 @@ function Index(props) {
 
       </Box>
 
-      <Box background="linear-gradient(to bottom, white, #EDF2F7)" height={[10, 20, 50, 100, 120]}>
+      <Box background="linear-gradient(to bottom, white, #EDF2F7)" height={[10, 20, 50, "60px",]}>
       </Box>
 
       <Section>
 
-        <Container>
-          <Heading textAlign="center" mb={[5, 10, 20]} color="#0a0a0a">
-            WHAT COULD YOU BUILD WITH THESE TOOLS?
-        </Heading>
-        </Container>
-        <Container maxWidth="1200px">
+        <Container maxWidth="1200px" mb={10}>
           <SimpleGrid columns={[1, 2]} spacing={[4, 8, 12]}>
-
-            <Link href="/music">
-              <Box height={["200px", "300px", "400px"]} rounded="sm" position="relative" overlfow="hidden" cursor="pointer">
-                <VerticalAlign>
-                  <Heading textAlign="center" color="white" position="relative" zIndex={1}>
-                    MUSIC PLAYER
-              </Heading>
-                </VerticalAlign>
-
-                <Box position="absolute" top={0} width="100%" height="100%" bottom={0} rounded="sm" overflow="hidden">
-
-                  <ProgressiveImage src="music.jpg" placeholder="music.jpg">
-                    {(src) => <img src={src} alt="Music" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
-                  </ProgressiveImage>
-                </Box>
-
-              </Box>
-            </Link>
-
-
-            <Link href="/gallery">
-              <Box height={["200px", "300px", "400px"]} rounded="sm" position="relative" overlfow="hidden" cursor="pointer">
-                <VerticalAlign>
-                  <Heading textAlign="center" color="white" position="relative" zIndex={1}>
-                    GALLERY
-              </Heading>
-                </VerticalAlign>
-
-                <Box position="absolute" top={0} width="100%" height="100%" bottom={0} rounded="sm" overflow="hidden">
-
-                  <ProgressiveImage src="gallery.jpg" placeholder="gallery.jpg">
-                    {(src) => <img src={src} alt="Gallery" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
-                  </ProgressiveImage>
-                </Box>
-
-              </Box>
-            </Link>
+             {
+               examples.map( ( el ) => { 
+                 return <Link href={ el.link }>
+                 <Box height={["200px", "300px", "400px"]} position="relative"  cursor="pointer">
+                   <VerticalAlign>
+                     <Heading textAlign="center" color="white" position="relative" zIndex={1}>
+                        { el.heading }
+                 </Heading>
+                   </VerticalAlign>
+   
+                   <Box position="absolute" top={0} width="100%" height="100%" bottom={0} rounded="md" overflow="hidden">
+   
+                     <ProgressiveImage src={ el.src } placeholder={ el.src }>
+                       {(src) => <img src={src} alt={ el.heading } style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
+                     </ProgressiveImage>
+                   </Box>
+   
+                 </Box>
+               </Link>
+   
+               })
+             }
+           
 
 
 
           </SimpleGrid>
         </Container>
+
+        <Box textAlign="center">
+          
+          <Link href="examples">
+          <Button colorScheme="red" rounded="full" size="lg">
+            ALL EXAMPLES
+          </Button>
+          </Link>
+
+        </Box>
+
+      </Section>
+
+      <Section>
 
       </Section>
 
