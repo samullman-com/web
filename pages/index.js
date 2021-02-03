@@ -94,16 +94,16 @@ function Index(props) {
 
         <VerticalAlign>
           <Container zIndex="5" position="relative" maxWidth="1100px"  px={[0, 0, 10, ]} >
-            <Heading color="white" fontSize={[55, 55,  95, 115, 120]} textAlign={["center", "center", "left"]} >
-              BUILDING
+            <Heading color="white" fontSize={[55, 75,  100, 115, 120]} textAlign={["center", "center", "left"]} >
+              DISCOVER
               </Heading>
 
-              <Heading color="white" fontSize={[55, 55, 95, 115, 120]} textAlign={["center", "center", "left"]} >
-              THE
+              <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+              YOUR
               </Heading>
 
-              <Heading color="white" fontSize={[55, 55, 95, 115, 120]} textAlign={["center", "center", "left"]} >
-              FUTURE
+              <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+              AGENCY
 
             <Box borderRadius={30} height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]}>
                 <Image
