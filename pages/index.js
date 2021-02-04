@@ -119,6 +119,7 @@ function Index(props) {
         
           <Container zIndex="5" position="relative" maxWidth="1100px" px={[0, 0, 10,]} >
           <Fade right>
+            <Box>
             <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
               DISCOVER
               </Heading>
@@ -144,7 +145,6 @@ function Index(props) {
             </Heading>
 
 
-
             <Box borderRadius={30} height={[12, "60px"]} width={[12, "60px",]} overflow="hidden" margin={["20px auto"]} display={["block", "block", "none"]}>
               <Image
                 className="rounded"
@@ -156,8 +156,15 @@ function Index(props) {
                 alt="sam"
               />
             </Box>
+            </Box>
+
+
+
+           
 
             </Fade>
+
+            
           </Container>
           
 
