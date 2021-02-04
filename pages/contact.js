@@ -71,7 +71,7 @@ import jump from "jump.js";
               </Box>
 
               <ButtonGroup>
-                    <Button rounded="full" colorScheme="blue">
+                    <Button rounded="full" colorScheme="blue" size="lg">
                       Submit
                     </Button>
                   </ButtonGroup>

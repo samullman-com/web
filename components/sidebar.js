@@ -68,8 +68,8 @@ function Sidebar(props) {
     },
 
     {
-      text: "Projects",
-      to: "/projects",
+      text: "Portfolio",
+      to: "/portfolio",
     },
 
 

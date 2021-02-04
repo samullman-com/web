@@ -27,6 +27,7 @@ import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
 import theme from "../public/theme";
 import Section from "../components/section";
+import Fade from 'react-reveal/Fade';
 
 
 
@@ -113,16 +114,20 @@ function Index(props) {
       <Box className="hero" minHeight="-webkit-fill-available" position="relative">
 
         <VerticalAlign>
+        
+
+        
           <Container zIndex="5" position="relative" maxWidth="1100px" px={[0, 0, 10,]} >
-            <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+          <Fade right>
+            <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
               DISCOVER
               </Heading>
 
-            <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+            <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
               YOUR
               </Heading>
 
-            <Heading color="white" fontSize={[55, 75, 100, 115, 120]} textAlign={["center", "center", "left"]} >
+            <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
               AGENCY
 
             <Box rounded="sm" height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]}>
@@ -152,8 +157,9 @@ function Index(props) {
               />
             </Box>
 
-
+            </Fade>
           </Container>
+          
 
         </VerticalAlign>
 
@@ -178,22 +184,43 @@ function Index(props) {
 
       </Box>
 
+      
+      <Section  >
+        <Container maxWidth="1100px" my={[2, 5, 10]}>
+        <SimpleGrid columns={[1, 1, 3]} spacing={10} > 
+          <Box height="250px" bg="green.400">
 
-      <Section>
+          </Box>
+
+
+          <Box height="250px" bg="pink.400">
+
+          </Box>
+
+          <Box height="250px" bg="purple.400">
+
+          </Box>
+
+
+
+        </SimpleGrid>
+        </Container>
         
       </Section>
 
 
-      <Box background="linear-gradient(to bottom, #EDF2F7, white)" height={[10, 20, 50, 100,]}>
+      <Box background="linear-gradient(to bottom, #EDF2F7, white)" py={[5, 10, 20, 50,]}>
+        
+      <Heading textAlign="center" color="#0a0a0a">
+            WHAT COULD YOU BUILD?
+        </Heading>
       </Box>
 
       <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
 
         <Container maxWidth="1000px">
 
-          <Heading textAlign="center" mb={[5, 10, 20]} color="#0a0a0a">
-            WHAT COULD YOU BUILD?
-        </Heading>
+          
 
 
           <SimpleGrid columns={[3, 4, 5, 6]} spacing={[4, 8, 12]}>

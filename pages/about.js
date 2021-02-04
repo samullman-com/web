@@ -26,7 +26,25 @@ function About() {
               </Heading>
 
               <Box bg="white" p={6} rounded="lg" shadow="lg" >
+     <Text>
+                Discover your agency with a team of innovators, brewing creativity never tasted before!
+            </Text>
 
+            <Text>
+            We are a one-window solution to all your web development needs, covering cover a wide spectrum of online services from web hosting to email marketing. With a passionate and certified team of experts, crowned with years of experience, we strive to help entrepreneurs explore the virtual universe of unimaginable opportunities.
+            </Text>
+
+            <Text>
+            Our dedicated professionals are all set to take businesses to the most memorable journey of their tenure, starting from scratch all the way to the top with an unparalleled approach, which gives them an edge over their competitors. With 100% customized development and marketing strategies, we endeavor to offer businesses highly personalized online platforms that deliver positive brand image and prominent brand personality.
+            </Text>
+
+            <Text>
+            Our versatile development solutions are perfect for all business models and types. We have helped hundreds of businesses overcome the barriers to success and reach new heights never seen before.
+            </Text>
+
+            <Text>
+            We ensure transparency and customer satisfaction through a well-structured communication system, providing every detail of the process to the customers, which enables them to easily track their ROI. What’s more, is our active customer support that is always ready to guide businesses and other entities interested in our business in every way possible.
+            </Text>
               </Box>
         </Container>
 

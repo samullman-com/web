@@ -88,6 +88,22 @@ function Music() {
       url: "https://www.youtube.com/watch?v=PbgKEjNBHqM",
     },
 
+    {
+      id: "prodigy", 
+      title: "Prodigy", 
+      artist: "Luca Stricagnoli",
+      url: "https://www.youtube.com/watch?v=CIpOxa5hxOw",
+    },
+
+    {
+      id: "thriller", 
+      title: "Thriller", 
+      artist: "Luca Stricagnoli",
+      url: "https://www.youtube.com/watch?v=zJ_pDcjICtw",
+    },
+
+    
+
   ];
 
   function setSong ( e ) {
@@ -111,7 +127,7 @@ function Music() {
 
       </Section>
     
-      <Box bgGradient="linear-gradient(to top, white, gray.100)" height={[ "20px", "50px", "60px", "80px", "100px"]}>
+      <Box bgGradient="linear-gradient(to top, white, gray.100)" height={[ "20px", "50px", "60px", ]}>
       </Box>
 
 

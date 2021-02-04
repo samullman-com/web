@@ -66,8 +66,8 @@ function Footer() {
 
                         <Box mb={1}>
                             <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/projects">
-                                    Projects
+                                <Link href="/portfolio">
+                                    Portfolio
                     </Link>
                             </Box>
                         </Box>
