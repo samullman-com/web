@@ -98,10 +98,13 @@ const Work = ( props ) => {
 
   let fields = props.el.fields;
 
-  return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
+  let crossOrigin = fields.crossOrigin ? <Box mb={6}></Box> : <Box fontSize="12px" mt={2} mb={6} color="red.500">*Cross-origin Policy may prevent site from displaying properly on <ChakraLink color="blue.500"><Link href="/">samullman.com</Link></ChakraLink></Box> ;
+
+  return <Box>
+    <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
 
   
-  <Box bg="white" p={4} rounded="lg" shadow="lg" mb={6} position="relative" _active={{shadow: "sm"}} >
+  <Box bg="white" p={4} rounded="lg" shadow="lg" mb={2} position="relative" _active={{shadow: "sm"}} >
       <Box position="absolute" top={0} left={0} width="100%" height="100%">
 
       </Box>
@@ -121,4 +124,10 @@ const Work = ( props ) => {
 
   </Box>
   </ChakraLink>
+
+    
+  {
+    crossOrigin
+  }
+  </Box>
 }
