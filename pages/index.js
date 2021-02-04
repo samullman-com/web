@@ -169,46 +169,13 @@ function Index(props) {
             {(src) => <img src={src} alt="Honeycomb" style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
           </ProgressiveImage>
         </Box>
-
-
-        {/* <Image
-          src="/stars.jpg"
-          loading="eager"
-          layout="fill"
-          objectFit="cover"
-          alt="Stars"
-          
-        /> */}
-
-
-
       </Box>
 
       
-      <Section  >
-        <Container maxWidth="1100px" my={[2, 5, 10]}>
-        <SimpleGrid columns={[1, 1, 3]} spacing={10} > 
-          <Box height="250px" bg="green.400">
 
-          </Box>
+      <Section>
 
-
-          <Box height="250px" bg="pink.400">
-
-          </Box>
-
-          <Box height="250px" bg="purple.400">
-
-          </Box>
-
-
-
-        </SimpleGrid>
-        </Container>
-        
       </Section>
-
-
       <Box background="linear-gradient(to bottom, #EDF2F7, white)" py={[5, 10, 20, 50,]}>
         
       <Heading textAlign="center" color="#0a0a0a">
@@ -237,57 +204,10 @@ function Index(props) {
       <Box background="linear-gradient(to bottom, white, #EDF2F7)" height={[10, 20, 50, "60px",]}>
       </Box>
 
-      <Section>
-
-        <Container maxWidth="1200px" mb={10}>
-          <SimpleGrid columns={[1, 2]} spacing={[4, 8, 12]}>
-             {
-               examples.map( ( el ) => { 
-                 return <Link href={ el.link }>
-                 <Box height={["200px", "300px", "400px"]} position="relative"  cursor="pointer">
-                   <VerticalAlign>
-                     <Heading textAlign="center" color="white" position="relative" zIndex={1}>
-                        { el.heading }
-                 </Heading>
-                   </VerticalAlign>
-   
-                   <Box position="absolute" top={0} width="100%" height="100%" bottom={0} rounded="md" overflow="hidden">
-   
-                     <ProgressiveImage src={ el.src } placeholder={ el.src }>
-                       {(src) => <img src={src} alt={ el.heading } style={{ height: "100%", width: "100%", objectFit: "cover" }} />}
-                     </ProgressiveImage>
-                   </Box>
-   
-                 </Box>
-               </Link>
-   
-               })
-             }
-           
-
-
-
-          </SimpleGrid>
-        </Container>
-
-        <Box textAlign="center">
-          
-          <Link href="examples">
-          <Button colorScheme="red" rounded="full" size="lg">
-            ALL EXAMPLES
-          </Button>
-          </Link>
-
-        </Box>
-
-      </Section>
 
       <Section>
 
       </Section>
-
-
-
 
 
     </Layout>

@@ -56,18 +56,26 @@ function Footer() {
                             </Box>
                         </Box>
 
-                        <Box mb={1}>
+                        {/* <Box mb={1}>
                             <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
                                 <Link href="/about">
                                     About
+                    </Link>
+                            </Box>
+                        </Box> */}
+
+                        <Box mb={1}>
+                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
+                                <Link href="/projects">
+                                    Projects
                     </Link>
                             </Box>
                         </Box>
 
                         <Box mb={1}>
                             <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/portfolio">
-                                    Portfolio
+                                <Link href="/work">
+                                    Work
                     </Link>
                             </Box>
                         </Box>
@@ -81,13 +89,13 @@ function Footer() {
                         </Box>
 
 
-                        <Box mb={1}>
+                        {/* <Box mb={1}>
                             <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
                                 <Link href="/login">
                                     Login
                     </Link>
                             </Box>
-                        </Box>
+                        </Box> */}
 
                     </Box>
 

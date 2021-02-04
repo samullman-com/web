@@ -82,8 +82,6 @@ import jump from "jump.js";
           </VerticalAlign>
 
           </Section>
-
-        
     </Layout>
   )
 }

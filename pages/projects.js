@@ -101,12 +101,14 @@ const Project = ( props ) => {
   return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
 
   
-  <Box bg="white" p={6} rounded="lg" shadow="lg" mb={6} >
+  <Box bg="white" p={4} rounded="lg" shadow="lg" mb={6} position="relative" _active={{shadow: "sm"}} >
+      <Box position="absolute" top={0} left={0} width="100%" height="100%">
 
+      </Box>
       
 
-      <Box rounded="lg" height={["300px",  "400px", "500px"]}  overflow="hidden"  mb={2}>
-        <ChakraImage src={ fields.images[0].fields.file.url } height="100%" width="100%" objectFit="cover" alt={ fields.alt } />
+      <Box rounded="sm" height={["300px",  "400px", "500px"]}  overflow="hidden"  mb={2}>
+        <iframe src={ fields.url } height="100%" width="100%" frameBorder="none" style={{zIndex: -1}} />
       </Box>
       
       <Heading mb={ 2 }>

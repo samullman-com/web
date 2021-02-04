@@ -62,14 +62,19 @@ function Sidebar(props) {
       to: "/",
     },
 
+    // {
+    //   text: "About",
+    //   to: "/about",
+    // },
+
     {
-      text: "About",
-      to: "/about",
+      text: "Projects",
+      to: "/projects",
     },
 
     {
-      text: "Portfolio",
-      to: "/portfolio",
+      text: "Work",
+      to: "/work",
     },
 
 
@@ -123,7 +128,7 @@ function Sidebar(props) {
 
 
 
-              {!session && <Box mb={4} cursor="pointer"   fontWeight="600" letterSpacing="1" _hover={{color: "blue.200"}} transition="0.2s ease" >
+              {!session && <Box mb={4} cursor="pointer"  display="none" fontWeight="600" letterSpacing="1" _hover={{color: "blue.200"}} transition="0.2s ease" >
                     <span onClick={ signIn }>
                       Login
                     </span>
