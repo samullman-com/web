@@ -118,7 +118,7 @@ function Index(props) {
 
         
           <Container zIndex="5" position="relative" maxWidth="1100px" px={[0, 0, 10,]} >
-          <Fade right>
+          {/* <Fade right> */}
             <Box>
             <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
               DISCOVER
@@ -162,7 +162,7 @@ function Index(props) {
 
            
 
-            </Fade>
+            {/* </Fade> */}
 
             
           </Container>
