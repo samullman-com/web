@@ -102,6 +102,14 @@ function Music() {
       url: "https://www.youtube.com/watch?v=zJ_pDcjICtw",
     },
 
+    {
+      id: "wish", 
+      title: "Wish I Knew You", 
+      artist: "The Revivalists",
+      url: "https://www.youtube.com/watch?v=o0Pt7M0weUI",
+    },
+    
+
     
 
   ];

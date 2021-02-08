@@ -27,7 +27,7 @@ function Header () {
 
   
 
-    return  <Grid gridTemplateColumns="100px calc(100% - 100px)" bg={"#0a0a0a"}  height={["60px", "60px",  "70px"]} position="fixed" width="100vw" zIndex="600" top={0} px={[3, 4,  5 ]}>
+    return  <Grid gridTemplateColumns="100px calc(100% - 100px)" bg={"#0a0a0a"}  height="60px" position="fixed" width="100vw" zIndex="600" top={0} px={[3, 4,  5 ]}>
 
         <Box>
             <VerticalAlign>

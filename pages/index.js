@@ -107,7 +107,7 @@ function Index(props) {
 
 
   return (
-    <Layout title="Home | Agents of Change" noTop={true}>
+    <Layout title="Home | Discovery Your Agency" noTop={true}>
 
 
 
@@ -120,18 +120,18 @@ function Index(props) {
           <Container zIndex="5" position="relative" maxWidth="1100px" px={[0, 0, 10,]} >
           {/* <Fade right> */}
             <Box>
-            <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
-              DISCOVER
+            <Heading color="white" fontSize={[55, 75, 100, 110, ]} textAlign={["center", "center", "left"]} >
+              WE<Box display={["inline-block", "inline-block", "none"]}>'RE</Box>
               </Heading>
 
-            <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
-              YOUR
+            <Heading color="white" fontSize={[55, 75, 100, 110, ]} textAlign={["center", "center", "left"]} >
+              BUILD<Box display={["inline-block", "inline-block", "none"]}>ING</Box>
               </Heading>
 
-            <Heading color="white" fontSize={[55, 75, 100, 115, ]} textAlign={["center", "center", "left"]} >
-              AGENCY
+            <Heading color="white" fontSize={[55, 75, 100, 110, ]} textAlign={["center", "center", "left"]} >
+              EMPIRES
 
-            <Box rounded="sm" height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]}>
+            <Box rounded="sm" height={"20px", "30px"} width={["20px", "30px"]} overflow="hidden" ml={4} display={["none", "none", "inline"]} onClick={ () => { jump("#next", {offset: -100}) } }>
                 <Image
                   className="rounded"
                   src="/sam.jpg"
@@ -145,7 +145,7 @@ function Index(props) {
             </Heading>
 
 
-            <Box borderRadius={30} height={[12, "60px"]} width={[12, "60px",]} overflow="hidden" margin={["20px auto"]} display={["block", "block", "none"]}>
+            <Box borderRadius={30} height={[12, "60px"]} width={[12, "60px",]} overflow="hidden" margin={["20px auto"]} display={["block", "block", "none"]} onClick={ () => { jump("#next", {offset: -100}) } }>
               <Image
                 className="rounded"
                 src="/sam.jpg"
@@ -178,21 +178,63 @@ function Index(props) {
         </Box>
       </Box>
 
-      
-
-      <Section>
-
-      </Section>
-      <Box background="linear-gradient(to bottom, #EDF2F7, white)" py={[5, 10, 20, 50,]}>
+      <Box id="next" >
         
-      <Heading textAlign="center" color="#0a0a0a">
-            WHAT COULD YOU BUILD?
-        </Heading>
+        <Section bg={ theme.white } >
+          <Container maxWidth="1100px" px={[2, 2, 10,]} pb={5} textAlign={["center", "center", "left"]}  >
+
+            <Box mb={3}>
+            <Box p={"3px 14px"} fontSize="32px" fontWeight="600" borderRadius="6px" bg="gray.200" display="inline-block" >
+              WHO  
+            </Box>
+            </Box>
+            <Heading size="md" fontWeight={["500", "600"]} mb={ 10 }>
+                A collaborative network of developers, designers, entreprenuers, and creators. 
+            </Heading>
+
+
+            <Box mb={ 3 }>
+            <Box p={"3px 14px"}  fontSize="32px" fontWeight="600" borderRadius="6px" bg="gray.200" display="inline-block" >
+              WHAT  
+            </Box>
+            </Box>
+
+            <Heading size="md" mb={ 4 } fontWeight={["500", "600"]} mb={ 10 }>
+            We deploy highly scalable digital solutions for ambitious clients. 
+          </Heading>
+
+          <Box mb={ 3 }>
+            <Box p={"3px 14px"} fontSize="32px" fontWeight="600" borderRadius="6px" bg="gray.200" display="inline-block" >
+              HOW
+            </Box>
+            </Box>
+
+            <Heading size="md" mb={ 4 } fontWeight={["500", "600"]} mb={ 10 }>
+            The <ChakraLink onClick={ () => { jump("#progressive", { offset: -100 }) } }>Progressive Web</ChakraLink> has allowed independent folks to build amazing, secure experiences at a fraction of the <i>normal</i> cost. 
+          </Heading>
+
+          <Box mb={ 3 }>
+            <Box p={"3px 14px"} fontSize="32px" fontWeight="600" borderRadius="6px" bg="gray.200" display="inline-block" >
+              WHY  
+            </Box>
+            </Box>
+
+            <Heading size="md" fontWeight={["500", "600"]} >
+                Being the change we want to see. 
+            </Heading>
+          </Container>
+        </Section>
       </Box>
 
-      <Box py={[5, 10, 12]} px={[2, 5, 10]} bg="white">
 
-        <Container maxWidth="1000px">
+
+
+
+      
+
+      <Box id="progressive">
+        <Section >
+        <Container maxWidth="1100px">
 
           
 
@@ -205,16 +247,9 @@ function Index(props) {
             }
           </SimpleGrid>
         </Container>
+        </Section>
 
       </Box>
-
-      <Box background="linear-gradient(to bottom, white, #EDF2F7)" height={[10, 20, 50, "60px",]}>
-      </Box>
-
-
-      <Section>
-
-      </Section>
 
 
     </Layout>
