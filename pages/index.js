@@ -107,23 +107,23 @@ function Index(props) {
             <Box>
               <Heading
                 color="white"
-                fontSize={[55, 75, 100, 110]}
+                fontSize={[65, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
-                WE'RE
+                WE<Box display={["inline-block", "inline-block", "none"]}>'RE</Box>
               </Heading>
 
               <Heading
                 color="white"
-                fontSize={[55, 75, 100, 110]}
+                fontSize={[65, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
-                BUILDING
+                BUILD<Box display={["inline-block", "inline-block", "none"]}>ING</Box>
               </Heading>
 
               <Heading
                 color="white"
-                fontSize={[55, 75, 100, 110]}
+                fontSize={[65, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
                 EMPIRES
