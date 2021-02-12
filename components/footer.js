@@ -105,7 +105,7 @@ function Footer() {
                     </Heading>
 
                         <Box width="300px" margin={["0 auto", "0 auto", 0]}>
-                            <iframe src="https://samullman.substack.com/embed" width="300px" height="80px" style={{ border: "none", background: "#0a0a0a" }} frameborder="0" scrolling="no"></iframe>
+                            <iframe src="https://samullman.substack.com/embed" width="300px" height="80px" style={{ border: "none", background: "#0a0a0a" }} frameBorder="0" scrolling="no"></iframe>
                         </Box>
 
                     </Box>

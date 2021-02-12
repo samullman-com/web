@@ -110,10 +110,7 @@ function Index(props) {
                 fontSize={[55, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
-                WE
-                <Box display={["inline-block", "inline-block", "none"]}>
-                  'RE
-                </Box>
+                WE'RE
               </Heading>
 
               <Heading
@@ -121,10 +118,7 @@ function Index(props) {
                 fontSize={[55, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
-                BUILD
-                <Box display={["inline-block", "inline-block", "none"]}>
-                  ING
-                </Box>
+                BUILDING
               </Heading>
 
               <Heading
