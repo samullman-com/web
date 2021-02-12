@@ -310,9 +310,10 @@ const Favorite = (props) => {
           overflow="hidden"
           borderWidth={2}
           margin="0 auto"
+          position="relative"
           mb={2}
         >
-          <ProgressiveImage src={ fields.images[0].fields.file.url } placeholder={ fields.alt }>
+          {/* <ProgressiveImage src={ fields.images[0].fields.file.url } placeholder={ fields.alt }>
             {(src) => (
                 <ChakraImage
                   src={src}
@@ -322,8 +323,16 @@ const Favorite = (props) => {
                   alt={fields.alt}
                 />
             )}
-          </ProgressiveImage>
- 
+          </ProgressiveImage> */}
+
+
+              <Image
+                src={ "https:" + fields.images[0].fields.file.url }
+                alt={ fields.alt }
+                layout="fill"
+                objectFit="cover"
+              />
+    
         </Box>
 
         <Box size="sm" fontWeight={[500, 600]} color="gray.900">
