@@ -107,17 +107,20 @@ const Project = ( props ) => {
       </Box>
       
 
-      <Box rounded="sm" height={["300px",  "400px", "500px"]}  overflow="hidden"  mb={2}>
-        <iframe src={ fields.url } height="100%" width="100%" frameBorder="none" style={{zIndex: -1}} />
+      <Box position="relative" rounded="sm" height={[ "300px", "400px", "500px"]}  overflow="hidden"  mb={2}>
+        <Image 
+          src={ "https:" + fields.heroImage.fields.file.url }
+          layout="fill"
+          objectFit="cover"
+          />
+        {/* <iframe src={ fields.url } height="100%" width="100%" frameBorder="none" style={{zIndex: -1}} /> */}
       </Box>
       
       <Heading mb={ 2 }>
         { fields.title }
       </Heading>
 
-      <Box >
-        { documentToReactComponents( fields.description ) }
-      </Box>
+      
 
       
 
