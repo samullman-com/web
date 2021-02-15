@@ -11,6 +11,28 @@ import {
 } from "@chakra-ui/react"
 
 function Footer() {
+
+    const pages = [
+        {
+            title: "Home",
+            link: "/",
+        },
+
+        {
+            title: "Projects",
+            link: "/projects",
+        },
+
+        {
+            title: "Work",
+            link: "/work",
+        },
+
+        {
+            title: "Contact",
+            link: "/contact",
+        },
+    ]
     return (
         <Box bg="#0a0a0a" color="white" py={20} px={5}>
             <Container maxWidth="1400px" textAlign={["center", "center", "left"]}>
@@ -33,7 +55,7 @@ function Footer() {
 
 
 
-                        <Heading size="md" mb={5} letterSpacing={1} fontWeight="600" className="finland" >
+                        <Heading size="md" className="cassannet" mb={5} letterSpacing={2} fontWeight="600" >
                             SAMULLMAN.COM
                     </Heading>
 
@@ -44,63 +66,30 @@ function Footer() {
 
                     <Box letterSpacing={"1"} fontWeight="600" mb={[10, 10, 0]}>
 
-                        <Heading size="md" mb={3} letterSpacing={1} fontWeight="600" >
+                        <Heading size="md" mb={3} letterSpacing={2} fontWeight="600" className="cassannet" >
                             PAGES
                     </Heading>
 
-                        <Box mb={1}>
-                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/">
-                                    Home
+                    {
+                        pages.map( el => {
+                            return <Box mb={1} key={ el.title }>
+                            <Box _hover={{ color: "gray.300" }} transition="0.2s ease" display="inline-block">
+                                <Link href={ el.link }>
+                                    { el.title }
                     </Link>
                             </Box>
                         </Box>
+                        })
+                    }
 
-                        {/* <Box mb={1}>
-                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/about">
-                                    About
-                    </Link>
-                            </Box>
-                        </Box> */}
+                        
 
-                        <Box mb={1}>
-                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/projects">
-                                    Projects
-                    </Link>
-                            </Box>
-                        </Box>
-
-                        <Box mb={1}>
-                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/work">
-                                    Work
-                    </Link>
-                            </Box>
-                        </Box>
-
-                        <Box mb={1}>
-                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/contact">
-                                    Contact
-                    </Link>
-                            </Box>
-                        </Box>
-
-
-                        {/* <Box mb={1}>
-                            <Box _hover={{ color: "blue.200" }} transition="0.2s ease" display="inline-block">
-                                <Link href="/login">
-                                    Login
-                    </Link>
-                            </Box>
-                        </Box> */}
+                     
 
                     </Box>
 
                     <Box>
-                        <Heading size="md" mb={3} letterSpacing={1} fontWeight="600" pl={[0, 0, 3]}>
+                        <Heading size="md" mb={3} letterSpacing={2} fontWeight="600" pl={[0, 0, 3]} className="cassannet">
                             SUBSCRIBE
                     </Heading>
 

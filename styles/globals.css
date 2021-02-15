@@ -23,14 +23,14 @@ a {
 }
 
 
-/* @font-face {
-  font-family: 'typewriter';
-  src: url('/typewriter.woff') format("WOFF");
+@font-face {
+  font-family: 'cassannet';
+  src: url('/cassannet.woff') format("WOFF");
  }
 
-.typewriter { 
- font-family: 'typewriter' !important;
-} */
+.cassannet { 
+ font-family: 'cassannet' !important;
+}
 
 .hero {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */

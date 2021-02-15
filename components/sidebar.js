@@ -62,11 +62,6 @@ function Sidebar(props) {
       to: "/",
     },
 
-    // {
-    //   text: "About",
-    //   to: "/about",
-    // },
-
     {
       text: "Projects",
       to: "/projects",
@@ -76,7 +71,6 @@ function Sidebar(props) {
       text: "Work",
       to: "/work",
     },
-
 
     {
       text: "Contact",
@@ -113,7 +107,7 @@ function Sidebar(props) {
               {
                 menuItems.map((el) => {
                   return <Box mb={4} key={el.text} >
-                  <Box  letterSpacing="1" _hover={{color: "blue.200"}} transition="0.2s ease" display="inline-block" >
+                  <Box  letterSpacing="1" _hover={{color: "gray.300"}} transition="0.2s ease" display="inline-block" >
                     <Link href={el.to}>
                       {el.text}
                     </Link>

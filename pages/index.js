@@ -101,6 +101,7 @@ function Index(props) {
             zIndex="5"
             position="relative"
             maxWidth="1100px"
+            
             px={[0, 0, 10]}
           >
             {/* <Fade right> */}
@@ -110,7 +111,7 @@ function Index(props) {
                 fontSize={[65, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
-                WE<Box display={["inline-block", "inline-block", "none"]}>'RE</Box>
+                WE'RE
               </Heading>
 
               <Heading
@@ -118,7 +119,7 @@ function Index(props) {
                 fontSize={[65, 75, 100, 110]}
                 textAlign={["center", "center", "left"]}
               >
-                BUILD<Box display={["inline-block", "inline-block", "none"]}>ING</Box>
+                BUILDING
               </Heading>
 
               <Heading
@@ -200,7 +201,10 @@ function Index(props) {
                 fontWeight="600"
                 borderRadius="6px"
                 bg="gray.200"
+                
                 display="inline-block"
+                letterSpacing={2}
+                className="cassannet"
               >
                 WHO
               </Box>
@@ -218,6 +222,8 @@ function Index(props) {
                 borderRadius="6px"
                 bg="gray.200"
                 display="inline-block"
+                letterSpacing={2}
+                className="cassannet"
               >
                 WHAT
               </Box>
@@ -235,6 +241,8 @@ function Index(props) {
                 borderRadius="6px"
                 bg="gray.200"
                 display="inline-block"
+                letterSpacing={2}
+                className="cassannet"
               >
                 HOW
               </Box>
@@ -261,6 +269,8 @@ function Index(props) {
                 borderRadius="6px"
                 bg="gray.200"
                 display="inline-block"
+                letterSpacing={2}
+                className="cassannet"
               >
                 WHY
               </Box>
@@ -335,7 +345,8 @@ const Favorite = (props) => {
     
         </Box>
 
-        <Box size="sm" fontWeight={[500, 600]} color="gray.900">
+        <Box fontSize="14px" fontWeight={[500, 600]} color="gray.900" letterSpacing={2}
+                className="cassannet">
           {fields.title}
         </Box>
       </Box>
