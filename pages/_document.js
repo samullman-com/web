@@ -28,6 +28,9 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+
+          <script async src="https://cdn.splitbee.io/sb.js"></script>
+
         </Head>
         <body>
 
