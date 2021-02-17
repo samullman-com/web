@@ -42,20 +42,19 @@ function Header() {
       </Box>
 
       <Box>
+
+   
+
         <VerticalAlign>
-          <Box display={["none", "none", "block"]}>
-            <Sidebar placement="right" />
-          </Box>
+        <Sidebar placement="right" />
 
-          <Box display={["block", "block", "none"]}>
-            <Sidebar placement="bottom" />
-          </Box>
-
-          <FeedbackFish projectId="51c156a6e8e6e6">
-            <Button rounded="full" float="right" size="sm" position="relative" top="4px" right="10px">
+        <FeedbackFish projectId="51c156a6e8e6e6">
+            <Button rounded="full" float="right" size="sm" position="relative" top={[ "4px"]} right={["5px", "7px", "10px"]}>
               Feedback
             </Button>
           </FeedbackFish>
+
+
         </VerticalAlign>
       </Box>
     </Grid>

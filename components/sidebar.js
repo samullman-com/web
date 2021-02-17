@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link"
+import { FeedbackFish } from "@feedback-fish/react";
 
 import Socials from "../components/socials";
 
@@ -97,11 +98,14 @@ function Sidebar(props) {
         placement={props.placement}
       >
         <DrawerOverlay>
-          <DrawerContent bg={"#0a0a0a"} color="white" textAlign="left">
-            <DrawerCloseButton />
-            <DrawerHeader></DrawerHeader>
+          <DrawerContent bg={"#0a0a0a"} >
+            <DrawerCloseButton color="white" />
+            <DrawerHeader>
 
-            <DrawerBody textAlign={textAlign} fontWeight="600">
+          
+            </DrawerHeader>
+
+            <DrawerBody textAlign={textAlign} fontWeight="600" color="white">
 
 
               {
@@ -173,7 +177,7 @@ function Sidebar(props) {
 
             </DrawerBody>
 
-            <DrawerFooter px={5} textAlign="center" display="block">
+            <DrawerFooter px={5} pb={[3, 3, 0]} textAlign="center" display="block">
 
              <Socials />
 
