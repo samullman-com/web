@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import ProgressiveImage from "react-progressive-graceful-image";
-import { signIn, signOut, useSession } from "next-auth/client";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { DateTime } from "luxon";
 import { FiChevronDown, FiSend } from "react-icons/fi";
@@ -19,7 +19,18 @@ import {
   Link as ChakraLink,
   SimpleGrid,
   Image as ChakraImage,
+  Divider, 
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+
 } from "@chakra-ui/react";
+
+
 import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
 import theme from "../public/theme";
@@ -27,22 +38,40 @@ import Section from "../components/section";
 import Fade from "react-reveal/Fade";
 
 function Index(props) {
-  let examples = [
+  let products = [
     {
-      heading: "MUSIC PLAYER",
-      link: "/music",
-      src: "/music.jpg",
+      title: "New Foundations",
+      link: "/new-foundations",
+      image: "/classroom.jpg",
+      price: 495, 
+      color: "orange.300",
     },
 
     {
-      heading: "GALLERY",
-      link: "/gallery",
-      src: "/gallery.jpg",
+      title: "Job Board",
+      link: "/job-board",
+      image: "/ventures.jpg",
+      price: 4995, 
+      color: "purple.300",
     },
+
+    {
+      title: "JAMStack Setup",
+      link: "/jamstack",
+      image: "/ui.jpg",
+      price: 2495, 
+      color: "pink.300",
+    },
+
+
+   
   ];
 
-  const [session, loading] = useSession();
   const [favorites, setFavorites] = useState([]);
+
+  const notify = () => toast('Coming soon !!!', {
+    icon: '👏',
+  });
 
   const client = require("contentful").createClient({
     space: props.CONTENTFUL_SPACE_ID,
@@ -294,6 +323,61 @@ function Index(props) {
           </Container>
         </Section>
       </Box>
+
+      <Section bg="gray.300">
+        <Container maxWidth="1200px">
+          {
+            products.map( el => {
+
+              const [ borderColor, setBorderColor ] = useState("white");
+
+
+              return (
+                <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 6]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer" onMouseEnter={ () => { setBorderColor( el.color )}} onMouseLeave={ () => { setBorderColor( "white" )}} onClick={ notify }>
+                  <Box overflow="hidden" height="100%" rounded="md">
+                  <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
+                  <Box position="relative" height="100%" rounded="sm" overflow="hidden">
+                  <VerticalAlign>
+                    {
+                      el.title.split(" ").map( word => {
+                        return  <Heading letterSpacing="2px"  className="cassannet" textAlign="center" color="white" position="relative" zIndex={5} fontSize={[45, 55, 60]} >
+                        { word }
+                    </Heading>
+                      })
+                    }
+
+                    <Divider borderWidth="0.125rem" borderColor={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" />
+
+                    <Heading size="md" color="white" position="relative" zIndex={5} textAlign="center">
+                      ${ el.price }<sup><small><u style={{position: "relative", top: 2, left: 1}}>00</u></small></sup>
+                    </Heading>
+               
+                </VerticalAlign>
+
+                </Box>
+
+                <Image
+                  src={ el.image }
+                  layout="fill"
+                  objectFit="cover"
+                  className="darken"
+                />
+                
+                </Box>
+                </Box>
+                </Box>
+              )
+            })
+          }
+         
+
+        
+        </Container>
+
+      </Section>
+
+      <Toaster />
+
     </Layout>
   );
 }
@@ -312,7 +396,7 @@ const Favorite = (props) => {
       rounded="md"
       _hover={{ textDecor: "none" }}
     >
-      <Box textAlign="center" p={1}>
+      <Box textAlign="centter" p={1}>
         <Box
           rounded="full"
           height={["60px", "65px", "80px"]}
@@ -364,4 +448,32 @@ export async function getStaticProps(context) {
       CONTENTFUL_ACCESS_TOKEN,
     }, // will be passed to the page component as props
   };
+}
+
+
+function BasicUsage() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <>
+      <Button >Open Modal</Button>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Lorem count={2} />
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
 }
