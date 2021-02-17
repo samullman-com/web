@@ -211,6 +211,7 @@ function Index(props) {
                 alt="Honeycomb"
                 layout="fill"
                 objectFit="cover"
+                alt="Honeycomb"
               />
         </Box>
       </Box>
@@ -353,6 +354,7 @@ function Index(props) {
                   layout="fill"
                   objectFit="cover"
                   className="darken"
+                  alt={ el.title }
                 />
                 
                 </Box>

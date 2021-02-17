@@ -48,7 +48,7 @@ function Header() {
         <Sidebar placement="right" />
 
         <FeedbackFish projectId="51c156a6e8e6e6">
-            <Button rounded="full" float="right" size="sm" position="relative" top={[ "4px"]} right={["5px", "7px", "10px"]}>
+            <Button rounded="full" aria-label="Feedback" float="right" size="sm" position="relative" top={[ "4px"]} right={["5px", "7px", "10px"]}>
               Feedback
             </Button>
           </FeedbackFish>

@@ -43,6 +43,7 @@ function Footer() {
                             src="/sam.jpg"
                             width={60}
                             height={60}
+                            
 
                             alt="sam"
                         />
@@ -50,7 +51,7 @@ function Footer() {
                 </Link>
 
 
-                <SimpleGrid columns={[1, 1, 3, 3]} mb={[0, 0, 12]} mt={5}>
+                <SimpleGrid columns={[1, 1, 1, 3]} mb={[0, 0, 12]} mt={5}>
                     <Box mb={[10, 10, 0]}>
 
 
@@ -64,7 +65,7 @@ function Footer() {
 
                     </Box>
 
-                    <Box letterSpacing={"1"} fontWeight="600" mb={[10, 10, 0]}>
+                    <Box letterSpacing={"1"} fontWeight="600" mb={[10, 10, 10, 0]}>
 
                         <Heading size="md" mb={3} letterSpacing={2} fontWeight="600" className="cassannet" >
                             PAGES
@@ -89,12 +90,12 @@ function Footer() {
                     </Box>
 
                     <Box>
-                        <Heading size="md" mb={3} letterSpacing={2} fontWeight="600" pl={[0, 0, 3]} className="cassannet">
+                        <Heading size="md" mb={3} letterSpacing={2} fontWeight="600" pl={[0, 0, 0,  3]} >
                             SUBSCRIBE
                     </Heading>
 
-                        <Box width="300px" margin={["0 auto", "0 auto", 0]}>
-                            <iframe src="https://samullman.substack.com/embed" width="300px" height="80px" style={{ border: "none", background: "#0a0a0a" }} frameBorder="0" scrolling="no"></iframe>
+                        <Box width="300px" margin={["0 auto", "0 auto",  0]}>
+                            <iframe src="https://samullman.substack.com/embed" aria-label="Substack Subscribe" width="300px" height="80px" style={{ border: "none", background: "#0a0a0a" }} frameBorder="0" scrolling="no"></iframe>
                         </Box>
 
                     </Box>
