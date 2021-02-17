@@ -221,7 +221,7 @@ function Index(props) {
                 
                 objectFit="cover"
                 alt="Honeycomb"
-                style={{height: "100%", objectFit: "cover", opacity: loading ? 0.6 : 1, transition: "0.15s ease"}}
+                style={{height: "100%", width: "100%", objectFit: "cover", opacity: loading ? 0.6 : 1, transition: "0.15s ease"}}
               />)
               }}
 
