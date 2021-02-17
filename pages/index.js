@@ -346,7 +346,7 @@ function Index(props) {
                       })
                     }
 
-                    <Divider borderWidth="0.125rem" borderColor={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" />
+                    <Box height="0.25rem" bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" />
 
                     <Heading size="md" color="white" position="relative" zIndex={5} textAlign="center">
                       ${ el.price }<sup><small><u style={{position: "relative", top: 2, left: 1}}>00</u></small></sup>
@@ -396,7 +396,7 @@ const Favorite = (props) => {
       rounded="md"
       _hover={{ textDecor: "none" }}
     >
-      <Box textAlign="centter" p={1}>
+      <Box textAlign="center" p={1}>
         <Box
           rounded="full"
           height={["60px", "65px", "80px"]}
