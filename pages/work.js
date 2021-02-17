@@ -101,33 +101,36 @@ const Work = ( props ) => {
   let crossOrigin = fields.crossOrigin ? <Box mb={6}></Box> : <Box fontSize="12px" mt={2} mb={6} color="red.500">*Cross-origin Policy may prevent site from displaying properly on <ChakraLink color="blue.500"><Link href="/">samullman.com</Link></ChakraLink></Box> ;
 
   return <Box>
-    <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
+     <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
+       <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer">
+                  <Box overflow="hidden" height="100%" rounded="sm">
+                  <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
+                  <Box position="relative" height="100%" rounded="sm" overflow="hidden">
+                  <VerticalAlign>
+                    {
+                      fields.title.split(" ").map( word => {
+                        return  <Heading textAlign="center" color="white" position="relative" fontWeight="600" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
+                        { word }
+                    </Heading>
+                      })
+                    }
 
+
+               
+                </VerticalAlign>
+
+                </Box>
+
+                <Image 
+          src={ "https:" + fields.heroImage.fields.file.url }
+          layout="fill"
+          objectFit="cover"
+          className="darken-2"
+          />
+                </Box>
+                </Box>
+                </Box>
   
-  <Box bg="white" p={4} rounded="lg" shadow="lg" mb={2} position="relative" _active={{shadow: "sm"}} >
-      <Box position="absolute" top={0} left={0} width="100%" height="100%">
-
-      </Box>
-      
-
-      <Box rounded="sm" height={["300px",  "400px", "500px"]}  overflow="hidden"  mb={2}>
-        <iframe src={ fields.url } height="100%" width="100%" frameBorder="none" style={{zIndex: -1}} />
-      </Box>
-      
-      <Heading mb={ 2 }>
-        { fields.title }
-      </Heading>
-
-      <Box display="none">
-        { documentToReactComponents( fields.description ) }
-      </Box>
-
-  </Box>
   </ChakraLink>
-
-    
-  {
-    crossOrigin
-  }
   </Box>
 }
