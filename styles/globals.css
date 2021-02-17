@@ -40,3 +40,7 @@ a {
 .darken {
   filter: brightness(82%);
 }
+
+.darken-2 {
+  filter: brightness(90%);
+}

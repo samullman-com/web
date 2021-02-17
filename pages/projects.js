@@ -99,41 +99,34 @@ const Project = ( props ) => {
   let fields = props.el.fields;
 
   return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
+       <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer">
+                  <Box overflow="hidden" height="100%" rounded="sm">
+                  <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
+                  <Box position="relative" height="100%" rounded="sm" overflow="hidden">
+                  <VerticalAlign>
+                    {
+                      fields.title.split(" ").map( word => {
+                        return  <Heading textAlign="center" color="white" position="relative" fontWeight="600" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
+                        { word }
+                    </Heading>
+                      })
+                    }
 
-  
-  <Box bg="white" p={4} rounded="lg" shadow="lg" mb={6} position="relative" _active={{shadow: "sm"}} >
-      <Box position="absolute" top={0} left={0} width="100%" height="100%">
 
-      </Box>
-      
+               
+                </VerticalAlign>
 
-      <Box position="relative" rounded="sm" height={[ "300px", "400px", "500px"]}  overflow="hidden"  mb={2}>
-        <Image 
+                </Box>
+
+                <Image 
           src={ "https:" + fields.heroImage.fields.file.url }
           layout="fill"
           objectFit="cover"
+          className="darken-2"
           />
-        {/* <iframe src={ fields.url } height="100%" width="100%" frameBorder="none" style={{zIndex: -1}} /> */}
-      </Box>
-      
-      <Heading mb={ 2 }>
-        { fields.title }
-      </Heading>
-
-      
-
-      
-
-
-      <ButtonGroup float={["none", "none", "right"]} display="none">
-        <IconButton rounded="full" icon={ <ImReddit /> }>
-          
-        </IconButton>
-
-      </ButtonGroup>
-
-
-
-  </Box>
+                </Box>
+                </Box>
+                </Box>
+  
   </ChakraLink>
 }
