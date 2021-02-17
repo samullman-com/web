@@ -204,15 +204,22 @@ function Index(props) {
         </VerticalAlign>
 
         <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
-          
-
-              <Image
-                src="/honeycomb.jpg"
+                
+              <ProgressiveImage src="/honeycomb.jpg" placeholder="Honeycomb Background">
+              {(src, loading) => {
+                return (<img
+                src={ src }
                 alt="Honeycomb"
                 layout="fill"
+                
                 objectFit="cover"
                 alt="Honeycomb"
-              />
+                style={{height: "100%", objectFit: "cover", opacity: loading ? 0.6 : 1, transition: "0.15s ease"}}
+              />)
+              }}
+
+              
+              </ProgressiveImage>
         </Box>
       </Box>
 
