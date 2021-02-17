@@ -232,8 +232,6 @@ function Index(props) {
                 bg="gray.200"
                 
                 display="inline-block"
-                letterSpacing={2}
-                className="cassannet"
               >
                 WHO
               </Box>
@@ -251,8 +249,6 @@ function Index(props) {
                 borderRadius="6px"
                 bg="gray.200"
                 display="inline-block"
-                letterSpacing={2}
-                className="cassannet"
               >
                 WHAT
               </Box>
@@ -270,8 +266,6 @@ function Index(props) {
                 borderRadius="6px"
                 bg="gray.200"
                 display="inline-block"
-                letterSpacing={2}
-                className="cassannet"
               >
                 HOW
               </Box>
@@ -298,8 +292,6 @@ function Index(props) {
                 borderRadius="6px"
                 bg="gray.200"
                 display="inline-block"
-                letterSpacing={2}
-                className="cassannet"
               >
                 WHY
               </Box>
@@ -340,7 +332,7 @@ function Index(props) {
                   <VerticalAlign>
                     {
                       el.title.split(" ").map( word => {
-                        return  <Heading letterSpacing="2px"  className="cassannet" textAlign="center" color="white" position="relative" zIndex={5} fontSize={[35, 55, 60]} >
+                        return  <Heading textAlign="center" color="white" position="relative" fontWeight="600" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
                         { word }
                     </Heading>
                       })
@@ -429,7 +421,7 @@ const Favorite = (props) => {
     
         </Box>
 
-        <Box fontSize="14px" fontWeight={[500, 600]} color="gray.900" letterSpacing={2}
+        <Box fontSize="15px" fontWeight={[500, 600]} color="gray.900" 
                 className="cassannet">
           {fields.title}
         </Box>

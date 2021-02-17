@@ -28,10 +28,9 @@ function Header() {
         <VerticalAlign>
           <Link href="/">
             <Heading
-                className="cassannet"
               fontWeight="600"
               color="white"
-              fontSize={[18, 24, 28]}
+              fontSize={[18, 24, 26]}
               letterSpacing={2}
               cursor="pointer"
             >
