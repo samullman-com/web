@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link"
-import { FeedbackFish } from "@feedback-fish/react";
 
 import Socials from "../components/socials";
 

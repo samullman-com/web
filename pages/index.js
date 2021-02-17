@@ -340,13 +340,13 @@ function Index(props) {
                   <VerticalAlign>
                     {
                       el.title.split(" ").map( word => {
-                        return  <Heading letterSpacing="2px"  className="cassannet" textAlign="center" color="white" position="relative" zIndex={5} fontSize={[45, 55, 60]} >
+                        return  <Heading letterSpacing="2px"  className="cassannet" textAlign="center" color="white" position="relative" zIndex={5} fontSize={[35, 55, 60]} >
                         { word }
                     </Heading>
                       })
                     }
 
-                    <Box height="0.25rem" bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" />
+                    <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" />
 
                     <Heading size="md" color="white" position="relative" zIndex={5} textAlign="center">
                       ${ el.price }<sup><small><u style={{position: "relative", top: 2, left: 1}}>00</u></small></sup>
