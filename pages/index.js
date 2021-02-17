@@ -340,8 +340,8 @@ function Index(props) {
 
 
               return (
-                <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 6]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer" onMouseEnter={ () => { setBorderColor( el.color )}} onMouseLeave={ () => { setBorderColor( "white" )}} onClick={ notify }>
-                  <Box overflow="hidden" height="100%" rounded="md">
+                <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer" onMouseEnter={ () => { setBorderColor( el.color )}} onMouseLeave={ () => { setBorderColor( "white" )}} onClick={ notify }>
+                  <Box overflow="hidden" height="100%" rounded="sm">
                   <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
                   <Box position="relative" height="100%" rounded="sm" overflow="hidden">
                   <VerticalAlign>
@@ -353,9 +353,9 @@ function Index(props) {
                       })
                     }
 
-                    <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" />
+                    {/* <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" /> */}
 
-                    <Heading size="md" color="white" position="relative" zIndex={5} textAlign="center">
+                    <Heading size="md" color="white" position="relative" zIndex={5} textAlign="center" mt={5}>
                       ${ el.price }<sup><small><u style={{position: "relative", top: 2, left: 1}}>00</u></small></sup>
                     </Heading>
                

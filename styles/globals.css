@@ -38,5 +38,9 @@ a {
 }
 
 .darken {
+  filter: brightness(80%);
+}
+
+.darken:hover {
   filter: brightness(90%);
 }
