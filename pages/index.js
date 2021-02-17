@@ -205,9 +205,16 @@ function Index(props) {
 
         <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
                 
-              <ProgressiveImage src="/honeycomb.jpg" placeholder="Honeycomb Background">
-              {(src, loading) => {
+              <ProgressiveImage  srcSetData={{
+          srcSet:
+            "/honeycomb.jpg 320w, /honeycomb.jpg 700w, /honeycomb.jpg 2000w",
+          sizes: "(max-width: 2000px) 100vw, 2000px"
+        }} src="/honeycomb.jpg" placeholder="Honeycomb Background">
+              {(src, loading, srcSetData) => {
                 return (<img
+                  sizes={srcSetData.sizes}
+                  srcSet={srcSetData.srcSet}
+
                 src={ src }
                 alt="Honeycomb"
                 layout="fill"
