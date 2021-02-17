@@ -176,7 +176,7 @@ function Sidebar(props) {
 
             </DrawerBody>
 
-            <DrawerFooter px={5} pb={[3, 3, 0]} textAlign="center" display="block">
+            <DrawerFooter px={5}  display="block">
 
              <Socials />
 

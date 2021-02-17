@@ -8,7 +8,7 @@ import {
 
 function Socials() {
     return (
-        <Box textAlign={["center", "center", "left"]}>
+        <Box textAlign={["center", "center", "center", "left"]}>
         <Grid gridTemplateColumns={"repeat(5, 1fr)"} gap={4} maxWidth="300px" display="inline-grid">
             <Box rounded="md" height="30px" overflow="hidden">
                 <a href="https://github.com/samullman-com" target="_blank" rel="noopener noreferrer" aria-label="Github">

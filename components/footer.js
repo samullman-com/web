@@ -35,10 +35,10 @@ function Footer() {
     ]
     return (
         <Box bg="#0a0a0a" color="white" py={20} px={5}>
-            <Container maxWidth="1400px" textAlign={["center", "center", "left"]}>
+            <Container maxWidth="1400px" textAlign={["center", "center", "center", "left"]}>
 
                 <Link href="/">
-                    <Box rounded="full" height={"60px"} width="60px" overflow="hidden" margin={["0 auto", "0 auto", "0"]} cursor="pointer">
+                    <Box rounded="full" height={"60px"} width="60px" overflow="hidden" margin={["0 auto", "0 auto", "0 auto", "0"]} cursor="pointer">
                         <Image
                             src="/sam.jpg"
                             width={60}
@@ -51,11 +51,8 @@ function Footer() {
                 </Link>
 
 
-                <SimpleGrid columns={[1, 1, 1, 3]} mb={[0, 0, 12]} mt={5}>
+                <SimpleGrid columns={[1, 1, 1, 3]} mb={[0, 0, 0, 12]} mt={5}>
                     <Box mb={[10, 10, 10, 0]}>
-
-
-
                         <Heading size="md" className="cassannet" mb={5} letterSpacing={2} fontWeight="600" >
                             SAMULLMAN.COM
                     </Heading>
