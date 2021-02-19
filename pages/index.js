@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Layout from "../components/layout";
-import ProgressiveImage from "react-progressive-graceful-image";
+import ProgressiveImage from "../components/progressiveImage";
 import toast, { Toaster } from "react-hot-toast";
 
 import { DateTime } from "luxon";
@@ -201,28 +201,7 @@ function Index(props) {
 
         <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
                 
-              <ProgressiveImage  srcSetData={{
-          srcSet:
-            "/honeycomb.jpg 320w, /honeycomb.jpg 700w, /honeycomb.jpg 2000w",
-          sizes: "(max-width: 2000px) 100vw, 2000px"
-        }} src="/honeycomb.jpg" placeholder="Honeycomb Background">
-              {(src, loading, srcSetData) => {
-                return (<img
-                  sizes={srcSetData.sizes}
-                  srcSet={srcSetData.srcSet}
-
-                src={ src }
-                alt="Honeycomb"
-                layout="fill"
-                
-                objectFit="cover"
-                alt="Honeycomb"
-                style={{height: "100%", width: "100%", objectFit: "cover", opacity: loading ? 0.6 : 1, transition: "0.15s ease"}}
-              />)
-              }}
-
-              
-              </ProgressiveImage>
+             <ProgressiveImage src="/honeycomb.jpg" alt="Honeycomb" />
         </Box>
       </Box>
 

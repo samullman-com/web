@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { useState } from "react"; 
 import Layout from "../components/layout";
+import ProgressiveImage from "../components/progressiveImage";
 import Section from "../components/section";
 
 import { DateTime } from "luxon";
@@ -29,6 +30,9 @@ import jump from "jump.js";
   
   return (
     <Layout title="Contact">
+        <Box position="relative" height="25vh">
+          <ProgressiveImage src="/connect.jpg" alt="Connect" />
+      </Box>
 
         <Section>
           <VerticalAlign>

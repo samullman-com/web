@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react"; 
 import Image from "next/image";
 import Layout from "../components/layout";
-import ProgressiveImage from "react-progressive-graceful-image";
+import ProgressiveImage from "../components/progressiveImage";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -34,7 +34,7 @@ const client = require('contentful').createClient({
 
 
 
-function About() {
+function Projects () {
 
   const [projects, setProjects] = useState([]);
 
@@ -61,6 +61,12 @@ function About() {
 
   return (
     <Layout title="Projects">
+      <Box position="relative" height="25vh">
+        <ProgressiveImage src="/projects.jpg" alt="Projects" />
+
+
+
+      </Box>
 
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 
@@ -89,7 +95,7 @@ function About() {
 }
 
 
-export default About;
+export default Projects;
 
 
 

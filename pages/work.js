@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react"; 
 import Image from "next/image";
 import Layout from "../components/layout";
-import ProgressiveImage from "react-progressive-graceful-image";
+import ProgressiveImage from "../components/progressiveImage";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -61,6 +61,10 @@ function About() {
 
   return (
     <Layout title="Work">
+
+      <Box position="relative" height="25vh">
+        <ProgressiveImage src="/work.jpg" alt="Work" darken="80%" />
+      </Box>
 
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 
