@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import ProgressiveImage from "react-progressive-graceful-image";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 import { DateTime } from "luxon";
 import { FiChevronDown, FiSend } from "react-icons/fi";
@@ -19,7 +19,7 @@ import {
   Link as ChakraLink,
   SimpleGrid,
   Image as ChakraImage,
-  Divider, 
+  Divider,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -27,9 +27,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-
 } from "@chakra-ui/react";
-
 
 import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
@@ -43,7 +41,7 @@ function Index(props) {
       title: "New Foundations",
       link: "/new-foundations",
       image: "/classroom.jpg",
-      price: 495, 
+      price: 495,
       color: "orange.300",
     },
 
@@ -51,7 +49,7 @@ function Index(props) {
       title: "Job Board",
       link: "/job-board",
       image: "/ventures.jpg",
-      price: 4995, 
+      price: 4995,
       color: "purple.300",
     },
 
@@ -59,19 +57,17 @@ function Index(props) {
       title: "JAMStack Setup",
       link: "/jamstack",
       image: "/ui.jpg",
-      price: 2495, 
+      price: 2495,
       color: "pink.300",
     },
-
-
-   
   ];
 
   const [favorites, setFavorites] = useState([]);
 
-  const notify = () => toast('Coming soon !!!', {
-    icon: '👏',
-  });
+  const notify = () =>
+    toast("Coming soon !!!", {
+      icon: "👏",
+    });
 
   const client = require("contentful").createClient({
     space: props.CONTENTFUL_SPACE_ID,
@@ -245,7 +241,6 @@ function Index(props) {
                 fontWeight="600"
                 borderRadius="6px"
                 bg="gray.200"
-                
                 display="inline-block"
               >
                 WHO
@@ -331,61 +326,105 @@ function Index(props) {
         </Section>
       </Box>
 
-      <Section bg="gray.300">
+      <Section bg="gray.200">
         <Container maxWidth="1200px">
-          {
-            products.map( el => {
+          {products.map((el) => {
+            const [borderColor, setBorderColor] = useState("white");
 
-              const [ borderColor, setBorderColor ] = useState("white");
+            return (
+              <Box
+                rounded="lg"
+                shadow="lg"
+                shadow="lg"
+                _active={{ shadow: "sm" }}
+                p={[2, 3, 5]}
+                mb={[5, 5, 10]}
+                height={[400, 400, 500]}
+                bg="white"
+                cursor="pointer"
+                onMouseEnter={() => {
+                  setBorderColor(el.color);
+                }}
+                onMouseLeave={() => {
+                  setBorderColor("white");
+                }}
+                onClick={notify}
+              >
+                <Box overflow="hidden" height="100%" rounded="sm">
+                  <Box
+                    _hover={{ transform: "scale(1.1)" }}
+                    position="relative"
+                    transition="0.5s ease"
+                    height="100%"
+                    overflow="hidden"
+                  >
+                    <Box
+                      position="relative"
+                      height="100%"
+                      rounded="sm"
+                      overflow="hidden"
+                    >
+                      <VerticalAlign>
+                        {el.title.split(" ").map((word) => {
+                          return (
+                            <Heading
+                              textAlign="center"
+                              color="white"
+                              position="relative"
+                              fontWeight="600"
+                              letterSpacing={1}
+                              zIndex={5}
+                              fontSize={[35, 55, 60]}
+                            >
+                              {word}
+                            </Heading>
+                          );
+                        })}
 
+                        {/* <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" /> */}
 
-              return (
-                <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer" onMouseEnter={ () => { setBorderColor( el.color )}} onMouseLeave={ () => { setBorderColor( "white" )}} onClick={ notify }>
-                  <Box overflow="hidden" height="100%" rounded="sm">
-                  <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
-                  <Box position="relative" height="100%" rounded="sm" overflow="hidden">
-                  <VerticalAlign>
-                    {
-                      el.title.split(" ").map( word => {
-                        return  <Heading textAlign="center" color="white" position="relative" fontWeight="600" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
-                        { word }
-                    </Heading>
-                      })
-                    }
+                        <Heading
+                          size="md"
+                          color="white"
+                          position="relative"
+                          zIndex={5}
+                          textAlign="center"
+                          mt={5}
+                        >
+                          ${el.price}
+                          <sup>
+                            <small>
+                              <u
+                                style={{
+                                  position: "relative",
+                                  top: 2,
+                                  left: 1,
+                                }}
+                              >
+                                00
+                              </u>
+                            </small>
+                          </sup>
+                        </Heading>
+                      </VerticalAlign>
+                    </Box>
 
-                    {/* <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" /> */}
-
-                    <Heading size="md" color="white" position="relative" zIndex={5} textAlign="center" mt={5}>
-                      ${ el.price }<sup><small><u style={{position: "relative", top: 2, left: 1}}>00</u></small></sup>
-                    </Heading>
-               
-                </VerticalAlign>
-
+                    <Image
+                      src={el.image}
+                      layout="fill"
+                      objectFit="cover"
+                      className="darken"
+                      alt={el.title}
+                    />
+                  </Box>
                 </Box>
-
-                <Image
-                  src={ el.image }
-                  layout="fill"
-                  objectFit="cover"
-                  className="darken"
-                  alt={ el.title }
-                />
-                
-                </Box>
-                </Box>
-                </Box>
-              )
-            })
-          }
-         
-
-        
+              </Box>
+            );
+          })}
         </Container>
-
       </Section>
 
       <Toaster />
-
     </Layout>
   );
 }
@@ -427,18 +466,20 @@ const Favorite = (props) => {
             )}
           </ProgressiveImage> */}
 
-
-              <Image
-                src={ "https:" + fields.images[0].fields.file.url }
-                alt={ fields.alt }
-                layout="fill"
-                objectFit="cover"
-              />
-    
+          <Image
+            src={"https:" + fields.images[0].fields.file.url}
+            alt={fields.alt}
+            layout="fill"
+            objectFit="cover"
+          />
         </Box>
 
-        <Box fontSize="15px" fontWeight={[500, 600]} color="gray.900" 
-                className="cassannet">
+        <Box
+          fontSize="15px"
+          fontWeight={[500, 600]}
+          color="gray.900"
+          className="cassannet"
+        >
           {fields.title}
         </Box>
       </Box>
@@ -458,12 +499,11 @@ export async function getStaticProps(context) {
   };
 }
 
-
 function BasicUsage() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button >Open Modal</Button>
+      <Button>Open Modal</Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -483,5 +523,5 @@ function BasicUsage() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }

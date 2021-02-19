@@ -86,7 +86,7 @@ function Sidebar(props) {
 
   return (
     <>
-      <IconButton ref={btnRef} icon={<BiMenuAltRight />} aria-label="Menu" float="right" variant="ghost" colorScheme="none" color="white" fontSize="30px" onClick={onOpen}>
+      <IconButton ref={btnRef} icon={<BiMenuAltRight />} aria-label="Menu" float="right" variant="ghost" colorScheme="none"  fontSize="30px" onClick={onOpen}>
 
       </IconButton>
       <Drawer

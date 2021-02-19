@@ -11,13 +11,36 @@ import { Heading, Box, Button, Grid, IconButton } from "@chakra-ui/react";
 import { BsChevronUp } from "react-icons/bs";
 
 import theme from "../public/theme";
+import { useEffect, useState } from "react";
+
 
 function Header() {
+  const [onTop, setOnTop ] = useState(true)
+  useEffect( () => {
+    window.onscroll = () => {
+      if ( onTop && window.scrollY > 10 ) {
+        setOnTop( false );
+      } else if ( !onTop && window.scrollY < 10 ) {
+        setOnTop( true )
+      }
+    };
+  })
+
+
+
+  const bg = onTop ? "#0a0a0a00" : "#0a0a0a";
+  const color = onTop ? "white" : "white";
+  const height = onTop ? "80px" : "60px";
+  const shadow = onTop ? "none" : "lg";
+
   return (
     <Grid
       gridTemplateColumns="100px calc(100% - 100px)"
-      bg={"#0a0a0a"}
-      height="60px"
+      transition="all 0.2s ease"
+      bg={ bg }
+      color={ color }
+      height={ height }
+      shadow={ shadow }
       position="fixed"
       width="100vw"
       zIndex="600"
@@ -29,7 +52,6 @@ function Header() {
           <Link href="/">
             <Heading
               fontWeight="600"
-              color="white"
               fontSize={[18, 24, 26]}
               letterSpacing={2}
               cursor="pointer"
@@ -47,11 +69,13 @@ function Header() {
         <VerticalAlign>
         <Sidebar placement="right" />
 
+        <Box display="none">
         <FeedbackFish projectId="51c156a6e8e6e6">
             <Button rounded="full" aria-label="Feedback" float="right" size="sm" position="relative" top={[ "4px"]} right={["5px", "7px", "10px"]}>
               Feedback
             </Button>
           </FeedbackFish>
+          </Box>
 
 
         </VerticalAlign>
