@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react"; 
 import Image from "next/image";
 import Layout from "../components/layout";
+import HeaderImage from "../components/headerImage"
 import ProgressiveImage from "../components/progressiveImage";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -61,13 +62,8 @@ function Projects () {
 
   return (
     <Layout title="Projects | Discover Your Agency">
-      <Box position="relative" height="25vh">
-        <ProgressiveImage src="/projects.jpg" alt="Projects" />
-
-
-
-      </Box>
-
+      <HeaderImage src="/projects.jpg" alt="Projects"  />
+      
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 
           <Container maxW="1200px" >
@@ -112,7 +108,7 @@ const Project = ( props ) => {
                   <VerticalAlign>
                     {
                       fields.title.split(" ").map( word => {
-                        return  <Heading textAlign="center" color="white" position="relative" fontWeight="600" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
+                        return  <Heading textAlign="center" color="white" position="relative" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
                         { word }
                     </Heading>
                       })
@@ -124,12 +120,13 @@ const Project = ( props ) => {
 
                 </Box>
 
-                <Image 
+                <Box position="absolute" height="100%" width="100%" top={0}>
+                <ProgressiveImage 
           src={ "https:" + fields.heroImage.fields.file.url }
-          layout="fill"
-          objectFit="cover"
-          className="darken-2"
+          alt={ fields.title }
+          darken="0.84"
           />
+          </Box>
                 </Box>
                 </Box>
                 </Box>

@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import { useRouter } from 'next/router'
-import ProgressiveImage from "../components/progressiveImage";
-import VerticalAlign from "../components/verticalAlign";
+import HeaderImage from "../components/headerImage";
 import Section from "../components/section";
-import Image from "next/image";
 
 import userbase from "userbase-js";
 
@@ -13,7 +11,6 @@ import {
   Button,
   ButtonGroup,
   Heading,
-  SimpleGrid,
   Container,
   FormControl,
   FormLabel,
@@ -28,7 +25,6 @@ import {
 } from "@chakra-ui/react";
 import Session from "../contexts/session";
 
-import theme from "../public/theme";
 
 export default function Login() {
   const router = useRouter()
@@ -76,15 +72,13 @@ export default function Login() {
 
   return (
     <Layout title="Login">
-      <Box position="relative" height="25vh">
-        <ProgressiveImage src="/login.jpg" alt="Login" />
-      </Box>
+      <HeaderImage src="/login.jpg" alt="Login" />
 
       <Section>
         <Container>
 
 
-          <Box bg="white" rounded="lg" shadow="lg" p={[3, 6]}>
+          <Box bg="white" rounded="lg" shadow="lg" p={[4, 6]}>
             <Tabs isFitted variant="soft-rounded" colorScheme="gray">
               <TabList >
                 <Tab  fontSize="lg" rounded="full" mr={2}>

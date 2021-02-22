@@ -39,7 +39,7 @@ function Header() {
       transition="all 0.2s ease"
       bg={ bg }
       color={ color }
-      height={ ["60px", height, height] }
+      height={ ["55px", height, height] }
       shadow={ shadow }
       position="fixed"
       width="100vw"

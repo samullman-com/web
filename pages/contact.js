@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import ProgressiveImage from "../components/progressiveImage";
+import HeaderImage from "../components/headerImage";
 import Section from "../components/section";
 
 import {
@@ -18,9 +18,7 @@ import VerticalAlign from "../components/verticalAlign";
 function Contact() {
   return (
     <Layout title="Contact | Discover Your Agency">
-      <Box position="relative" height="25vh">
-        <ProgressiveImage src="/connect.jpg" alt="Connect" />
-      </Box>
+      <HeaderImage  src="/connect.jpg" alt="Connect"  />
 
       <Section>
         <VerticalAlign>
@@ -32,7 +30,7 @@ function Contact() {
             >
               <Heading mb={[3, 5]}>Contact</Heading>
 
-              <Box bg="white" p={6} rounded="lg" shadow="lg" mb={[3, 6]}>
+              <Box bg="white" p={[4, 6]} rounded="lg" shadow="lg" mb={[3, 6]}>
                 <FormControl isRequired mb={3}>
                   <FormLabel>Email</FormLabel>
                   <Input type="email" name="email" />

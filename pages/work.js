@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Layout from "../components/layout";
 import ProgressiveImage from "../components/progressiveImage";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
-import { VscGlobe } from "react-icons/vsc"
-import { ImReddit } from "react-icons/im"
+import HeaderImage from "../components/headerImage"
 
 import {
   Box,
@@ -62,9 +58,7 @@ function About() {
   return (
     <Layout title="Work | Discover Your Agency">
 
-      <Box position="relative" height="25vh">
-        <ProgressiveImage src="/work.jpg" alt="Work" darken="80%" />
-      </Box>
+      <HeaderImage src="/work.jpg" alt="Work" darken="80%" /> 
 
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 
@@ -106,14 +100,14 @@ const Work = ( props ) => {
 
   return <Box>
      <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
-       <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer">
+       <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer">
                   <Box overflow="hidden" height="100%" rounded="sm">
                   <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
                   <Box position="relative" height="100%" rounded="sm" overflow="hidden">
                   <VerticalAlign>
                     {
                       fields.title.split(" ").map( word => {
-                        return  <Heading textAlign="center" color="white" position="relative" fontWeight="600" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
+                        return  <Heading textAlign="center" color="white" position="relative"  letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
                         { word }
                     </Heading>
                       })
@@ -124,13 +118,14 @@ const Work = ( props ) => {
                 </VerticalAlign>
 
                 </Box>
-
-                <Image 
+                
+                <Box position="absolute" height="100%" width="100%" top={0}>
+                <ProgressiveImage 
           src={ "https:" + fields.heroImage.fields.file.url }
-          layout="fill"
-          objectFit="cover"
-          className="darken-2"
+          alt={ fields.title }
+          darken="0.84"
           />
+          </Box>
                 </Box>
                 </Box>
                 </Box>
