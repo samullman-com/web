@@ -69,15 +69,6 @@ function Account () {
                 Profile
               </Heading>
 
-              <ButtonGroup>
-                  <Link href={`/profile/${ session.user.username }`}>
-                  <Button size="sm" rounded="full" colorScheme="green">
-                      View
-                  </Button>
-                  </Link>
-
-                    {/* <EditProfile user={ session.user } /> */}
-              </ButtonGroup>
             </Box>
 
             <Box bg="white" p={[3, 6]} rounded="lg" shadow="lg">

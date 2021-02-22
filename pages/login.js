@@ -83,9 +83,6 @@ export default function Login() {
       <Section>
         <Container>
 
-        <Heading textAlign="center"  mb={ [3, 5] }>
-        AUTHENTICATE
-              </Heading>
 
           <Box bg="white" rounded="lg" shadow="lg" p={[3, 6]}>
             <Tabs isFitted variant="soft-rounded" colorScheme="gray">

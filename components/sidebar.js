@@ -62,14 +62,26 @@ function Sidebar(props) {
   function logout () {
     userbase.signOut().then(() => {
       // user logged out
-      window.href.location = "/"
-      
+      window.location.href = "/"
     }).catch((e) => console.error(e))
   }
 
   let textAlign = props.placement == "right" ? "left" : "center";
   let loginLink = session.user ? (
     <Box>
+      <Box mb={ 4 }>
+      <Box
+        letterSpacing="1"
+        _hover={{ color: "gray.300" }}
+        transition="0.2s ease"
+        display="inline-block"
+        cursor="pointer"
+      >
+        <Link href="/account">
+        Account
+        </Link>
+      </Box>
+      </Box>
       <Box
         letterSpacing="1"
         _hover={{ color: "gray.300" }}
