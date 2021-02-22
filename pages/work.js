@@ -58,7 +58,7 @@ function About() {
   return (
     <Layout title="Work | Discover Your Agency">
 
-      <HeaderImage src="/work.jpg" alt="Work" darken="80%" /> 
+      <HeaderImage src="/work.jpg" alt="Work" darken="0.84" /> 
 
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 

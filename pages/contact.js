@@ -18,7 +18,7 @@ import VerticalAlign from "../components/verticalAlign";
 function Contact() {
   return (
     <Layout title="Contact | Discover Your Agency">
-      <HeaderImage  src="/connect.jpg" alt="Connect"  />
+      <HeaderImage  src="/connect.jpg" alt="Connect" darken="0.84"  />
 
       <Section>
         <VerticalAlign>

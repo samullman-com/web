@@ -72,7 +72,7 @@ export default function Login() {
 
   return (
     <Layout title="Login">
-      <HeaderImage src="/login.jpg" alt="Login" />
+      <HeaderImage src="/login.jpg" alt="Login" darken="0.84" />
 
       <Section>
         <Container>
