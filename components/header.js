@@ -39,7 +39,7 @@ function Header() {
       transition="all 0.2s ease"
       bg={ bg }
       color={ color }
-      height={ height }
+      height={ ["60px", height, height] }
       shadow={ shadow }
       position="fixed"
       width="100vw"
@@ -52,7 +52,7 @@ function Header() {
           <Link href="/">
             <Heading
               fontWeight="600"
-              fontSize={[18, 24, 26]}
+              fontSize={[20, 24, 26]}
               letterSpacing={2}
               cursor="pointer"
             >

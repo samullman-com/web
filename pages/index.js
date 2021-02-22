@@ -366,7 +366,7 @@ function Index(props) {
                     <Box height="100%" width="100%" position="absolute" top={0}>
                     <ProgressiveImage
                       src={el.image}
-                      
+                      darken={ "0.84" }
                       alt={el.title}
                     />
                     </Box>
