@@ -44,3 +44,30 @@ a {
 .darken-2 {
   filter: brightness(90%);
 }
+
+
+@keyframes animate {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animated {
+  animation: animate linear 2s infinite;
+}
+
+.animated2 {
+  animation: animate2 linear 2s infinite;
+}

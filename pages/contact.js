@@ -1,94 +1,67 @@
-import Link from "next/link";
-
-import { useState } from "react"; 
 import Layout from "../components/layout";
 import ProgressiveImage from "../components/progressiveImage";
 import Section from "../components/section";
 
-import { DateTime } from "luxon";
-import { FiChevronDown } from "react-icons/fi";
-import { FaUser } from "react-icons/fa";
-
 import {
-  Box, 
-  
-  Button, 
-  ButtonGroup, 
-  Container, 
-  FormControl, 
-  FormLabel, 
+  Box,
+  Button,
+  ButtonGroup,
+  Container,
+  FormControl,
+  FormLabel,
   Heading,
   Input,
-  Text,
-  Textarea, 
+  Textarea,
 } from "@chakra-ui/react";
 import VerticalAlign from "../components/verticalAlign";
-import jump from "jump.js";
 
- function Contact () {
-  
-  
+function Contact() {
   return (
-    <Layout title="Contact">
-        <Box position="relative" height="25vh">
-          <ProgressiveImage src="/connect.jpg" alt="Connect" />
+    <Layout title="Contact | Discover Your Agency">
+      <Box position="relative" height="25vh">
+        <ProgressiveImage src="/connect.jpg" alt="Connect" />
       </Box>
 
-        <Section>
-          <VerticalAlign>
-            
-            <Container maxWidth="1000px" mb={12}>
-
-            <form action="https://formcarry.com/s/aijTlOcIOM" method="POST" acceptCharset="UTF-8" >
-
-              <Heading mb={ [3, 5] }>
-                Contact
-              </Heading>
+      <Section>
+        <VerticalAlign>
+          <Container maxWidth="1000px" mb={12}>
+            <form
+              action="https://formcarry.com/s/aijTlOcIOM"
+              method="POST"
+              acceptCharset="UTF-8"
+            >
+              <Heading mb={[3, 5]}>Contact</Heading>
 
               <Box bg="white" p={6} rounded="lg" shadow="lg" mb={[3, 6]}>
-                 
-                  <FormControl isRequired mb={3}>
-                    <FormLabel>
-                      Email
-                    </FormLabel>
-                    <Input type="email" name="email" />
-                  </FormControl>
+                <FormControl isRequired mb={3}>
+                  <FormLabel>Email</FormLabel>
+                  <Input type="email" name="email" />
+                </FormControl>
 
-                  <FormControl isRequired mb={3}>
-                    <FormLabel>
-                      Full name
-                    </FormLabel>
+                <FormControl isRequired mb={3}>
+                  <FormLabel>Full name</FormLabel>
 
-                    <Input type="text" name="fullName" />
-                  </FormControl>
-                  
-                  <FormControl isRequired mb={3}>
-                    <FormLabel>
-                      Message
-                    </FormLabel>
+                  <Input type="text" name="fullName" />
+                </FormControl>
 
-                    <Textarea name="message" rows={ 6 } resize />
-                  </FormControl>
+                <FormControl isRequired mb={3}>
+                  <FormLabel>Message</FormLabel>
 
-                
-
+                  <Textarea name="message" rows={6} resize />
+                </FormControl>
               </Box>
 
               <ButtonGroup>
-                    <Button rounded="full" colorScheme="blue" size="lg">
-                      Submit
-                    </Button>
-                  </ButtonGroup>
-                  </form>
-
-
-            </Container>
-          </VerticalAlign>
-
-          </Section>
+                <Button rounded="full" colorScheme="blue" size="lg">
+                  Submit
+                </Button>
+              </ButtonGroup>
+            </form>
+          </Container>
+        </VerticalAlign>
+      </Section>
     </Layout>
-  )
+  );
 }
-
 
 export default Contact;

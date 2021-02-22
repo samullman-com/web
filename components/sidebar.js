@@ -1,12 +1,7 @@
 import React from "react";
-import Link from "next/link"
-
+import Link from "next/link";
 import Socials from "../components/socials";
-
-import VerticalAlign from "../components/verticalAlign";
-
-import { signIn, signOut, useSession } from 'next-auth/client'
-
+import { useRouter } from 'next/router';
 
 import {
   Box,
@@ -21,40 +16,26 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  VStack,
-  Divider,
-  Flex,
-  Spacer,
-  Switch,
-  SimpleGrid, 
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 
-import {
-  BiMenuAltRight
-} from "react-icons/bi";
+import { BiMenuAltRight } from "react-icons/bi";
+import userbase from "userbase-js";
 
-import {
-  BsMoon, 
-} from "react-icons/bs";
-
-import {
-  FiSun, 
-} from "react-icons/fi"
-
-import colors from "../contexts/colors";
-
-
-
-import theme from "../public/theme.js"
-
+import theme from "../public/theme.js";
+import Session from "../contexts/session";
 
 function Sidebar(props) {
-
-  const increasePopulation = colors(state => state.increasePopulation)
-
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const session = Session( state => state);
+  const router = useRouter()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
 
   const menuItems = [
     {
@@ -76,19 +57,59 @@ function Sidebar(props) {
       text: "Contact",
       to: "/contact",
     },
+  ];
 
-    
-  ]
+  function logout () {
+    userbase.signOut().then(() => {
+      // user logged out
+      window.href.location = "/"
+      
+    }).catch((e) => console.error(e))
+  }
 
   let textAlign = props.placement == "right" ? "left" : "center";
-  const [session, loading] = useSession()
-
+  let loginLink = session.user ? (
+    <Box>
+      <Box
+        letterSpacing="1"
+        _hover={{ color: "gray.300" }}
+        transition="0.2s ease"
+        display="inline-block"
+        cursor="pointer"
+        onClick={ logout }
+      >
+        Logout
+      </Box>
+    </Box>
+  ) : (
+    <Box >
+        <Box
+        letterSpacing="1"
+        _hover={{ color: "gray.300" }}
+        transition="0.2s ease"
+        display="inline-block"
+      >
+        <Link href="/login">
+        Login
+        </Link>
+      </Box>
+    </Box>
+  );
 
   return (
     <>
-      <IconButton ref={btnRef} icon={<BiMenuAltRight />} aria-label="Menu" float="right" variant="ghost" colorScheme="none"  fontSize="30px" onClick={onOpen}>
+      <IconButton
+        ref={btnRef}
+        icon={<BiMenuAltRight />}
+        rounded="sm"
+        aria-label="Menu"
+        float="right"
+        variant="ghost"
+        colorScheme="none"
+        fontSize="30px"
+        onClick={onOpen}
+      />
 
-      </IconButton>
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -97,95 +118,75 @@ function Sidebar(props) {
         placement={props.placement}
       >
         <DrawerOverlay>
-          <DrawerContent bg={"#0a0a0a"} >
-            <DrawerCloseButton color="white" />
-            <DrawerHeader>
-
-          
-            </DrawerHeader>
+          <DrawerContent bg={"#0a0a0a"}>
+            <DrawerCloseButton color="white" rounded="sm" />
+            <DrawerHeader></DrawerHeader>
 
             <DrawerBody textAlign={textAlign} fontWeight="600" color="white">
-
-
-              {
-                menuItems.map((el) => {
-                  return <Box mb={4} key={el.text} >
-                  <Box  letterSpacing="1" _hover={{color: "gray.300"}} transition="0.2s ease" display="inline-block" >
-                    <Link href={el.to}>
-                      {el.text}
-                    </Link>
-                  </Box>
-                  </Box>
-                })
-              }
-
-
-                
-
-
-
-
-              {!session && <Box mb={4} cursor="pointer"  display="none" fontWeight="600" letterSpacing="1" _hover={{color: "blue.200"}} transition="0.2s ease" >
-                    <span onClick={ signIn }>
-                      Login
-                    </span>
-                  </Box>
-              }
-              {session && <>
-                Signed in as {session.user.email} <br />
-                <button onClick={signOut}>Sign out</button>
-              </>}
-
-
-              {/* <Divider mb={4} /> */}
-              
-              <Box display="none">
-              <Grid templateColumns="24px 40px 24px"  columns={3} display="inline-grid">
-                <Box >
-                  <VerticalAlign>
-                    <Box display="inline-block" position="relative" top={"2px"}>
-
-                    
-                  <BsMoon />
-                  </Box>
-                  </VerticalAlign>
-                </Box>
-
-                <Box>
-                <Switch />
-
-                
-                </Box>
-
-                <Box textAlign="center">
-                  <VerticalAlign>
-                  <Box display="inline-block" position="relative" top={"3px"}> 
-                    <FiSun />
+              {menuItems.map((el) => {
+                return (
+                  <Box mb={4} key={el.text}>
+                    <Box
+                      letterSpacing="1"
+                      _hover={{ color: "gray.300" }}
+                      transition="0.2s ease"
+                      display="inline-block"
+                    >
+                      <Link href={el.to}>{el.text}</Link>
                     </Box>
-                  </VerticalAlign>
+                  </Box>
+                );
+              })}
 
-                </Box>
-
-              </Grid>
-              </Box>
-
-              
-
-              
-
-
+              {loginLink }
             </DrawerBody>
 
-            <DrawerFooter px={5}  display="block">
-
-             <Socials />
-
+            <DrawerFooter px={5} display="block">
+              <Socials />
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>
       </Drawer>
     </>
-  )
+  );
 }
 
 export default Sidebar;
+
+
+
+function LoginModal () {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+       <Box
+        letterSpacing="1"
+        _hover={{ color: "gray.300" }}
+        transition="0.2s ease"
+        display="inline-block"
+        onClick={onOpen}
+      >
+        Login
+      </Box>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Login</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            asdkfjn
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}

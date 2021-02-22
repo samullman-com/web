@@ -60,7 +60,7 @@ function About() {
 
 
   return (
-    <Layout title="Work">
+    <Layout title="Work | Discover Your Agency">
 
       <Box position="relative" height="25vh">
         <ProgressiveImage src="/work.jpg" alt="Work" darken="80%" />

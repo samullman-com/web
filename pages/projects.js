@@ -60,7 +60,7 @@ function Projects () {
 
 
   return (
-    <Layout title="Projects">
+    <Layout title="Projects | Discover Your Agency">
       <Box position="relative" height="25vh">
         <ProgressiveImage src="/projects.jpg" alt="Projects" />
 

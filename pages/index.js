@@ -5,11 +5,6 @@ import Layout from "../components/layout";
 import ProgressiveImage from "../components/progressiveImage";
 import toast, { Toaster } from "react-hot-toast";
 
-import { DateTime } from "luxon";
-import { FiChevronDown, FiSend } from "react-icons/fi";
-import { FaUser } from "react-icons/fa";
-import { ImArrowDown } from "react-icons/im";
-
 import {
   Box,
   ButtonGroup,
@@ -20,20 +15,14 @@ import {
   SimpleGrid,
   Image as ChakraImage,
   Divider,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
+ 
 } from "@chakra-ui/react";
 
 import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
 import theme from "../public/theme";
 import Section from "../components/section";
-import Fade from "react-reveal/Fade";
+
 
 function Index(props) {
   let products = [
@@ -98,21 +87,6 @@ function Index(props) {
     getFavorites();
     setResize();
   }, []);
-
-  // let end = DateTime.fromISO( DateTime.local() )
-  // let start = DateTime.fromISO('2015-02-01');
-  // let diffs = end.diff(start, ['years', 'months', 'days', 'hours', 'minutes', 'seconds']);
-
-  // let [time, setTime ] = useState( diffs.toObject() )
-
-  // function countUp () {
-  //   let end2 = DateTime.fromISO( DateTime.local() );
-  //   let start2 = DateTime.fromISO('2015-02-01');
-  //   let diffs2 = end.diff(start, ['years', 'months', 'days', 'hours', 'minutes', 'seconds']);
-  //   setTime( diffs.toObject() )
-  // }
-
-  // setInterval(countUp, 1000);
 
   return (
     <Layout title="Home | Discovery Your Agency" noTop={true}>
@@ -312,6 +286,7 @@ function Index(props) {
 
             return (
               <Box
+                key={ "IndexProduct" + el.title }
                 rounded="lg"
                 shadow="lg"
                 shadow="lg"
@@ -387,18 +362,18 @@ function Index(props) {
                         </Heading>
                       </VerticalAlign>
                     </Box>
-
-                    <Image
+                    
+                    <Box height="100%" width="100%" position="absolute" top={0}>
+                    <ProgressiveImage
                       src={el.image}
-                      layout="fill"
-                      objectFit="cover"
-                      className="darken"
+                      
                       alt={el.title}
                     />
+                    </Box>
                   </Box>
                 </Box>
               </Box>
-            );
+            )
           })}
         </Container>
       </Section>
@@ -420,6 +395,7 @@ const Favorite = (props) => {
       rel="noopener noreferrer"
       display="block"
       rounded="md"
+      key={"Favorite" + fields.title }
       _hover={{ textDecor: "none" }}
     >
       <Box textAlign="center" p={1}>
@@ -428,6 +404,7 @@ const Favorite = (props) => {
           height={["60px", "65px", "80px"]}
           width={["60px", "65px", "80px"]}
           overflow="hidden"
+          bg="white"
           borderWidth={2}
           margin="0 auto"
           position="relative"
@@ -445,11 +422,10 @@ const Favorite = (props) => {
             )}
           </ProgressiveImage> */}
 
-          <Image
+          <ProgressiveImage
             src={"https:" + fields.images[0].fields.file.url}
             alt={fields.alt}
-            layout="fill"
-            objectFit="cover"
+            
           />
         </Box>
 
@@ -476,31 +452,4 @@ export async function getStaticProps(context) {
       CONTENTFUL_ACCESS_TOKEN,
     }, // will be passed to the page component as props
   };
-}
-
-function BasicUsage() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  return (
-    <>
-      <Button>Open Modal</Button>
-
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Lorem count={2} />
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </>
-  );
 }

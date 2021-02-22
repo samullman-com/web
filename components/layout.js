@@ -29,10 +29,10 @@ function Layout ( props )  {
 
     <Box  minHeight="100vh" bg="gray.100"> 
 
-    <ScrollToTop smooth color="#6f00ff" component={ 
-      <Button textAlign="center" width="40px" p={0} fontSize={24} variant="ghost">
-      <BiUpArrowAlt /> 
-      </Button>
+    <ScrollToTop smooth={ true } color="#6f00ff" background="#000" component={ 
+      <Box textAlign="center"  fontSize={24} >
+      <BiUpArrowAlt style={{display: "inline-block", position: "relative", bottom: 2}} /> 
+      </Box>
     } />
 
 

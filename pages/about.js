@@ -18,7 +18,7 @@ import VerticalAlign from "../components/verticalAlign";
 
 function About() {
   return (
-    <Layout title="About">
+    <Layout title="About | Discover Your Agency">
       <Section>
         <Container maxW="1000px">
           <Heading mb={6} size="xl">
