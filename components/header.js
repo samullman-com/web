@@ -52,7 +52,7 @@ function Header() {
           <Link href="/">
             <Heading
               fontWeight="600"
-              fontSize={[20, 24, 26]}
+              fontSize={[20, 24, ]}
               letterSpacing={2}
               cursor="pointer"
             >

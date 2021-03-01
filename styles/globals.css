@@ -32,10 +32,7 @@ a {
  font-family: 'cassannet' !important;
 } */
 
-.hero {
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-}
+
 
 .darken {
   filter: brightness(82%);
@@ -70,4 +67,9 @@ a {
 
 .animated2 {
   animation: animate2 linear 2s infinite;
+}
+
+
+.square {
+  aspect-ratio: 1/1;
 }

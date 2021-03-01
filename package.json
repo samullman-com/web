@@ -27,7 +27,9 @@
     "react-progressive-graceful-image": "^0.6.12",
     "react-reveal": "^1.2.2",
     "react-scroll-to-top": "^1.0.5",
+    "react-visibility-sensor": "^5.1.1",
     "three": "^0.125.2",
+    "use-count-up": "^2.3.0",
     "userbase-js": "^2.8.0",
     "zustand": "^3.3.1"
   }

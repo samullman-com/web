@@ -77,7 +77,6 @@ export default function Login() {
       <Section>
         <Container>
 
-
           <Box bg="white" rounded="lg" shadow="lg" p={[4, 6]}>
             <Tabs isFitted variant="soft-rounded" colorScheme="gray">
               <TabList >
