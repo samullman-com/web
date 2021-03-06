@@ -46,6 +46,7 @@ function Header() {
       zIndex="600"
       top={0}
       px={[3, 4, 5]}
+      pr={[1, 2, 4]}
     >
       <Box>
         <VerticalAlign>

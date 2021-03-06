@@ -6,6 +6,7 @@ import ProgressiveImage from "../components/progressiveImage";
 import toast, { Toaster } from "react-hot-toast";
 import VisibilitySensor from "react-visibility-sensor";
 import { CountUp } from "use-count-up";
+import { BiDownArrow } from "react-icons/bi"
 import PageLink from "../components/link";
 
 import {
@@ -121,66 +122,31 @@ function Index(props) {
             <Box color={theme.white}>
               <Heading
                 fontWeight="500"
-                fontSize={[65, 75, 100]}
+                fontSize={[70,  75, 100]}
                 textAlign={["center", "center", "left"]}
               >
-                <VisibilitySensor onChange={componentVisible}>
-                  <Box display="inline-block">
-                    <CountUp
-                      isCounting={isCounting}
-                      start={1}
-                      end={100}
-                      easing={"easeInCubic"}
-                      duration={3.5}
-                      onComplete={setBlue}
-                    />
-                  </Box>
-                </VisibilitySensor>
-                x{" "}
-                <Box
-                  color={afterCountColor}
-                  transition="color 1s ease"
-                  display="inline-block"
-                >
-                  your
-                </Box>
+                
+             
+                  Your tech.
               </Heading>
 
               <Heading
                 fontWeight="500"
-                fontSize={[65, 75, 100]}
+                fontSize={[70, 75, 100]}
+                mb={10}
                 textAlign={["center", "center", "left"]}
               >
-                coverage.
-                <Box
-                  rounded="full"
-                  height={("20px", "30px")}
-                  width={["20px", "30px"]}
-                  overflow="hidden"
-                  ml={4}
-                  position="relative"
-                  cursor="pointer"
-                  display={["none", "none", "inline"]}
-                  onClick={() => {
-                    jump("#next", { offset: -60 });
-                  }}
-                >
-                  <Image
-                    className="rounded"
-                    src="/sam.jpg"
-                    width={30}
-                    height={30}
-                    alt="sam"
-                  />
-                </Box>
+                Organized.
+               
               </Heading>
 
               <Box
-                borderRadius={30}
-                borderWidth="2px"
-                height={[12, "60px"]}
-                width={[12, "60px"]}
-                mt={20}
+                oveflow="hidden"
+                height={["60px"]}
+                width={["60px"]}
+                mt={10}
+                fontSize="50px"
+                textAlign="center"
                 overflow="hidden"
                 margin={["20px auto"]}
                 display={["block", "block", "none"]}
@@ -188,13 +154,7 @@ function Index(props) {
                   jump("#next", { offset: -60 });
                 }}
               >
-                <Image
-                  className="rounded"
-                  src="/sam.jpg"
-                  width={60}
-                  height={60}
-                  alt="sam"
-                />
+                <BiDownArrow style={{display: "inline-block"}} />
               </Box>
             </Box>
 
@@ -202,9 +162,26 @@ function Index(props) {
           </Container>
         </VerticalAlign>
 
-        {/* <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
-          <ProgressiveImage src="/honeycomb.jpg" alt="Honeycomb" />
-        </Box> */}
+        <Box
+          position="absolute"
+          width="100%"
+          bottom={"0px"}
+          height={"10vw"}
+          minHeight="60px"
+          zIndex="1"
+        >
+          <img
+            src="/wave.svg"
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              bottom: -1,
+              objectFit: "cover",
+            }}
+          />
+          {/* <Image src="/landing-wave.svg" layout="fill"  /> */}
+        </Box>
       </Box>
 
       <Box id="next">
@@ -217,7 +194,7 @@ function Index(props) {
               margin="40px auto"
             >
               <Box>
-                <Box  position="relative" height="400px" rounded="sm" overflow="hidden">
+                <Box  position="relative" height={[250, "400px"]} rounded="sm" overflow="hidden">
                   <ProgressiveImage
                     src="/professional.jpg"
                     alt="Professional"
@@ -227,14 +204,14 @@ function Index(props) {
 
               <Box >
                 <VerticalAlign>
-                <Heading mb={5} >Hi 👋</Heading>
+                <Heading mb={[2, 2, 5]} >Hi 👋</Heading>
 
                 <Box mb={2}>
-                  My name is Sam Ullman and I've been building Web Apps for 5 years!
+                  My name is Sam Ullman and I've been building Web Apps for over 5 years!
                 </Box>
 
                 <Box mb={2}>
-                  I'm currently focused on building great <PageLink href="/portfolio">companies</PageLink> and helping other engineers unlock their potential. 
+                  I'm currently focused on building great <PageLink href="/portfolio">products</PageLink> and helping other engineers tap into their curiosity. 
                 </Box>
 
                 <Box mb={2}>
