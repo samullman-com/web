@@ -102,7 +102,7 @@ function Footer() {
       >
         
 
-        <SimpleGrid columns={[1, 1, 1, 3]} mb={[0, 0, 0, 12]} mt={5}>
+        <SimpleGrid columns={[1, 1, 1, 3]} >
           <Box mb={[10, 10, 10, 0]}>
           <Link href="/">
             <Heading

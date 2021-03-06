@@ -145,7 +145,7 @@ function Index(props) {
                 height={["60px"]}
                 width={["60px"]}
                 mt={10}
-                fontSize="50px"
+                fontSize="42px"
                 textAlign="center"
                 overflow="hidden"
                 margin={["20px auto"]}
@@ -154,7 +154,9 @@ function Index(props) {
                   jump("#next", { offset: -60 });
                 }}
               >
+                <VerticalAlign>
                 <BiDownArrow style={{display: "inline-block"}} />
+                </VerticalAlign>
               </Box>
             </Box>
 
@@ -176,7 +178,7 @@ function Index(props) {
               width: "100%",
               height: "100%",
               position: "absolute",
-              bottom: -1,
+              bottom: -2,
               objectFit: "cover",
             }}
           />
@@ -207,11 +209,11 @@ function Index(props) {
                 <Heading mb={[2, 2, 5]} >Hi 👋</Heading>
 
                 <Box mb={2}>
-                  My name is Sam Ullman and I've been building Web Apps for over 5 years!
+                  My name is <Box display="inline-block" fontWeight="600">Sam Ullman</Box> and I've been building Web Apps for over 5 years!
                 </Box>
 
                 <Box mb={2}>
-                  I'm currently focused on building great <PageLink href="/portfolio">products</PageLink> and helping other engineers tap into their curiosity. 
+                  I'm currently focused on building great <PageLink href="/portfolio">products</PageLink>, creating a course, and helping other engineers tap into their curiosity. 
                 </Box>
 
                 <Box mb={2}>
@@ -247,7 +249,7 @@ function Index(props) {
               width: "100%",
               height: "100%",
               position: "absolute",
-              top: -1,
+              top: -2,
               transform: "rotateX(180deg) rotateY(180deg)",
               objectFit: "cover",
             }}
@@ -255,7 +257,7 @@ function Index(props) {
           {/* <Image src="/landing-wave.svg" layout="fill"  /> */}
         </Box>
 
-        <Box py={"200px"} height="100%" >
+        <Box py={"200px"} height="100%" px={ 5 } >
           <VerticalAlign>
           <Container bg="white" shadow="lg" rounded="lg" p={[4, 6]} maxWidth="800px" mt="5vw">
             kdajsnfkandjf
