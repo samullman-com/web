@@ -15,6 +15,11 @@ body {
 
 }
 
+.bg-2 {
+  background: rgb(100,189,101);
+  background: linear-gradient(346deg, rgba(100,189,101,1) 10%, rgba(255,206,109,1) 36%, rgba(255,98,95,1) 69%, rgba(43,44,121,1) 100%);
+}
+
 a {
   color: inherit;
 }

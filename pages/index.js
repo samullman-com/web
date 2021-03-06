@@ -232,6 +232,40 @@ function Index(props) {
         </Box>
       </Box>
 
+      <Box className="bg-2" position="relative" >
+      <Box
+          position="absolute"
+          width="100%"
+          top={"0px"}
+          height={"10vw"}
+          minHeight="60px"
+          zIndex="1"
+        >
+          <img
+            src="/wave.svg"
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: -1,
+              transform: "rotateX(180deg) rotateY(180deg)",
+              objectFit: "cover",
+            }}
+          />
+          {/* <Image src="/landing-wave.svg" layout="fill"  /> */}
+        </Box>
+
+        <Box py={"200px"} height="100%" >
+          <VerticalAlign>
+          <Container bg="white" shadow="lg" rounded="lg" p={[4, 6]} maxWidth="800px" mt="5vw">
+            kdajsnfkandjf
+          </Container>
+          </VerticalAlign>
+
+        </Box>
+
+      </Box>
+
     
       <Box display="none">
       <Section bg="blue.500" display="none">

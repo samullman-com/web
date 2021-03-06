@@ -100,23 +100,13 @@ function Footer() {
         maxWidth="1400px"
         textAlign={["center", "center", "center", "left"]}
       >
-        <Link href="/">
-          <Box
-            rounded="full"
-            borderWidth="2px"
-            height={"80px"}
-            width="80px"
-            overflow="hidden"
-            margin={["0 auto", "0 auto", "0 auto", "0"]}
-            cursor="pointer"
-          >
-            <Image src="/sam.jpg" width={80} height={80} alt="sam" />
-          </Box>
-        </Link>
+        
 
         <SimpleGrid columns={[1, 1, 1, 3]} mb={[0, 0, 0, 12]} mt={5}>
           <Box mb={[10, 10, 10, 0]}>
+          <Link href="/">
             <Heading
+              cursor="pointer"
               size="md"
               className="cassannet"
               mb={5}
@@ -125,6 +115,7 @@ function Footer() {
             >
               SAMULLMAN.COM
             </Heading>
+            </Link>
 
             <Box textAlign={["center", "center", "center", "left"]}>
             <Socials />
