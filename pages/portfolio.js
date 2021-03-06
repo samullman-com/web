@@ -14,14 +14,18 @@ import {
   Box,
   Container,
   Divider,
-  Grid,
   Heading,
   Button, 
   ButtonGroup, 
   Text,
   Link as ChakraLink, 
-  Image as ChakraImage,
-  IconButton, 
+  SimpleGrid, 
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+
 
 } from "@chakra-ui/react";
 
@@ -62,20 +66,20 @@ function Projects () {
 
   return (
     <Layout title="Projects | Discover Your Agency">
-      <HeaderImage src="/projects.jpg" alt="Projects" darken="0.84" />
+      <HeaderImage src="/connect.jpg" alt="Projects" darken="0.88" />
       
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 
           <Container maxW="1200px" >
-            <Heading mb={6} size="xl">
-              Projects
-              </Heading>
+
+              <SimpleGrid columns={[1, 1, 2]} spacing={8}>
 
             {
               projects.map((el, idx) => {
                 return <Project el={el} idx={ idx } />
               })
             }
+            </SimpleGrid>
 
 
 
@@ -100,36 +104,45 @@ const Project = ( props ) => {
 
   let fields = props.el.fields;
 
-  return <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="lg">
-       <Box  rounded="lg" shadow="lg" shadow="lg" _active={{shadow: "sm"}} p={[2, 3, 5]} mb={[5, 5, 10]} height={[400, 400, 500,]} bg="white"  cursor="pointer">
-                  <Box overflow="hidden" height="100%" rounded="sm">
-                  <Box _hover={{transform: "scale(1.1)"}} position="relative" transition="0.5s ease" height="100%" overflow="hidden">
-                  <Box position="relative" height="100%" rounded="sm" overflow="hidden">
-                  <VerticalAlign>
-                    {
-                      fields.title.split(" ").map( word => {
-                        return  <Heading textAlign="center" color="white" position="relative" letterSpacing={1} zIndex={5} fontSize={[35, 55, 60]} >
-                        { word }
-                    </Heading>
-                      })
-                    }
+  return (
+    <Box  >
+    <Box  >
+    <Accordion allowToggle isFocusable={ false } colorScheme="purple">
+  <AccordionItem border="none" bg="white">
+      <AccordionButton _focus={{boxShadow: "none"}} _hover={{bg: "white"}} bg="white" p={4}>
+        <Box flex="1" textAlign="left">
+          <Heading size="sm">
+          { fields.title }
+          </Heading>
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    <AccordionPanel pb={4} pt={"4px"}>
 
-
-               
-                </VerticalAlign>
-
-                </Box>
-
-                <Box position="absolute" height="100%" width="100%" top={0}>
-                <ProgressiveImage 
+    <ChakraLink href={ fields.url } mb={2} target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="sm" >
+      <Box height="300px" rounded="sm" overflow="hidden">
+      <ProgressiveImage 
           src={ "https:" + fields.heroImage.fields.file.url }
           alt={ fields.title }
           darken="0.84"
           />
-          </Box>
-                </Box>
-                </Box>
-                </Box>
-  
+      </Box>
   </ChakraLink>
+
+  <ChakraLink href={ fields.url } target="_blank" rel="noopener noreferrer" rounded="md">
+    { fields.url }
+  </ChakraLink>
+
+
+
+
+    </AccordionPanel>
+  </AccordionItem>
+  </Accordion>
+  </Box>
+  </Box>
+
+    
+  
+  )
 }

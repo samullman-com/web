@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Socials from "../components/socials";
 import { useRouter } from 'next/router';
 
 import {
@@ -25,7 +24,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 
-import { BiMenuAltRight } from "react-icons/bi";
+import { RiMenu3Fill } from "react-icons/ri";
 import userbase from "userbase-js";
 
 import theme from "../public/theme.js";
@@ -43,14 +42,20 @@ function Sidebar(props) {
       to: "/",
     },
 
+
     {
-      text: "Projects",
-      to: "/projects",
+      text: "Portfolio",
+      to: "/portfolio",
     },
 
     {
-      text: "Work",
-      to: "/work",
+      text: "Toolkit",
+      to: "/toolkit",
+    },
+
+    {
+      text: "Shop",
+      to: "/shop",
     },
 
     {
@@ -112,13 +117,13 @@ function Sidebar(props) {
     <>
       <IconButton
         ref={btnRef}
-        icon={<BiMenuAltRight />}
+        icon={<RiMenu3Fill />}
         rounded="sm"
         aria-label="Menu"
         float="right"
         variant="ghost"
         colorScheme="none"
-        fontSize="30px"
+        fontSize="26px"
         onClick={onOpen}
       />
 
@@ -130,7 +135,7 @@ function Sidebar(props) {
         placement={props.placement}
       >
         <DrawerOverlay>
-          <DrawerContent bg={"#0a0a0a"}>
+          <DrawerContent bg={ theme.black }>
             <DrawerCloseButton color="white" rounded="sm" />
             <DrawerHeader></DrawerHeader>
 
@@ -150,11 +155,10 @@ function Sidebar(props) {
                 );
               })}
 
-              {loginLink }
+              {/* {loginLink } */}
             </DrawerBody>
 
             <DrawerFooter px={5} display="block">
-              <Socials />
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>

@@ -1,19 +1,10 @@
-// import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react"
 
-// const config = {
-//     black: "#0a0a0a", 
-//     white: "#fafafa",
-//     fonts: {
-//         body: "comic-sans, sans-serif",
-//         heading: "Roboto, serif",
-//         mono: "Menlo, monospace",
-//     },
-// }
+const theme = extendTheme({
+    black: "#030303",
+    white: "#fbfbfb",
+    width: 1200,
+})
   
-// const theme = extendTheme({ config })
-// export default theme;
 
-export default {
-    black: "#0a0a0a", 
-    white: "#fafafa",
-}
+export default theme;

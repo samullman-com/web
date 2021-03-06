@@ -21,7 +21,7 @@ function App ({ Component, pageProps }) {
     });
   }, [])
 
-  return <ChakraProvider >
+  return <ChakraProvider theme={ theme } >
     <Component {...pageProps} loading={ loading } />
   </ChakraProvider>
 

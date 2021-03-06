@@ -6,7 +6,7 @@ import {
 } from "@chakra-ui/react";
 
 function HeaderImage ( { src, alt, darken } ) {
-    return <Box position="relative" height={["100px", "25vh"]}>
+    return <Box position="relative" height={["100px", "25vh"]} minHeight="300px">
     <ProgressiveImage src={ src } alt={ alt } darken={ darken } />
   </Box>
 }

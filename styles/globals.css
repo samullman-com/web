@@ -2,16 +2,21 @@
 
 html,
 body {
-  background: #0a0a0a;
+  background: #030303;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.index-hero {
+  background: rgb(100,189,101);
+  background: linear-gradient(166deg, rgba(100,189,101,1) 10%, rgba(255,206,109,1) 36%, rgba(255,98,95,1) 69%, rgba(43,44,121,1) 100%);
+
+}
+
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 * {
@@ -20,6 +25,9 @@ a {
 
 .rounded {
   border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  border: 5px solid rgb(199, 190, 190);
 }
 
 

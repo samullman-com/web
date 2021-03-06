@@ -28,7 +28,7 @@ function Header() {
 
 
 
-  const bg = onTop ? "#0a0a0a00" : "#0a0a0a";
+  const bg = onTop ? "#03030300" : "#030303";
   const color = onTop ? "white" : "white";
   const height = onTop ? "80px" : "60px";
   const shadow = onTop ? "none" : "lg";
@@ -52,7 +52,7 @@ function Header() {
           <Link href="/">
             <Heading
               fontWeight="600"
-              fontSize={[20, 24, ]}
+              fontSize={[18, 20, 23 ]}
               letterSpacing={2}
               cursor="pointer"
             >

@@ -6,7 +6,8 @@ import ProgressiveImage from "../components/progressiveImage";
 import toast, { Toaster } from "react-hot-toast";
 import VisibilitySensor from "react-visibility-sensor";
 import { CountUp } from "use-count-up";
-import WhoWhatWhy from "../old/whoWhatWhy";
+import PageLink from "../components/link";
+
 import {
   Box,
   ButtonGroup,
@@ -23,13 +24,14 @@ import VerticalAlign from "../components/verticalAlign";
 import jump from "jump.js";
 import theme from "../public/theme";
 import Section from "../components/section";
+import Socials from "../components/socials";
 
 function Index(props) {
   const [isCounting, setIsCounting] = useState(false);
+  const [afterCount, setAfterCount] = useState(false);
 
   function componentVisible() {
-    
-     setIsCounting( !isCounting );
+    setIsCounting(!isCounting);
   }
 
   let products = [
@@ -95,9 +97,19 @@ function Index(props) {
     setResize();
   }, []);
 
+  function setBlue() {
+    setTimeout(() => {
+      setAfterCount(true);
+
+    
+    }, 500);
+  }
+
+  let afterCountColor = afterCount ? "rgba(43,44,121,0.86)" : theme.white;
+
   return (
     <Layout title="Home | Discovery Your Agency" noTop={true}>
-      <Box height="100vh" position="relative">
+      <Box height="100vh" position="relative" className="index-hero">
         <VerticalAlign>
           <Container
             zIndex="5"
@@ -106,49 +118,47 @@ function Index(props) {
             px={[0, 0, 10]}
           >
             {/* <Fade right> */}
-            <Box>
+            <Box color={theme.white}>
               <Heading
-                color="white"
                 fontWeight="500"
-                fontSize={[65, 75, 100, ]}
+                fontSize={[65, 75, 100]}
                 textAlign={["center", "center", "left"]}
               >
-                <VisibilitySensor onChange={ componentVisible }>
+                <VisibilitySensor onChange={componentVisible}>
                   <Box display="inline-block">
-                  <CountUp
-                    isCounting={isCounting}
-                    start={2}
-                    end={100}
-                    easing={ "easeInCubic" }
-                    duration={3.5}
-                  />
+                    <CountUp
+                      isCounting={isCounting}
+                      start={1}
+                      end={100}
+                      easing={"easeInCubic"}
+                      duration={3.5}
+                      onComplete={setBlue}
+                    />
                   </Box>
                 </VisibilitySensor>
-                x
-              </Heading>
-
-              <Heading
-                color="white"
-                fontSize={[65, 75, 100, ]}
-                fontWeight="500"
-                textAlign={["center", "center", "left"]}
-              >
-                YOUR
-              </Heading>
-
-              <Heading
-                color="white"
-                fontWeight="500"
-                fontSize={[65, 75, 100, ]}
-                textAlign={["center", "center", "left"]}
-              >
-                COVERAGE
+                x{" "}
                 <Box
-                  rounded="sm"
+                  color={afterCountColor}
+                  transition="color 1s ease"
+                  display="inline-block"
+                >
+                  your
+                </Box>
+              </Heading>
+
+              <Heading
+                fontWeight="500"
+                fontSize={[65, 75, 100]}
+                textAlign={["center", "center", "left"]}
+              >
+                coverage.
+                <Box
+                  rounded="full"
                   height={("20px", "30px")}
                   width={["20px", "30px"]}
                   overflow="hidden"
                   ml={4}
+                  position="relative"
                   cursor="pointer"
                   display={["none", "none", "inline"]}
                   onClick={() => {
@@ -167,8 +177,10 @@ function Index(props) {
 
               <Box
                 borderRadius={30}
+                borderWidth="2px"
                 height={[12, "60px"]}
                 width={[12, "60px"]}
+                mt={20}
                 overflow="hidden"
                 margin={["20px auto"]}
                 display={["block", "block", "none"]}
@@ -190,50 +202,91 @@ function Index(props) {
           </Container>
         </VerticalAlign>
 
-        <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
+        {/* <Box position="absolute" top={0} width="100%" height="100%" bottom={0}>
           <ProgressiveImage src="/honeycomb.jpg" alt="Honeycomb" />
-        </Box>
+        </Box> */}
       </Box>
 
       <Box id="next">
-          <WhoWhatWhy />
-          <Box display="none">
-        <Section bg={theme.white} >
-          <SimpleGrid
-            columns={[1, 1, 2]}
-            spacing={12}
-            maxWidth="calc(900px + 3rem)"
-            margin="0 auto"
-          >
-            <Box>
-              <Box className="square" position="relative" height="400px">
-                <ProgressiveImage src="/professional.jpg" alt="Professional" />
+        <Box >
+          <Section bg={theme.white}>
+            <SimpleGrid
+              columns={[1, 1, 2]}
+              spacing={[6, 6, 12]}
+              maxWidth="calc(900px + 3rem)"
+              margin="40px auto"
+            >
+              <Box>
+                <Box  position="relative" height="400px" rounded="sm" overflow="hidden">
+                  <ProgressiveImage
+                    src="/professional.jpg"
+                    alt="Professional"
+                  />
+                </Box>
               </Box>
-            </Box>
 
-            <Box>
-              <Heading>
-                Invested in YOUR business. 
-              </Heading>
-            </Box>
-          </SimpleGrid>
-        </Section>
+              <Box >
+                <VerticalAlign>
+                <Heading mb={5} >Hi 👋</Heading>
+
+                <Box mb={2}>
+                  My name is Sam Ullman and I've been building Web Apps for 5 years!
+                </Box>
+
+                <Box mb={2}>
+                  I'm currently focused on building great <PageLink href="/portfolio">companies</PageLink> and helping other engineers unlock their potential. 
+                </Box>
+
+                <Box mb={2}>
+                  Let's talk soon about <ChakraLink target="_blank" rounded="sm" rel="noopener" href="https://twitter.com/rauchg/status/1358866006496612353?s=20">React</ChakraLink>, the <ChakraLink target="_blank" rounded="sm" rel="noopener" href="https://jamstack.org/">JAMStack</ChakraLink>, Crytocurrencies (DeFi), Business Development, and more! 
+                </Box>
+
+                <Box mb={5}>
+                  
+                  <PageLink href="/contact">
+                  Get in touch</PageLink>:
+                </Box>
+
+                <Socials />
+                </VerticalAlign>
+              </Box>
+            </SimpleGrid>
+          </Section>
         </Box>
       </Box>
 
-      <Box id="progressive">
-        <Section>
-          <Container maxWidth="1100px">
-            <SimpleGrid columns={[3, 4, 5, 6]} spacing={[4, 8, 12]}>
-              {favorites.map((el) => {
-                return <Favorite el={el} />;
-              })}
-            </SimpleGrid>
-          </Container>
-        </Section>
-      </Box>
+    
+      <Box display="none">
+      <Section bg="blue.500" display="none">
+        <Container maxWidth="900px">
+          <SimpleGrid columns={[1, 1, 3]} spacing={10}>
+            <Box>
+              <Heading size="sm" textAlign="center">
+                E-commerce
+              </Heading>
+              Typically Shopify. Should we make it Headless?
+            </Box>
 
-      <Section bg="gray.200">
+            <Box>
+              <Heading size="sm" textAlign="center">
+                JAMStack Site
+              </Heading>
+            </Box>
+
+            <Box>
+              <Heading size="sm" textAlign="center">
+                Progressive Web App (PWA)
+              </Heading>
+              Google Maps, Twitter, and Tinder have adopted progessive framework
+              for developing. We'll do the same.
+            </Box>
+          </SimpleGrid>
+        </Container>
+      </Section>
+      </Box>
+      
+      <Box display="none">
+      <Section bg="gray.200" >
         <Container maxWidth="1200px">
           {products.map((el) => {
             const [borderColor, setBorderColor] = useState("white");
@@ -331,6 +384,7 @@ function Index(props) {
           })}
         </Container>
       </Section>
+      </Box>
 
       <Toaster />
     </Layout>
@@ -339,61 +393,7 @@ function Index(props) {
 
 export default Index;
 
-const Favorite = (props) => {
-  let fields = props.el.fields;
 
-  return (
-    <ChakraLink
-      href={fields.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      display="block"
-      rounded="md"
-      key={"Favorite" + fields.title}
-      _hover={{ textDecor: "none" }}
-    >
-      <Box textAlign="center" p={1}>
-        <Box
-          rounded="full"
-          height={["60px", "65px", "80px"]}
-          width={["60px", "65px", "80px"]}
-          overflow="hidden"
-          bg="white"
-          borderWidth={2}
-          margin="0 auto"
-          position="relative"
-          mb={2}
-        >
-          {/* <ProgressiveImage src={ fields.images[0].fields.file.url } placeholder={ fields.alt }>
-            {(src) => (
-                <ChakraImage
-                  src={src}
-                  height="100%"
-                  width="100%"
-                  objectFit="cover"
-                  alt={fields.alt}
-                />
-            )}
-          </ProgressiveImage> */}
-
-          <ProgressiveImage
-            src={"https:" + fields.images[0].fields.file.url}
-            alt={fields.alt}
-          />
-        </Box>
-
-        <Box
-          fontSize="15px"
-          fontWeight={[500, 600]}
-          color="gray.900"
-          className="cassannet"
-        >
-          {fields.title}
-        </Box>
-      </Box>
-    </ChakraLink>
-  );
-};
 
 export async function getStaticProps(context) {
   let CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID;

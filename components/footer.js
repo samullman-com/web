@@ -10,6 +10,7 @@ import {
   Grid,
 } from "@chakra-ui/react";
 
+import theme from "../public/theme";
 import userbase from "userbase-js";
 
 import Session from "../contexts/session";
@@ -19,23 +20,29 @@ function Footer() {
 
   const pages = [
     {
-      title: "Home",
-      link: "/",
+      text: "Home",
+      to: "/",
+    },
+
+
+    {
+      text: "Portfolio",
+      to: "/portfolio",
     },
 
     {
-      title: "Projects",
-      link: "/projects",
+      text: "Toolkit",
+      to: "/toolkit",
     },
 
     {
-      title: "Work",
-      link: "/work",
+      text: "Shop",
+      to: "/shop",
     },
 
     {
-      title: "Contact",
-      link: "/contact",
+      text: "Contact",
+      to: "/contact",
     },
   ];
 
@@ -88,7 +95,7 @@ function Footer() {
   );
 
   return (
-    <Box bg="#0a0a0a" color="white" py={20} px={5}>
+    <Box bg={ theme.black } color="white" py={20} px={5}>
       <Container
         maxWidth="1400px"
         textAlign={["center", "center", "center", "left"]}
@@ -96,13 +103,14 @@ function Footer() {
         <Link href="/">
           <Box
             rounded="full"
-            height={"60px"}
-            width="60px"
+            borderWidth="2px"
+            height={"80px"}
+            width="80px"
             overflow="hidden"
             margin={["0 auto", "0 auto", "0 auto", "0"]}
             cursor="pointer"
           >
-            <Image src="/sam.jpg" width={60} height={60} alt="sam" />
+            <Image src="/sam.jpg" width={80} height={80} alt="sam" />
           </Box>
         </Link>
 
@@ -118,7 +126,10 @@ function Footer() {
               SAMULLMAN.COM
             </Heading>
 
+            <Box textAlign={["center", "center", "center", "left"]}>
             <Socials />
+            
+            </Box>
           </Box>
 
           <Box letterSpacing={"1"} fontWeight="600" mb={[10, 10, 10, 0]}>
@@ -134,19 +145,19 @@ function Footer() {
 
             {pages.map((el) => {
               return (
-                <Box mb={1} key={el.title}>
+                <Box mb={2} key={el.text}>
                   <Box
                     _hover={{ color: "gray.300" }}
                     transition="0.2s ease"
                     display="inline-block"
                   >
-                    <Link href={el.link}>{el.title}</Link>
+                    <Link href={el.to}>{el.text}</Link>
                   </Box>
                 </Box>
               );
             })}
 
-            {loginLink}
+            {/* {loginLink} */}
           </Box>
 
           <Box>
