@@ -109,7 +109,7 @@ function Index(props) {
   return (
     <Layout title="Home | Discovery Your Agency" noTop={true}>
       <Box
-        height="100vh"
+        height={["93vh", "100vh"]}
         position="relative"
         className="index-hero"
         minHeight={[500]}
@@ -151,7 +151,7 @@ function Index(props) {
                 margin={["20px auto"]}
                 display={["block", "block", "none"]}
                 onClick={() => {
-                  jump("#next", { offset: -60 });
+                  jump("#next", { offset: -30 });
                 }}
               >
                 <VerticalAlign>
@@ -207,7 +207,7 @@ function Index(props) {
                   /> */}
 
                   <Image
-                    src="/professional.jpg"
+                    src="/professional.JPG"
                     layout="fill"
                     objectFit="cover"
                     alt="Professional"

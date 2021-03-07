@@ -72,9 +72,9 @@ function Projects () {
       
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 
-          <Container maxW="1200px" >
+          <Container maxW="1200px" mb={5} >
 
-              <SimpleGrid columns={[1, 1, 2]} spacing={8}>
+              <SimpleGrid columns={[1, 1, 2]} spacing={[5, 5, 8]}>
 
             {
               projects.map((el, idx) => {
@@ -119,14 +119,14 @@ const Project = ( props ) => {
         </Box>
         <AccordionIcon />
       </AccordionButton>
-    <AccordionPanel pb={4} pt={"4px"}>
+    <AccordionPanel pb={4} pt={"10px"}>
 
     <ChakraLink href={ fields.url } mb={2} target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="sm" >
-      <Box height="300px" rounded="sm" overflow="hidden">
+      <Box height={[200, "300px"]} rounded="sm" overflow="hidden">
       <ProgressiveImage 
           src={ "https:" + fields.heroImage.fields.file.url }
           alt={ fields.title }
-          darken="0.84"
+          
           />
       </Box>
   </ChakraLink>
