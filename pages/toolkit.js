@@ -45,7 +45,7 @@ function Toolkit( props ) {
   return (
     <Layout title="Toolkit | Discover Your Agency">
       <HeaderImage  src="/clouds.jpg" alt="Clouds"  />
-      <Section>
+      <Section bg="gray.200">
         <Container maxW="1000px">
         <Box bg="white" p={6} rounded="lg" shadow="lg">
         <SimpleGrid columns={[3, 4, 5, 6]} spacing={[4, 8, 12]}>

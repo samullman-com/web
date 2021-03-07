@@ -27,7 +27,7 @@ function Layout ( props )  {
 
     <Header />
 
-    <Box  minHeight="75vh" bg="gray.100"> 
+    <Box  minHeight="50vh" bg="gray.100"> 
 
     <ScrollToTop smooth={ true } color="#6f00ff" background="#000" component={ 
       <Box textAlign="center"  fontSize={24} >

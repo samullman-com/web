@@ -109,7 +109,7 @@ const Project = ( props ) => {
   return (
     <Box  >
     <Box  >
-    <Accordion allowToggle isFocusable={ false } colorScheme="purple">
+    <Accordion allowToggle isFocusable={ false } colorScheme="purple" rounded="lg" overflow="hidden">
   <AccordionItem border="none" bg="white">
       <AccordionButton _focus={{boxShadow: "none"}} _hover={{bg: "white"}} bg="white" p={4}>
         <Box flex="1" textAlign="left">
