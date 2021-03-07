@@ -4,8 +4,8 @@ function MyImage({ src, alt, darken }) {
   return (
     <ProgressiveImage
       srcSetData={{
-        srcSet: `${src} 320w, ${src} 700w, ${src} 2000w`,
-        sizes: "(max-width: 2000px) 100vw, 2000px",
+        srcSet: `${src} 320w, ${src} 700w, ${src} 1000px`,
+        sizes: "(max-width: 1000px) 100vw, 1000px",
       }}
       src={src}
       placeholder={alt}

@@ -182,7 +182,7 @@ function Index(props) {
               objectFit: "cover",
             }}
           />
-          {/* <Image src="/landing-wave.svg" layout="fill"  /> */}
+          
         </Box>
       </Box>
 
@@ -197,10 +197,12 @@ function Index(props) {
             >
               <Box>
                 <Box  position="relative" height={[250, "400px"]} rounded="sm" overflow="hidden">
-                  <ProgressiveImage
+                  {/* <ProgressiveImage
                     src="/professional.jpg"
                     alt="Professional"
-                  />
+                  /> */}
+
+                  <Image src="/professional.jpg" layout="fill" objectFit="cover" alt="Professional" />
                 </Box>
               </Box>
 
@@ -259,7 +261,7 @@ function Index(props) {
 
         <Box py={"200px"} height="100%" px={ 5 } >
           <VerticalAlign>
-          <Container bg="white" shadow="lg" rounded="lg" p={[4, 6]} maxWidth="800px" mt="5vw">
+          <Container bg="white" shadow="lg" rounded="lg" p={[4, 6]} maxWidth="800px" mt="5vw" display="none">
             kdajsnfkandjf
           </Container>
           </VerticalAlign>
