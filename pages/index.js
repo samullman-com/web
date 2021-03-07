@@ -6,7 +6,7 @@ import ProgressiveImage from "../components/progressiveImage";
 import toast, { Toaster } from "react-hot-toast";
 import VisibilitySensor from "react-visibility-sensor";
 import { CountUp } from "use-count-up";
-import { BiDownArrow } from "react-icons/bi"
+import { BiDownArrow } from "react-icons/bi";
 import PageLink from "../components/link";
 
 import {
@@ -101,8 +101,6 @@ function Index(props) {
   function setBlue() {
     setTimeout(() => {
       setAfterCount(true);
-
-    
     }, 500);
   }
 
@@ -110,7 +108,12 @@ function Index(props) {
 
   return (
     <Layout title="Home | Discovery Your Agency" noTop={true}>
-      <Box height="100vh" position="relative" className="index-hero" minHeight={[500]}>
+      <Box
+        height="100vh"
+        position="relative"
+        className="index-hero"
+        minHeight={[500]}
+      >
         <VerticalAlign>
           <Container
             zIndex="5"
@@ -122,12 +125,10 @@ function Index(props) {
             <Box color={theme.white}>
               <Heading
                 fontWeight="500"
-                fontSize={[70,  75, 100]}
+                fontSize={[70, 75, 100]}
                 textAlign={["center", "center", "left"]}
               >
-                
-             
-                  Your tech.
+                Your tech.
               </Heading>
 
               <Heading
@@ -137,7 +138,6 @@ function Index(props) {
                 textAlign={["center", "center", "left"]}
               >
                 Organized.
-               
               </Heading>
 
               <Box
@@ -155,7 +155,7 @@ function Index(props) {
                 }}
               >
                 <VerticalAlign>
-                <BiDownArrow style={{display: "inline-block"}} />
+                  <BiDownArrow style={{ display: "inline-block" }} />
                 </VerticalAlign>
               </Box>
             </Box>
@@ -182,12 +182,11 @@ function Index(props) {
               objectFit: "cover",
             }}
           />
-          
         </Box>
       </Box>
 
       <Box id="next">
-        <Box >
+        <Box>
           <Section bg={theme.white}>
             <SimpleGrid
               columns={[1, 1, 2]}
@@ -196,39 +195,72 @@ function Index(props) {
               margin="40px auto"
             >
               <Box>
-                <Box  position="relative" height={[250, "400px"]} rounded="sm" overflow="hidden">
+                <Box
+                  position="relative"
+                  height={[250, "400px"]}
+                  rounded="sm"
+                  overflow="hidden"
+                >
                   {/* <ProgressiveImage
                     src="/professional.jpg"
                     alt="Professional"
                   /> */}
 
-                  <Image src="/professional.jpg" layout="fill" objectFit="cover" alt="Professional" />
+                  <Image
+                    src="/professional.jpg"
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Professional"
+                  />
                 </Box>
               </Box>
 
-              <Box >
+              <Box>
                 <VerticalAlign>
-                <Heading mb={[2, 2, 5]} >Hi 👋</Heading>
+                  <Heading mb={[2, 2, 5]}>Hi 👋</Heading>
 
-                <Box mb={2}>
-                  My name is <Box display="inline-block" fontWeight="600">Sam Ullman</Box> and I've been building Web Apps for over 5 years!
-                </Box>
+                  <Box mb={2}>
+                    My name is{" "}
+                    <Box display="inline-block" fontWeight="600">
+                      Sam Ullman
+                    </Box>{" "}
+                    and I've been building Web Apps for over 5 years!
+                  </Box>
 
-                <Box mb={2}>
-                  I'm currently focused on building great <PageLink href="/portfolio">products</PageLink>, creating a course, and helping other engineers tap into their curiosity. 
-                </Box>
+                  <Box mb={2}>
+                    I'm currently focused on building great{" "}
+                    <PageLink href="/portfolio">products</PageLink>, creating a
+                    course, and helping other engineers tap into their
+                    curiosity.
+                  </Box>
 
-                <Box mb={2}>
-                  Let's talk soon about <ChakraLink target="_blank" rounded="sm" rel="noopener" href="https://twitter.com/rauchg/status/1358866006496612353?s=20">React</ChakraLink>, the <ChakraLink target="_blank" rounded="sm" rel="noopener" href="https://jamstack.org/">JAMStack</ChakraLink>, Crytocurrencies (DeFi), Business Development, and more! 
-                </Box>
+                  <Box mb={2}>
+                    Let's talk soon about{" "}
+                    <ChakraLink
+                      target="_blank"
+                      rounded="sm"
+                      rel="noopener"
+                      href="https://twitter.com/rauchg/status/1358866006496612353?s=20"
+                    >
+                      React
+                    </ChakraLink>
+                    , the{" "}
+                    <ChakraLink
+                      target="_blank"
+                      rounded="sm"
+                      rel="noopener"
+                      href="https://jamstack.org/"
+                    >
+                      JAMStack
+                    </ChakraLink>
+                    , Crytocurrencies (DeFi), Business Development, and more!
+                  </Box>
 
-                <Box mb={5}>
-                  
-                  <PageLink href="/contact">
-                  Get in touch</PageLink>:
-                </Box>
+                  <Box mb={5}>
+                    <PageLink href="/contact">Get in touch</PageLink>:
+                  </Box>
 
-                <Socials />
+                  <Socials />
                 </VerticalAlign>
               </Box>
             </SimpleGrid>
@@ -236,8 +268,8 @@ function Index(props) {
         </Box>
       </Box>
 
-      <Box className="bg-2" position="relative" >
-      <Box
+      <Box className="bg-2" position="relative">
+        <Box
           position="absolute"
           width="100%"
           top={"0px"}
@@ -259,146 +291,156 @@ function Index(props) {
           {/* <Image src="/landing-wave.svg" layout="fill"  /> */}
         </Box>
 
-        <Box py={"200px"} height="100%" px={ 5 } >
+        <Box py={"200px"} height="100%" px={5}>
           <VerticalAlign>
-          <Container bg="white" shadow="lg" rounded="lg" p={[4, 6]} maxWidth="800px" mt="5vw" display="none">
-            kdajsnfkandjf
-          </Container>
+            <Container
+              bg="white"
+              shadow="lg"
+              rounded="lg"
+              p={[4, 6]}
+              maxWidth="800px"
+              mt="5vw"
+              display="none"
+            >
+              kdajsnfkandjf
+            </Container>
           </VerticalAlign>
-
         </Box>
-
       </Box>
 
-    
       <Box display="none">
-      <Section bg="blue.500" display="none">
-        <Container maxWidth="900px">
-          <SimpleGrid columns={[1, 1, 3]} spacing={10}>
-            <Box>
-              <Heading size="sm" textAlign="center">
-                E-commerce
-              </Heading>
-              Typically Shopify. Should we make it Headless?
-            </Box>
+        <Section bg="blue.500" display="none">
+          <Container maxWidth="900px">
+            <SimpleGrid columns={[1, 1, 3]} spacing={10}>
+              <Box>
+                <Heading size="sm" textAlign="center">
+                  E-commerce
+                </Heading>
+                Typically Shopify. Should we make it Headless?
+              </Box>
 
-            <Box>
-              <Heading size="sm" textAlign="center">
-                JAMStack Site
-              </Heading>
-            </Box>
+              <Box>
+                <Heading size="sm" textAlign="center">
+                  JAMStack Site
+                </Heading>
+              </Box>
 
-            <Box>
-              <Heading size="sm" textAlign="center">
-                Progressive Web App (PWA)
-              </Heading>
-              Google Maps, Twitter, and Tinder have adopted progessive framework
-              for developing. We'll do the same.
-            </Box>
-          </SimpleGrid>
-        </Container>
-      </Section>
+              <Box>
+                <Heading size="sm" textAlign="center">
+                  Progressive Web App (PWA)
+                </Heading>
+                Google Maps, Twitter, and Tinder have adopted progessive
+                framework for developing. We'll do the same.
+              </Box>
+            </SimpleGrid>
+          </Container>
+        </Section>
       </Box>
-      
-      <Box display="none">
-      <Section bg="gray.200" >
-        <Container maxWidth="1200px">
-          {products.map((el) => {
-            const [borderColor, setBorderColor] = useState("white");
 
-            return (
-              <Box
-                key={"IndexProduct" + el.title}
-                rounded="lg"
-                shadow="lg"
-                shadow="lg"
-                _active={{ shadow: "sm" }}
-                p={[2, 3, 5]}
-                mb={[5, 5, 10]}
-                height={[400, 400, 500]}
-                bg="white"
-                cursor="pointer"
-                onMouseEnter={() => {
-                  setBorderColor(el.color);
-                }}
-                onMouseLeave={() => {
-                  setBorderColor("white");
-                }}
-                onClick={notify}
-              >
-                <Box overflow="hidden" height="100%" rounded="sm">
-                  <Box
-                    _hover={{ transform: "scale(1.1)" }}
-                    position="relative"
-                    transition="0.5s ease"
-                    height="100%"
-                    overflow="hidden"
-                  >
+      <Box display="none">
+        <Section bg="gray.200">
+          <Container maxWidth="1200px">
+            {products.map((el) => {
+              const [borderColor, setBorderColor] = useState("white");
+
+              return (
+                <Box
+                  key={"IndexProduct" + el.title}
+                  rounded="lg"
+                  shadow="lg"
+                  shadow="lg"
+                  _active={{ shadow: "sm" }}
+                  p={[2, 3, 5]}
+                  mb={[5, 5, 10]}
+                  height={[400, 400, 500]}
+                  bg="white"
+                  cursor="pointer"
+                  onMouseEnter={() => {
+                    setBorderColor(el.color);
+                  }}
+                  onMouseLeave={() => {
+                    setBorderColor("white");
+                  }}
+                  onClick={notify}
+                >
+                  <Box overflow="hidden" height="100%" rounded="sm">
                     <Box
+                      _hover={{ transform: "scale(1.1)" }}
                       position="relative"
+                      transition="0.5s ease"
                       height="100%"
-                      rounded="sm"
                       overflow="hidden"
                     >
-                      <VerticalAlign>
-                        {el.title.split(" ").map((word) => {
-                          return (
-                            <Heading
-                              textAlign="center"
-                              color="white"
-                              position="relative"
-                              fontWeight="600"
-                              letterSpacing={1}
-                              zIndex={5}
-                              fontSize={[35, 55, 60]}
-                            >
-                              {word}
-                            </Heading>
-                          );
-                        })}
-
-                        {/* <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" /> */}
-
-                        <Heading
-                          size="md"
-                          color="white"
-                          position="relative"
-                          zIndex={5}
-                          textAlign="center"
-                          mt={5}
-                        >
-                          ${el.price}
-                          <sup>
-                            <small>
-                              <u
-                                style={{
-                                  position: "relative",
-                                  top: 2,
-                                  left: 1,
-                                }}
+                      <Box
+                        position="relative"
+                        height="100%"
+                        rounded="sm"
+                        overflow="hidden"
+                      >
+                        <VerticalAlign>
+                          {el.title.split(" ").map((word) => {
+                            return (
+                              <Heading
+                                textAlign="center"
+                                color="white"
+                                position="relative"
+                                fontWeight="600"
+                                letterSpacing={1}
+                                zIndex={5}
+                                fontSize={[35, 55, 60]}
                               >
-                                00
-                              </u>
-                            </small>
-                          </sup>
-                        </Heading>
-                      </VerticalAlign>
-                    </Box>
+                                {word}
+                              </Heading>
+                            );
+                          })}
 
-                    <Box height="100%" width="100%" position="absolute" top={0}>
-                      <ProgressiveImage
-                        src={el.image}
-                        darken={"0.84"}
-                        alt={el.title}
-                      />
+                          {/* <Box height={["0.175rem", "0.25rem"]} bg={ borderColor } maxWidth={[100, 200, ]} zIndex="5" position="relative" margin="0 auto" mt={[2, 4, 7]} mb={[2, 3, 5]} transition="0.5s ease" opacity="0.92" /> */}
+
+                          <Heading
+                            size="md"
+                            color="white"
+                            position="relative"
+                            zIndex={5}
+                            textAlign="center"
+                            mt={5}
+                          >
+                            ${el.price}
+                            <sup>
+                              <small>
+                                <u
+                                  style={{
+                                    position: "relative",
+                                    top: 2,
+                                    left: 1,
+                                  }}
+                                >
+                                  00
+                                </u>
+                              </small>
+                            </sup>
+                          </Heading>
+                        </VerticalAlign>
+                      </Box>
+
+                      <Box
+                        height="100%"
+                        width="100%"
+                        position="absolute"
+                        top={0}
+                      >
+                        <ProgressiveImage
+                          src={el.image}
+                          darken={"0.84"}
+                          alt={el.title}
+                        />
+                      </Box>
                     </Box>
                   </Box>
                 </Box>
-              </Box>
-            );
-          })}
-        </Container>
-      </Section>
+              );
+            })}
+          </Container>
+        </Section>
       </Box>
 
       <Toaster />
@@ -407,8 +449,6 @@ function Index(props) {
 }
 
 export default Index;
-
-
 
 export async function getStaticProps(context) {
   let CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID;

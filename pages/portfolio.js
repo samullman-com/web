@@ -67,6 +67,8 @@ function Projects () {
   return (
     <Layout title="Projects | Discover Your Agency">
       <HeaderImage src="/connect.jpg" alt="Projects" darken="0.88" />
+
+      
       
       <Box  py={[5, 10, 12]} px={[3, 5, 10]} bg="gray.100">
 

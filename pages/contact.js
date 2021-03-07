@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import HeaderImage from "../components/headerImage";
 import Section from "../components/section";
-
+import styled from "@emotion/styled";
 import {
   Box,
   Button,
@@ -17,45 +17,83 @@ import {
 
 import theme from "../public/theme";
 
+const Styles = styled.div`
+
+  .box {
+
+    .text {
+      
+    }
+  
+    .emoji {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &:hover {
+      .text {
+        opacity: 0;
+        position: absolute;
+      }
+    
+      .emoji {
+        position: relative;
+        opacity: 1;
+        z-index: 1;
+    
+      }
+
+    }
+
+  
+}
+
+`
+
 import VerticalAlign from "../components/verticalAlign";
 
 function Contact() {
   return (
     <Layout title="Contact | Discover Your Agency">
+      <Styles>
       <HeaderImage  src="/login.jpg" alt="Connect"  />
 
-      <Section>
+
+      <Section bg="gray.200">
         <VerticalAlign>
           <Container maxWidth="1000px" mb={12}>
-            <SimpleGrid columns={[1, 2, 3]} mb={8} spacing={8}>
-              <Box bg={ theme.white } p={[4, 6]} rounded="lg" shadow="md">
-                <Heading size="md" mb={1}>
-                  Let's work together <Box float="right">💪</Box>
+            <SimpleGrid columns={[1, 1, 3]} mb={[4, 5, 8]} spacing={[4, 5, 8]}>
+              <Box bg={ theme.white } p={[4, 6]} rounded="lg" shadow="md" textAlign="center" className="box">
+
+                <Heading size="md" lineHeight="40px" className="text">
+                  Let's work together 
                 </Heading>
 
-                <Box>
-                  I'm currently working with clients on a monthly retainer basis. 
-                </Box>
+
+
+                <Box fontSize="40px" className="emoji">💪</Box>
+
+
+                
               </Box>
 
               <Box bg={ theme.white } p={[4, 6]} rounded="lg" shadow="md">
-                <Heading size="md" mb={1}>
-                  I need help <Box float="right">😤</Box>
+                <VerticalAlign>
+                <Heading size="md" lineHeight="50px">
+                  I need help <Box float="right" fontSize="50px">😤</Box>
                 </Heading>
+                </VerticalAlign>
 
-                <Box>
-                  My app is broken. I need help overcoming a technical challenge.
-                </Box>
               </Box>
 
               <Box bg={ theme.white } p={[4, 6]} rounded="lg" shadow="md">
-                <Heading size="md" mb={1}>
-                  I have an idea <Box float="right">💡</Box>
+                <VerticalAlign>
+                <Heading size="md"  lineHeight="50px">
+                  I have an idea <Box float="right" fontSize="50px">💡</Box>
                 </Heading>
+                </VerticalAlign>
 
-                <Box>
-                  Never say never.  I'm available to help startups kick things off! 
-                  </Box>
               </Box>
 
             </SimpleGrid>
@@ -101,6 +139,7 @@ function Contact() {
           </Container>
         </VerticalAlign>
       </Section>
+      </Styles>
     </Layout>
   );
 }

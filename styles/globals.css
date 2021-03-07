@@ -20,6 +20,11 @@ body {
   background: linear-gradient(346deg, rgba(100,189,101,1) 10%, rgba(255,206,109,1) 36%, rgba(255,98,95,1) 69%, rgba(43,44,121,1) 100%);
 }
 
+.contact-gradient-top {
+  background: rgb(255,255,230);
+  background: linear-gradient(346deg, rgba(255,255,230,1) 7%, rgba(251,100,100,1) 35%, rgba(95,77,71,1) 65%, rgba(6,5,4,1) 90%);
+}
+
 a {
   color: inherit;
 }
