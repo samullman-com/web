@@ -211,6 +211,7 @@ function Index(props) {
                     layout="fill"
                     objectFit="cover"
                     alt="Professional"
+                    
                   />
                 </Box>
               </Box>
