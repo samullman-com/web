@@ -95,6 +95,7 @@ const Favorite = (props) => {
           rounded="full"
           height={["60px", "65px", "80px"]}
           width={["60px", "65px", "80px"]}
+          bg="gray.800"
           overflow="hidden"
           bg="white"
           borderWidth={2}
@@ -114,10 +115,14 @@ const Favorite = (props) => {
             )}
           </ProgressiveImage> */}
 
-          <ProgressiveImage
+          {/* <ProgressiveImage
             src={"https:" + fields.images[0].fields.file.url}
             alt={fields.alt}
-          />
+          /> */}
+
+          <Image src={"https:" + fields.images[0].fields.file.url}
+            alt={fields.alt} layout="fill" objectFit="cover"
+            />
         </Box>
 
         <Box

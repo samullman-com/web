@@ -25,6 +25,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Spinner,
 
 
 } from "@chakra-ui/react";
@@ -79,7 +80,7 @@ function Projects () {
             {
               projects.map((el, idx) => {
                 return <Project el={el} idx={ idx } />
-              })
+              }) 
             }
             </SimpleGrid>
 
@@ -122,12 +123,15 @@ const Project = ( props ) => {
     <AccordionPanel pb={4} pt={["10px"]}>
 
     <ChakraLink href={ fields.url } mb={2} target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="sm" >
-      <Box height={[200, "300px"]} rounded="sm" overflow="hidden">
-      <ProgressiveImage 
+      <Box height={[200, "300px"]} rounded="sm" overflow="hidden" position="relative">
+      {/* <ProgressiveImage 
           src={ "https:" + fields.heroImage.fields.file.url }
           alt={ fields.title }
           
-          />
+          /> */}
+
+          <Image src={ "https:" + fields.heroImage.fields.file.url }
+          alt={ fields.title } layout="fill" objectFit="cover" />
       </Box>
   </ChakraLink>
 

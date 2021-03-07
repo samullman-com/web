@@ -292,7 +292,7 @@ function Index(props) {
           {/* <Image src="/landing-wave.svg" layout="fill"  /> */}
         </Box>
 
-        <Box py={"200px"} height="100%" px={5}>
+        <Box py={"150px"} height="100%" px={5}>
           <VerticalAlign>
             <Container
               bg="white"

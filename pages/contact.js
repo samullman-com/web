@@ -31,9 +31,9 @@ function Contact() {
           <VerticalAlign>
             <Container maxWidth="1000px" mb={3} px={0}>
               <SimpleGrid
-                columns={[1, 2, 3]}
-                mb={[4, 5, 8]}
-                spacing={[4, 5, 8]}
+                columns={[1, 2, 2, 3]}
+                mb={[4, 5, 5, 8]}
+                spacing={[4, 5, 5, 8]}
               >
                 <Box
                   bg={theme.white}
