@@ -110,7 +110,7 @@ function Index(props) {
 
   return (
     <Layout title="Home | Discovery Your Agency" noTop={true}>
-      <Box height="100vh" position="relative" className="index-hero">
+      <Box height="100vh" position="relative" className="index-hero" minHeight={[500]}>
         <VerticalAlign>
           <Container
             zIndex="5"
