@@ -29,7 +29,7 @@ function Contact() {
 
         <Section bg="gray.200">
           <VerticalAlign>
-            <Container maxWidth="1000px" mb={12} px={0}>
+            <Container maxWidth="1000px" mb={3} px={0}>
               <SimpleGrid
                 columns={[1, 2, 3]}
                 mb={[4, 5, 8]}

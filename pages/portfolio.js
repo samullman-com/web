@@ -119,7 +119,7 @@ const Project = ( props ) => {
         </Box>
         <AccordionIcon />
       </AccordionButton>
-    <AccordionPanel pb={4} pt={"10px"}>
+    <AccordionPanel pb={4} pt={["10px"]}>
 
     <ChakraLink href={ fields.url } mb={2} target="_blank" rel="noopener noreferrer" _hover={{textDecor: "none"}} display="block" rounded="sm" >
       <Box height={[200, "300px"]} rounded="sm" overflow="hidden">

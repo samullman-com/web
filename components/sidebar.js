@@ -124,8 +124,10 @@ function Sidebar(props) {
         variant="ghost"
         colorScheme="none"
         fontSize="26px"
+        size="md"
         onClick={onOpen}
       />
+
 
       <Drawer
         isOpen={isOpen}

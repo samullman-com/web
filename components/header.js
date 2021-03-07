@@ -39,14 +39,14 @@ function Header() {
       transition="all 0.2s ease"
       bg={ bg }
       color={ color }
-      height={ ["55px", height, height] }
+      height={ ["60px", height, height] }
       shadow={ shadow }
       position="fixed"
       width="100vw"
       zIndex="600"
       top={0}
-      px={[3, 4, 5]}
-      pr={[1, 2, 4]}
+      px={[5, 5, 5]}
+      pr={[3, 3, 5]}
     >
       <Box>
         <VerticalAlign>
