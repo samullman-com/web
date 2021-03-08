@@ -35,10 +35,10 @@ function Footer() {
       to: "/toolkit",
     },
 
-    {
-      text: "Shop",
-      to: "/shop",
-    },
+    // {
+    //   text: "Shop",
+    //   to: "/shop",
+    // },
 
     {
       text: "Contact",

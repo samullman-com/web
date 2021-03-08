@@ -53,10 +53,10 @@ function Sidebar(props) {
       to: "/toolkit",
     },
 
-    {
-      text: "Shop",
-      to: "/shop",
-    },
+    // {
+    //   text: "Shop",
+    //   to: "/shop",
+    // },
 
     {
       text: "Contact",
