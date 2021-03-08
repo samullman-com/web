@@ -13,6 +13,11 @@ import {
   Input,
   Textarea,
   SimpleGrid,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
 } from "@chakra-ui/react";
 
 import theme from "../public/theme";
@@ -119,6 +124,17 @@ function Contact() {
                     <FormLabel>Message</FormLabel>
 
                     <Textarea name="message" rows={6} resize />
+                  </FormControl>
+
+                  <FormControl mb={3}>
+                    <FormLabel>Project budget ($)</FormLabel>
+                    <NumberInput name="budget" min={0} step={500}>
+                      <NumberInputField />
+                      <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                      </NumberInputStepper>
+                    </NumberInput>
                   </FormControl>
 
                   <ButtonGroup>
