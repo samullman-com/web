@@ -254,7 +254,7 @@ function Index(props) {
                     >
                       JAMStack
                     </ChakraLink>
-                    , Crytocurrencies (DeFi), Business Development, and more!
+                    , Cryptocurrencies (DeFi), Business Development, and more!
                   </Box>
 
                   <Box mb={5}>
